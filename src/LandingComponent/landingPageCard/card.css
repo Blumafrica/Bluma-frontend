@@ -1,0 +1,37 @@
+#card{
+    width: 40rem;
+    color: rgb(78, 77, 77);
+    border-radius: 15px;
+    box-shadow: 0px 10px 15px -3px rgba(0,0,0,0.1);
+}
+#card .cover-pic{
+    width: 100%;
+    border-radius: 15px 15px 0 0 ;
+}
+#card .container{
+    padding: 2rem;
+    background-color: rgb(250, 249, 249);
+}
+#post-info{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+#card .user-pic{
+    height: 40px;
+}
+#card button{
+    background: none; 
+}
+#card .like-icon{
+    height: 16px;
+}
+@media (max-width: 1344px) {
+    #card{
+        width: 70%;
+        /* border: 2px solid red; */
+        margin: auto;
+        margin-bottom: 2rem;
+    }
+
+}

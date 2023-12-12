@@ -1,0 +1,57 @@
+.festival-slide-show {
+  background-color: #e1ddb1;
+  height: 45rem;
+}
+.festival-slide-show .wrapper {
+  display: flex;
+  gap: 1rem;
+  padding: 2rem;
+  width: fit-content;
+  margin: auto;
+  /* border: 1px solid rgb(129, 52, 201); */
+  border-radius: 15px;
+  margin-top: 2rem;
+}
+.festival-slide-show .caption {
+  padding-top: 6rem;
+  padding-left: 14rem;
+  font-family: Cabinet Grotesk;
+  font-size: 60px;
+  font-style: normal;
+  font-weight: 800;
+  background-image: linear-gradient(
+    92deg,
+    rgb(129, 52, 201) 7.5%,
+    rgba(14, 15, 3, 0.99) 107.24%
+  );
+  background-color: #e4ff35;
+  background-size: 100%;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -moz-text-fill-color: transparent;
+}
+.image-card img {
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 10px -1px,
+    rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+}
+@media (max-width: 1560px) {
+  .image-card img {
+    border: 2px solid red;
+    width: 100%;
+  }
+  .festival-slide-show .caption {
+    width: fit-content;
+    margin: auto;
+    font-size: 32px;
+    padding: 4rem 0 0 0;
+  }
+}
+@media (max-width: 700px) {
+  .festival-slide-show{
+    height: fit-content;
+  }
+  .festival-slide-show .wrapper  {
+    display: block;
+  }
+}

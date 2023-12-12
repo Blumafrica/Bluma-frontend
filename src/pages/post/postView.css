@@ -1,0 +1,27 @@
+
+.post-view .wrapper{
+    width: 70%;
+    margin: auto;
+    align-items: center;
+    text-align: center;
+    padding: 2rem;
+    border: 1px solid rgb(209, 203, 203);
+    margin-top: 2rem;
+}
+.post-view .lines{
+    height: 3px;
+    background-color: rgb(42, 41, 41);
+    margin: 1rem;
+    display: block;
+}
+.post-view .text-content{
+    font-size: 22px;
+    color: rgb(30, 29, 29);
+    word-spacing: 10px;
+    font-style: italic;
+    text-align: left;
+}
+.post-view .likes{
+    margin-left: 90%;
+    margin-top: 2rem;
+}
