@@ -1,0 +1,17 @@
+.landing-page .card-section{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: fit-content;
+    gap: 2rem;
+    margin: auto;
+    margin-top: 3rem;
+}
+.landing-page{
+    background-color: rgb(252, 248, 248);
+}
+@media (max-width: 1344px) {
+    .landing-page .card-section{
+        display: block;
+    }
+
+}

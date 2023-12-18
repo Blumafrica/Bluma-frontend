@@ -1,0 +1,68 @@
+.hero-section {
+  background-color: rgb(216, 211, 211);
+  height: 45rem;
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+    url(./assets/tradition.png);
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  color: white;
+}
+.hero-section .container {
+  width: fit-content;
+  padding: 4rem;
+  text-align: center;
+  margin: auto;
+}
+.hero-section .container .text-area {
+  margin: 7rem;
+}
+.hero-section button {
+  background-color: rgb(129, 52, 201);
+  color: white;
+}
+.text-area h1 {
+  font-size: 42px;
+}
+.text-area p {
+  font-size: 22px;
+}
+@media (max-width: 1344px) {
+  .landing-page .card-section {
+    display: block;
+    width: 90%;
+  }
+  .text-area p {
+    font-size: 20px;
+  }
+  .hero-section .container {
+    width: 500px;
+    padding: 1rem;
+    text-align: center;
+    margin: auto;
+  }
+}
+@media (max-width: 1344px) {
+  .hero-section {
+    height: 35rem;
+  }
+  .text-area h1 {
+    font-size: 22px;
+  }
+  .hero-section .container .text-area {
+    margin: 1rem;
+  }
+}
+@media (max-width: 700px) {
+  .hero-section {
+    height: fit-content;
+  }
+  .hero-section .container {
+    width: fit-content;
+  }
+  .hero-section .text-area {
+    width: 100%;
+    margin: 0;
+  }
+}

@@ -1,0 +1,20 @@
+.hambuger{
+    display: none;
+    height: 15px;
+    width: 20px;
+    background-color: rgb(242, 238, 233);
+    border-radius: 5px;
+}
+.hambuger span{
+    display: block;
+    height: 3px;
+    background-color: black;
+    margin-bottom: 2px;
+    border-radius: 5px;
+}
+@media (max-width: 1344px) {
+    .hambuger{
+        display: block;
+        
+    } 
+}

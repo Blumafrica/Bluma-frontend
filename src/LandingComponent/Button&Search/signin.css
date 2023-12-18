@@ -1,0 +1,22 @@
+button{
+    border: transparent;
+    font-size: 18px;
+    padding: 15px 20px;
+    border-radius: 15px;
+}
+.sign-in button{
+    background-color: transparent;
+    font-weight: bolder;
+    border-left-color: black;
+}
+.sign-in button:hover{
+    font-size: larger;
+}
+.sign-up button{
+    background-color: rgb(129, 52, 201);
+    font-weight: bolder;
+    color: white;
+}
+.sign-up button:hover{
+    background-color: rgb(163, 100, 222);;
+}
