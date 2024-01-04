@@ -1,6 +1,6 @@
 .search-bar{
     width: fit-content;
-    border: 1px solid rgb(113, 110, 110);
+    border: 1px solid rgb(157, 156, 156);
     width: 20rem;
     display: flex;
     align-items: center;
@@ -30,12 +30,10 @@
 }
 .search-bar .search-icon img{
     padding: 3px;
-
-    /* margin: 5px 0 0 5px; */
 }
 @media (max-width: 1344px) {
     .search-bar{
       display: none;
     }
-    
+        
   }

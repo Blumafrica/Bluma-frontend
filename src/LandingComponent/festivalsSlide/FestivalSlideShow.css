@@ -2,15 +2,24 @@
   background-color: #e1ddb1;
   height: 45rem;
 }
-.festival-slide-show .wrapper {
-  display: flex;
-  gap: 1rem;
-  padding: 2rem;
+.slick-slide > div{
+  /* border: 2px solid red; */
   width: fit-content;
-  margin: auto;
+  margin: 0 10px;
+}
+.slick-slide{
+  /* border: 2px solid black; */
+  width: 70%;
+}
+.festival-slide-show .wrapper {
+  /* display: flex; */
+  /* gap: 1rem; */
+  padding: 2rem 5rem;
+  /* width: fit-content; */
+  /* margin: auto; */
   /* border: 1px solid rgb(129, 52, 201); */
-  border-radius: 15px;
-  margin-top: 2rem;
+  /* border-radius: 15px; */
+  /* margin-top: 2rem; */
 }
 .festival-slide-show .caption {
   padding-top: 6rem;
@@ -51,7 +60,7 @@
   .festival-slide-show{
     height: fit-content;
   }
-  .festival-slide-show .wrapper  {
+  /* .festival-slide-show .wrapper  {
     display: block;
-  }
+  } */
 }

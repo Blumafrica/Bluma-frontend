@@ -7,7 +7,7 @@ function ImageCard(props) {
       <img
         src={props.image}
         alt=""
-        style={{ height: "20rem", borderRadius: "10px" , border:"none"}}
+        style={{ height: "20rem", borderRadius: "10px" , border:"none", width:"100%"}}
       />
     </div>
   );
