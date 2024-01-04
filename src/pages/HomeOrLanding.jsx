@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import Homepage from "./HomePage";
 import LandingPage from "./landinPage/LandingPage";
+import AdminLogin from "./admin/AdminLogin";
 
-function HomeOrLanding() {
+function HomeLandingOrAdmin() {
   const [loggedIn, setLoggedin] = useState(false);
   return (
     <div className="home-or-landing-page">
@@ -11,4 +12,4 @@ function HomeOrLanding() {
   );
 }
 
-export default HomeOrLanding;
+export default HomeLandingOrAdmin;

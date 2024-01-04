@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom'
 function SignUpBtn() {
   const navigate = useNavigate();
   function goToSignUpPage(){
-    navigate("/Signup")
+    navigate("/LoginAndSignUp")
   }
   return (
     <div className='sign-up'><button onClick={goToSignUpPage}>Sign up</button></div>

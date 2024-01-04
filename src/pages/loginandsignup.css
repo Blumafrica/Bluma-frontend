@@ -1,0 +1,22 @@
+.login-and-signup {
+}
+.login-and-signup .container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: fit-content;
+  /* border: 2px solid red; */
+  margin: auto;
+  margin-top: 2rem;
+}
+.login-and-signup .nav-btns{
+    display: flex;
+    justify-content: space-around;
+}
+.login-and-signup .img-section {
+  background-color: rgb(199, 207, 225);
+  height: 90rem;
+  width: 30rem;
+}
+.login-and-signup .main-content {
+  width: 100%;
+}

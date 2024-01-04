@@ -5,7 +5,7 @@ import "./signin.css"
 function SignInBtn() {
   const navigate =useNavigate()
   function goToSignInPage(){
-    navigate("/Signup")
+    navigate("/LoginAndSignUp")
   }
   return (
     <div className='sign-in'><button onClick={goToSignInPage}>Sign in</button></div>

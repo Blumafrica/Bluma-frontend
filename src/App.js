@@ -4,10 +4,10 @@ import Events from "./pages/Events";
 import HomeOrLanding from "./pages/HomeOrLanding";
 import HomePage from "./pages/HomePage";
 import Products from "./pages/Products";
-import SignUp from "./pages/Signup";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import PostView from "./pages/post/postView";
 import Post from "./pages/post/post";
+import LoginAndSignUp from "./pages/LoginAndSignUp";
 
 function App() {
   return (
@@ -15,7 +15,7 @@ function App() {
       <Routes>
         <Route path="/" element={<HomeOrLanding />} />
         <Route path="/HomePage" element={<HomePage />} />
-        <Route path="/Signup" element={<SignUp />} />
+        <Route path="/LoginAndSignUp" element={<LoginAndSignUp />} />
         <Route path="/About" element={<About />} />
         <Route path="/Products" element={<Products />} />
         <Route path="/events" element={<Events />} />
