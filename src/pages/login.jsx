@@ -10,7 +10,7 @@ function Login() {
     try {
       e.preventDefault();
       const response = await axios
-        .post("")
+        .post("http://localhost:8080/api/v1/user/login")
         .then((result) => console.log(result.data));
     } catch (error) {
       console.log(error);

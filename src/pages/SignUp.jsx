@@ -7,35 +7,39 @@ function SignUp() {
   const [password, setPassword] = useState("");
   const [username, setUsername] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
-  const [errorMsg, setErrorMsg] = useState("");
-  const [success, setSuccess] = useState(false);
+  // const [errorMsg, setErrorMsg] = useState("");
+  // const [success, setSuccess] = useState(false);
 
-  function checkPwdEmpty() {
-    if (password == "" || confirmPassword == "") {
-      return false;
-    }
-    return true;
+  function checkPasswordEmpty() {
+    return !(password === "" || confirmPassword === "");
+
   }
-  function checkPwdmatch() {
-    if (password !== confirmPassword) {
-      return false;
-    }
-    return true;
+  function checkPasswordMatch() {
+    return password === confirmPassword;
+
   }
 
   async function handleSubmit(e) {
     e.preventDefault();
-    if (checkPwdEmpty && checkPwdmatch)
+    if (checkPasswordEmpty && checkPasswordMatch)
       try {
-        const resposnse = await axios.post(
-          "http://localhost:8080/api/v1/register",
-          { username, email, password },
-          {
-            headers: {
-              "Content-Type": "application/json",
-            },
-          }
+        const response =await axios.post(
+            "http://localhost:8080/api/v1/user/register",
+            {username, email, password},
+            {
+              headers: {
+                "Content-Type": "application/json"
+              },
+              withCredentials: true
+            }
         );
+        const {id,message,token} =  response.data;
+        localStorage.setItem("authToken",token)
+        console.log("Message -> ",message)
+        console.log("Token -> ",token)
+        console.log("Id -> ",id)
+
+
       } catch (err) {
         console.log(err);
       }
