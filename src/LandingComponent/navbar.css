@@ -3,7 +3,8 @@
   justify-content: space-around;
   align-items: center;
   background-color: rgb(241, 241, 241);
-  padding: 3rem;
+  /* padding: 3rem; */
+  background-color: transparent;
   padding-bottom: 1rem; 
 }
 .nav-bar a{
