@@ -5,6 +5,7 @@ import SignUp from "./SignUp";
 import "./loginandsignup.css";
 import BlumaLogo from "../LandingComponent/Button&Search/BlumaLogo"
 
+
 export default function LoginAndSignUp() {
   const [login, setLogin] = useState(false);
   function displayLoginSection() {
@@ -22,7 +23,8 @@ export default function LoginAndSignUp() {
         <BlumaLogo/>
       </nav>
       <div className="container">
-        <div className="img-section"></div>
+        <div className="img-section  bg-gradient-to-tr from violet-500 to-fuchsia-500" ></div>
+        {/* <div class="h-14 bg-gradient-to-tr from violet-500 to-fuchsia-500 "></div> */}
         <div className="main-content">
           <div className="nav-btns">
             <button onClick={displayLoginSection}>Login</button>

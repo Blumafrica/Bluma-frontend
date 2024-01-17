@@ -13,9 +13,11 @@
     justify-content: space-around;
 }
 .login-and-signup .img-section {
-  background-color: rgb(199, 207, 225);
-  height: 90rem;
+  /* background-color: rgb(199, 207, 225); */
+  background-image: linear-gradient(slateblue , purple);
+  height: 40rem;
   width: 30rem;
+  margin-right: 70px;
 }
 .login-and-signup .main-content {
   width: 100%;
