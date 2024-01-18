@@ -4,6 +4,7 @@ import Login from "./login";
 import SignUp from "./SignUp";
 import "./loginandsignup.css";
 import BlumaLogo from "../LandingComponent/Button&Search/BlumaLogo"
+import BigBlumaLogo from "../LandingComponent/Button&Search/BigBlumaLogo";
 
 
 export default function LoginAndSignUp() {
@@ -21,9 +22,10 @@ export default function LoginAndSignUp() {
     <section className="login-and-signup">
       <nav className="nav-bar">
         <BlumaLogo/>
+        <BigBlumaLogo/>
       </nav>
       <div className="container">
-        <div className="img-section  bg-gradient-to-tr from violet-500 to-fuchsia-500" ></div>
+        <div className="img-section  bg-gradient-to-tr from violet-500 to-fuchsia-500" > <BigBlumaLogo/> </div>
         {/* <div class="h-14 bg-gradient-to-tr from violet-500 to-fuchsia-500 "></div> */}
         <div className="main-content">
           <div className="nav-btns">

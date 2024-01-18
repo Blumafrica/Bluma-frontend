@@ -80,7 +80,9 @@ function SignUp() {
             onChange={(e) => setConfirmPassword(e.target.value)}
           ></input>
           <br></br>
-          <button type="submit">Submit</button>
+          <input type="submit"  
+           class="m-2 p-4 w-4/5 rounded-xl border-2 border-purple-400 bg-purple-400 text-center text-xl"/>
+
         </form>
       </div>
     </div>

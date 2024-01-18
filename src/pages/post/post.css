@@ -1,22 +1,33 @@
+.user-post {
+   /* background-image: linear-gradient(rgb(224, 52, 224), rgb(84, 73, 158)); */
+   /* background-color: rgb(170, 111, 226); */
+}
 .user-post .nav-bar {
   display: flex;
 }
 .user-post h1{
-    color:  rgb(129, 52, 201);
+    /* color:  rgb(129, 52, 201); */
 }
 .user-post .container {
   width: 70%;
   margin: auto;
   box-shadow: 0px 5px 10px 0px rgba(47, 47, 47, 0.5);
+  background-color:  rgb(237, 234, 240);
+  /* background-image: linear-gradient(rgb(129, 52, 201)); */
   padding: 3rem;
   border-radius: 10px;
   margin-top: 3rem;
 
 }
 /* .user-post .container:hover{
-    width: 690px;
+    width: 690px;wor
     height: 590px;
 } */
+.container .image{
+  margin-top: 20px;
+  width: 490px;
+  height: 100px;
+}
 .user-post input {
   display: block;
   border: 1px solid rgb(197, 195, 195);
@@ -61,11 +72,14 @@ input::placeholder {
 
 
 .user-post .create-post {
+  margin-left: 258px;
+  margin-top: 50px;
   appearance: none;
+  width: 20rem;
   backface-visibility: hidden;
-  background-color: #27ae60;
+  background-color: rgb(129, 52, 201);
   border-radius: 8px;
-  border-style: none;
+  border-style: 2px solid;
   box-shadow: rgba(39, 174, 96, .15) 0 4px 9px;
   box-sizing: border-box;
   color: #fff;
@@ -92,7 +106,7 @@ input::placeholder {
 }
 
 .user-post .create-post:hover {
-  background-color: #1e8449;
+  background-color: #671e84;
   opacity: 1;
   transform: translateY(0);
   transition-duration: .35s;

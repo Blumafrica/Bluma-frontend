@@ -1,9 +1,8 @@
-import React from "react";
 import BlumaLogo from "../../LandingComponent/Button&Search/BlumaLogo";
 import { NavLink } from "react-router-dom";
 import Notification from "../../LandingComponent/notification/Notification";
 import "./post.css";
-import { useState } from "react";
+import { useState, useCallback } from "react";
 import Footer from "../../LandingComponent/footer";
 
 function Post() {
@@ -18,21 +17,33 @@ function Post() {
     formData.append("upload_preset",apiKey)
     
   }
+  // const post = useCallback(async () =>{
+  //  let url = '/api/v1/post/'
+  //  const response = await fetch(url,
+  //   {'method' : Post,{image, }})
+
+  // }, []);
+
+  // const post  useCallback (async =>{
+  //   let url = '/api/v1/post/'
+  //   const response = await fetch(url, {method : 'post'})
+  // }, [])
+
   return (
-    <div className="user-post">
+    <div className="user-post" >
       <nav className="nav-bar">
         <BlumaLogo />
         <div className="links">
-          <NavLink to="/About">About</NavLink>
-          <NavLink to="/products">Product</NavLink>
-          <NavLink to="/post-view">view posts</NavLink>
+          <NavLink to="/About" color="white">About</NavLink>
+          <NavLink to="/products" color="white">Product</NavLink>
+          <NavLink to="/post-view" background-color="white">view posts</NavLink>
         </div>
-        <Notification />
+        {/* <Notification /> */}
       </nav>
 
       <div className="container">
-        <h1>Create Post</h1>
-        <label htmlFor="">Title</label>
+        <h1 font-size={'bold'}>Create Post</h1>
+        {/* <label htmlFor="">Title</label> */}
         <input type="text" placeholder="Enter title" className="title-input"/>
         <br />
         {/* <label htmlFor="">Description</label>
@@ -42,11 +53,11 @@ function Post() {
         <textarea name="post" id="" cols="30" rows="10"></textarea>
         <input type="file" className="image" onChange={uploadImg}/>
       </div>
-      <div className="btns">
-        <button className="create-post">+ Add file</button>
-        <button className="reset-post">reset</button>
-      </div>
-      <Footer/>
+      {/* <div className="btns"> */}
+        <button className="create-post">post</button>
+        {/* <button className="reset-post">reset</button> */}
+      {/* </div> */}
+      {/* <Footer/> */}
     </div>
   );
 }
