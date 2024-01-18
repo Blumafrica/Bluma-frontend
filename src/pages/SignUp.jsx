@@ -20,16 +20,16 @@ function SignUp() {
     return password === confirmPassword;
 
   }
-  let catchError = useCallback ( (param) => {
-    useNavigate
-  }, [])
+  // let catchError = useCallback ( (param) => {
+  //   useNavigate
+  // }, [])
 
   async function handleSubmit(e) {
     e.preventDefault();
     if (checkPasswordEmpty && checkPasswordMatch)
       try {
         const response =await axios.post(
-            "http://localhost:8080/api/v1/user/register",
+            "https://blumafrica-production.up.railway.app/api/v1/user/register",
             {username, email, password},
             {
               headers: {
