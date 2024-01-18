@@ -17,7 +17,7 @@ function AdminLogin() {
 
     try {
       const response = await axios.post(
-        "http://localhost:8080/api/v1/login",
+        "http://localhost:8080/api/v1/login/",
         { email, password },
         {
           headers: {
