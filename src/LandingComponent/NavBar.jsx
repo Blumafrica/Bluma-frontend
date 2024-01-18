@@ -2,9 +2,7 @@ import React from "react";
 import BlumaLogo from "./Button&Search/BlumaLogo";
 import { NavLink } from "react-router-dom";
 import SignInBtn from "./Button&Search/SignInBtn ";
-import SignUpBtn from "./Button&Search/SignUpBtn";
 import Hambuger from "./Button&Search/hambuger";
-import SearchBar from "./Button&Search/SearchBar";
 import "./navbar.css"
 
 function NavBar() {

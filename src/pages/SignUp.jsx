@@ -1,12 +1,14 @@
 import React from "react";
-import { useState } from "react";
+import { useState , useCallback} from "react";
 import axios from "axios";
+import {useNavigate, useLocation} from "react-router-dom";
 
 function SignUp() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [username, setUsername] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
+  const navigate = useNavigate()
   // const [errorMsg, setErrorMsg] = useState("");
   // const [success, setSuccess] = useState(false);
 
@@ -18,6 +20,9 @@ function SignUp() {
     return password === confirmPassword;
 
   }
+  let catchError = useCallback ( (param) => {
+    useNavigate
+  }, [])
 
   async function handleSubmit(e) {
     e.preventDefault();
