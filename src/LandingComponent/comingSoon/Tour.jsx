@@ -12,6 +12,7 @@ const ImageArea = styled.div`
   width: 100%;
   height: 100%;
   background: purple;
+  border: 2px solid red;
 `;
 const Image = styled.img``;
 const List = styled.li``;
