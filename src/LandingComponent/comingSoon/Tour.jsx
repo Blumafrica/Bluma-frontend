@@ -9,6 +9,9 @@ const TextArea = styled.div`
 `;
 const ImageArea = styled.div`
   flex: 1;
+  width: 100%;
+  height: 100%;
+  background: purple;
 `;
 const Image = styled.img``;
 const List = styled.li``;
