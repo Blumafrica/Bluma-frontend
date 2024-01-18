@@ -20,9 +20,9 @@ function SignUp() {
     return password === confirmPassword;
 
   }
-  let catchError = useCallback ( (param) => {
-    useNavigate
-  }, [])
+  // let catchError = useCallback ( (param) => {
+  //   useNavigate
+  // }, [])
 
   async function handleSubmit(e) {
     e.preventDefault();

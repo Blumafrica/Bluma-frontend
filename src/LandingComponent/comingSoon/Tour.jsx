@@ -9,8 +9,8 @@ const TextArea = styled.div`
 `;
 const ImageArea = styled.div`
   flex: 1;
-  width: 100%;
-  height: 100%;
+  width: 0;
+  height: 0;
   background: purple;
   border: 2px solid red;
 `;
