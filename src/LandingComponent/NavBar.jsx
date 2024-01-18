@@ -11,7 +11,7 @@ function NavBar() {
   return (
     <div className="nav-bar">
       <BlumaLogo />
-      <SearchBar/>
+      {/* <SearchBar/> */}
       <div className="links">
         <NavLink to="about">About</NavLink>
         <NavLink to="products">Products</NavLink>
@@ -19,7 +19,7 @@ function NavBar() {
       </div>
       <div className="check-in">
       <SignInBtn />
-      <SignUpBtn />
+      {/* <SignUpBtn /> */}
       </div>
       <Hambuger/>
       
