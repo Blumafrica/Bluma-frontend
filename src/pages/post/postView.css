@@ -25,3 +25,8 @@
     margin-left: 90%;
     margin-top: 2rem;
 }
+.comment {
+    border-radius: 30px;
+    width: 20rem;
+    height: 4rem;
+}

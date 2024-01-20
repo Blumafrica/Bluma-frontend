@@ -8,26 +8,27 @@ import Footer from "../../LandingComponent/footer";
 function Post() {
   const apiKey= "";
   const apiName ="";
-  const [image, setImage] = useState();
+  const [image, setImage] = useState([]);
+  const url = '/api/v1/post/';
 
   function uploadImg(event){
     const file = event.target.file[0]
-    const formData = new FormData()
+    const formData = new FormData('')
     formData.append("file", file)
     formData.append("upload_preset",apiKey)
     
   }
-  // const post = useCallback(async () =>{
-  //  let url = '/api/v1/post/'
-  //  const response = await fetch(url,
-  //   {'method' : Post,{image, }})
 
-  // }, []);
-
-  // const post  useCallback (async =>{
-  //   let url = '/api/v1/post/'
-  //   const response = await fetch(url, {method : 'post'})
-  // }, [])
+  const poat = useCallback( async (parameter) => {
+    const response = await fetch(url, {
+      
+       headers :{
+        'Content-Type' : 'application/json'
+       }
+    })
+      
+  }, [])
+  
 
   return (
     <div className="user-post" >
@@ -44,13 +45,13 @@ function Post() {
       <div className="container">
         <h1 font-size={'bold'}>Create Post</h1>
         {/* <label htmlFor="">Title</label> */}
-        <input type="text" placeholder="Enter title" className="title-input"/>
+        <input type="text" placeholder="Enter title" className="title-input" />
         <br />
         {/* <label htmlFor="">Description</label>
         <input type="text" placeholder="Write Summary" />
         <br /> */}
         <label htmlFor="post">Write post</label>
-        <textarea name="post" id="" cols="30" rows="10"></textarea>
+        <textarea name="post" id="" cols="30" rows="10" ></textarea>
         <input type="file" className="image" onChange={uploadImg}/>
       </div>
       {/* <div className="btns"> */}

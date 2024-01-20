@@ -20,8 +20,13 @@ function SignUp() {
     return password === confirmPassword;
 
   }
+
   // const catchError = useCallback ( (param) => {
   //   navigate("/Error", {state :{value: param}})
+
+  // let catchError = useCallback ( (param) => {
+  //   useNavigate
+
   // }, [])
 
   // const navigateToLandingPage = useCallback( (param)=>{
@@ -32,7 +37,7 @@ function SignUp() {
     if (checkPasswordEmpty && checkPasswordMatch)
       try {
         const response =await axios.post(
-            "http://localhost:8080/api/v1/user/register",
+            "https://localhost:8080/api/v1/user/register",
             {username, email, password},
             {
               headers: {

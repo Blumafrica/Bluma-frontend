@@ -4,7 +4,7 @@ import Homepage from "./HomePage";
 import LandingPage from "./landinPage/LandingPage";
 import AdminLogin from "./admin/AdminLogin";
 
-function HomeLandingOrAdmin() {
+function HomeLanding() {
   const [loggedIn, setLoggedin] = useState(false);
   return (
     <div className="home-or-landing-page">
@@ -13,4 +13,4 @@ function HomeLandingOrAdmin() {
   );
 }
 
-export default HomeLandingOrAdmin;
+export default HomeLanding;
