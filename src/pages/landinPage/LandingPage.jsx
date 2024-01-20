@@ -1,3 +1,4 @@
+
 import React from "react";
 import NavBar from "../../LandingComponent/NavBar";
 import HeroSection from "../../LandingComponent/HeroSection";
@@ -8,9 +9,37 @@ import postImg from "../../LandingComponent/assets/rectangle2.svg";
 import userPic from "../../LandingComponent/assets/profileImg.svg";
 import FestivalSlideShow from "../../LandingComponent/festivalsSlide/FestivalSlideShow";
 import Footer from "../../LandingComponent/footer"
+import { useState, useCallback } from "react";
 import "./landingpage.css"
+import axios from "axios";
 
 function LandingPage() {
+
+
+
+   const [post, setPosts] = useState([]);
+
+    async function getPost  (e){
+   
+
+      e.priventDefault();
+
+      try{
+
+      const response = await axios.get('/api/v1/getAdminPost')
+      console.log(response.data);
+      setPosts(response.data);
+
+      }catch (error){
+        console.log(error);
+      }
+    }
+
+    
+      
+
+
+
   return (
     <div className="landing-page">
       <NavBar />
