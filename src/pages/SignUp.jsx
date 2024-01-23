@@ -1,6 +1,6 @@
 import { useState , useCallback, React} from "react";
 import axios from "axios";
-// import {useNavigate} from "react-router-dom";
+import {useNavigate} from "react-router-dom";
 
 function SignUp() {
   const [email, setEmail] = useState("");
@@ -8,8 +8,8 @@ function SignUp() {
   const [username, setUsername] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
-  // const navigate = useNavigate()
-  // const [errorMsg, setErrorMsg] = useState("");
+  const navigate = useNavigate();
+  const [errorMsg, setErrorMsg] = useState("");
   // const [success, setSuccess] = useState(false);
 
   function checkPasswordEmpty() {
@@ -29,14 +29,15 @@ function SignUp() {
 
   // }, [])
 
-  // const navigateToLandingPage = useCallback( (param)=>{
-  //   navigate("/LandingPage", [])
-  // })
+  const navigateToLandingPage = useCallback( (param)=>{
+    navigate("/LandingPage", {state:{value: param}})
+  })
   async function handleSubmit(e) {
     e.preventDefault();
+
     if (checkPasswordEmpty && checkPasswordMatch)
       try {
-        const response =await axios.post(
+        const response = await axios.post(
             "https://localhost:8080/api/v1/user/register",
             {username, email, password},
             {
@@ -52,25 +53,18 @@ function SignUp() {
         console.log("Message -> ",message)
         console.log("Token -> ",token)
         console.log("Id -> ",id)
-        // navigateToLandingPage(data)
+        navigateToLandingPage(response.data);
 
 
       } catch (err) {
-        setErrorMessage(err)
         console.log(err);
-
-        return(<div >
-          message : {err.message}
-          mes: {err.response}
-        </div>)
+        setErrorMsg(err)
       }
   }
   return (
     <div className="sign-up">
       <div className="">
-        {<p color="red" >{errorMessage}</p>}
-        {errorMessage && <p style={{color:"red"}}>{errorMessage}</p>}
-        {errorMessage && <p class="m-2 p-4 w-4/5    text-rose-600">{errorMessage}</p>}
+        <p color="red">{errorMsg}</p>
         <form onSubmit={handleSubmit}>
           <input
             class="m-2 p-4 w-4/5 rounded-xl border-2 border-purple-400 bg-transparent text-center text-xl"
