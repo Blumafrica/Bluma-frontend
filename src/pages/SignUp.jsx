@@ -9,8 +9,8 @@ function SignUp() {
   const [username, setUsername] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
   const navigate = useNavigate()
-  // const [errorMsg, setErrorMsg] = useState("");
-  // const [success, setSuccess] = useState(false);
+  const [errorMsg, setErrorMsg] = useState("");
+  const [success, setSuccess] = useState(false);
 
   function checkPasswordEmpty() {
     return !(password === "" || confirmPassword === "");
