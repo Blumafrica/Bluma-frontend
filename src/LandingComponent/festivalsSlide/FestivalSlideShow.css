@@ -1,5 +1,5 @@
 .festival-slide-show {
-  background-color: #1d1d1b;
+  background-color: rgb(129, 52, 201);;
   height: 45rem;
 }
 .slick-slide > div{
@@ -30,7 +30,7 @@
   font-weight: 800;
   background-image: linear-gradient(
     92deg,
-    rgb(129, 52, 201) 7.5%,
+    rgb(235, 231, 238) 7.5%,
     rgba(14, 15, 3, 0.99) 107.24%
   );
   background-color: #e4ff35;

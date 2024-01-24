@@ -10,7 +10,7 @@ export default function Header(){
             </div>
             <div class="list-none flex sm:justify-end md:justify-end xl:justify-end">
                 <li>
-                <Link to="/Signup" >
+                {/* <Link to="/Signup" >
                     <p class="btn p-3 w-40 text-center
                       cursor-pointer rounded border-purple-600 border-2
                     ">Sign Up</p>
@@ -22,7 +22,7 @@ export default function Header(){
                     <p class="btn p-3 w-40 text-center ml-10
                       cursor-pointer rounded border-purple-600 border-2
                     ">Log In</p>
-                </Link>
+                </Link> */}
                 </li>
             </div>
         </header>

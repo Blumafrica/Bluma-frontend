@@ -30,7 +30,7 @@ function SignUp() {
   // }, [])
 
   const navigateToLandingPage = useCallback( (param)=>{
-    navigate("/LandingPage", {state:{value: param}})
+    navigate("/HomePage", {state:{value: param}})
   })
   async function handleSubmit(e) {
     e.preventDefault();
