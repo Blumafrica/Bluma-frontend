@@ -9,6 +9,11 @@ import "./postView.css";
 import Footer from "../../LandingComponent/footer";
 
 function PostView() {
+
+   
+
+
+
   return (
     <div className="post-view">
       <nav className="nav-bar">
@@ -69,6 +74,9 @@ function PostView() {
           className="likes"
           style={{ height: "1rem" }}
         />
+      </div>
+      <div className="comment">
+
       </div>
       <Footer />
     </div>
