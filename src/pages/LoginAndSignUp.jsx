@@ -12,6 +12,7 @@ export default function LoginAndSignUp() {
   function displayLoginSection() {
     if (!login) {
       setLogin(true);
+      
     }
   }
   function displaySignUpSection() {
@@ -29,7 +30,7 @@ export default function LoginAndSignUp() {
         {/* <div class="h-14 bg-gradient-to-tr from violet-500 to-fuchsia-500 "></div> */}
         <div className="main-content">
           <div className="nav-btns">
-            <button onClick={displayLoginSection}>Login</button>
+            <button className='login bg-gradient-to-tr from violet-500 to-fuchsia-500' onClick={displayLoginSection} color="Purple">Login</button>
             <button onClick={displaySignUpSection}>Sign up</button>
           </div>
           {login ? <Login /> : <SignUp />}

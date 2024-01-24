@@ -2,7 +2,7 @@ import React from "react";
 import { useState } from "react";
 import { useLocation } from "react-router-dom";
 
-function FailedSignUp () {
+function Error () {
 
     const [message , setMessage] = useState("");
     const data = useLocation().state;
@@ -10,6 +10,9 @@ function FailedSignUp () {
 
     return (
         <div  className="container">
+            <div>
+                Error message: {data.message}
+            </div>
 
 
         </div>
@@ -20,4 +23,4 @@ function FailedSignUp () {
 
 }
 
-export default FailedSignUp;
+export default Error;
