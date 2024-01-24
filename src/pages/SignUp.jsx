@@ -29,7 +29,7 @@ function SignUp() {
     if (checkPasswordEmpty && checkPasswordMatch)
       try {
         const response =await axios.post(
-            "https://localhost:8080/api/v1/user/register",
+            "http://localhost:8080/api/v1/user/register",
             {username, email, password},
             {
               headers: {
