@@ -3,7 +3,7 @@ import BlumaLogo from "./Button&Search/BlumaLogo";
 import { NavLink } from "react-router-dom";
 import SignInBtn from "./Button&Search/SignInBtn ";
 import Hambuger from "./Button&Search/hambuger";
-import "./navbar.css"
+import "./navbar.css";
 
 function NavBar() {
   return (
@@ -16,11 +16,10 @@ function NavBar() {
         <NavLink to="events">Events</NavLink>
       </div>
       <div className="check-in">
-      <SignInBtn />
-      {/* <SignUpBtn /> */}
+        <SignInBtn />
+        {/* <SignUpBtn /> */}
       </div>
-      <Hambuger/>
-      
+      <Hambuger />
     </div>
   );
 }
