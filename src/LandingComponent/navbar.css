@@ -36,12 +36,13 @@
     align-items: center;
 }
 @media (max-width: 1344px) {
+   
+}
+@media (max-width: 570px) {
     .nav-bar .check-in{
         display: none;
         align-items: center;
     }
-}
-@media (max-width: 570px) {
     .nav-bar .links{
         display: none;
         

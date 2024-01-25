@@ -119,8 +119,13 @@ function LandingPage() {
     <div className="landing-page">
       <NavBar />
       <HeroSection />
+
       <AddArticleBtn />
       {/* <Tour /> */}
+
+      {/* <AddArticleBtn /> */}
+      <Tour />
+
       <div className="card-section">
         <Card
           class="card-item"

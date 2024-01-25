@@ -1,5 +1,7 @@
 .festival-slide-show {
-  background-color: rgb(129, 52, 201);;
+/* 
+  background-color: rgb(129, 52, 201);; */
+  background-color: rgb(222, 222, 178);
   height: 45rem;
 }
 .slick-slide > div{
