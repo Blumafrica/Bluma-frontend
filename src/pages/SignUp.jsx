@@ -27,7 +27,7 @@ function SignUp() {
 
   // }, [])
 
-  const navigateToLandingPage = useCallback( (param)=>{
+  const navigateToHomePage = useCallback( (param)=>{
     navigate("/HomePage", {state:{value: param}})
   })
   async function handleSubmit(e) {
@@ -35,8 +35,9 @@ function SignUp() {
 
     if (checkPasswordEmpty && checkPasswordMatch)
       try {
+    const url = 'https://localhost:8080/api/v1/user/register'
         const response =await axios.post(
-            "https://localhost:8080/api/v1/user/register",
+            "https://blumafricabackend-production.up.railway.app/api/v1/user/register",
             {username, email, password},
             {
               headers: {
@@ -50,6 +51,7 @@ function SignUp() {
         console.log("Message -> ",message)
         console.log("Token -> ",token)
         console.log("Id -> ",id)
+        navigateToHomePage(id)
 
 
       } catch (err) {

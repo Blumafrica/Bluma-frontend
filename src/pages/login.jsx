@@ -16,13 +16,15 @@ const Login = () => {
 
     const loginAuthentication = useAuth();
 
+    
     const handleSubmitEvent = async (e) => {
 
         e.preventDefault();
         if (input.email !== "" && input.password !== "") {
             try {
-                const url = 'https://localhost:2005/api/v1/user/api/login/';
+                // const url = 'https://localhost:2005/api/v1/user/api/login/';
                 // const response = await loginAuthentication.login(input);
+                const url = 'https://blumafricabackend-production.up.railway.app/api/v1/user/register';
                 const response = await fetch(url, {
                     method : 'PUT',
                     headers :{

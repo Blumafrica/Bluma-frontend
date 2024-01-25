@@ -9,7 +9,7 @@ import PostView from "./pages/post/postView";
 import Post from "./pages/post/post";
 import LoginAndSignUp from "./pages/LoginAndSignUp";
 import AdminLogin from "./pages/admin/AdminLogin";
-
+import Login from "./pages/login";
 import Error from "./pages/Error";
 import LandingPage from "./pages/landinPage/LandingPage";
 
@@ -28,7 +28,7 @@ function App() {
         <Route path="/PostView" element={<PostView/>}/>
         <Route path="/PostArticle" element={<Post/>}/>
         <Route path="/AdminLogin" element={<AdminLogin/>}/>
-
+         <Route path="/Login" element={<Login/>}/>
         <Route path="/Error" element={<Error/>}/>
         <Route path="/LandingPage" element={<LandingPage/>}/>
         {/* <Route path="/LandingPage" element={<LandingPage/>}/> */}

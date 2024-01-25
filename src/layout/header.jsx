@@ -10,7 +10,7 @@ export default function Header(){
                 <p class=" text-purple-500 font-bold sm:text-4xl ">Bluma</p>
             </div>
             <div class="list-none flex sm:justify-end md:justify-end xl:justify-end">
-                <AddArticleBtn/>
+                {/* <AddArticleBtn/> */}
                 <li>
                 {/* <Link to="/Signup" >
                     <p class="btn p-3 w-40 text-center
