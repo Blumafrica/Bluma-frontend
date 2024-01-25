@@ -13,7 +13,6 @@ import { useState, useCallback } from "react";
 import { useNavigate } from "react-router-dom";
 import "./landingpage.css"
 import axios from "axios";
-import Error from "../Error";
 
 function LandingPage() {
 
@@ -120,8 +119,13 @@ function LandingPage() {
     <div className="landing-page">
       <NavBar />
       <HeroSection />
+
+      <AddArticleBtn />
+      {/* <Tour /> */}
+
       {/* <AddArticleBtn /> */}
       <Tour />
+
       <div className="card-section">
         <Card
           class="card-item"

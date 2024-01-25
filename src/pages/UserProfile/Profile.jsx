@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import BlumaLogo from "../../LandingComponent/Button&Search/BlumaLogo";
 import profilePix from "../../images/profilePix.jpg";
 import styled from "styled-components";
+import { useLocation } from "react-router-dom";
 
 const Container = styled.div`
   height: 100vh;
@@ -112,6 +113,8 @@ const ContactBtn =styled.button`
 `;
 
 const Profile = () => {
+
+  const user = useLocation()
   const [phoneNumber, setPhoneNumber]= useState("")
   const displayNumber =() =>{
     setPhoneNumber("")

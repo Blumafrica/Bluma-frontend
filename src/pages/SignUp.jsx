@@ -27,16 +27,17 @@ function SignUp() {
 
   // }, [])
 
-  const navigateToLandingPage = useCallback( (param)=>{
-    navigate("/LandingPage", {state:{value: param}})
+  const navigateToHomePage = useCallback( (param)=>{
+    navigate("/HomePage", {state:{value: param}})
   })
   async function handleSubmit(e) {
     e.preventDefault();
 
     if (checkPasswordEmpty && checkPasswordMatch)
       try {
+    const url = 'https://localhost:8080/api/v1/user/register'
         const response =await axios.post(
-            "https://localhost:8080/api/v1/user/register",
+            "https://blumafricabackend-production.up.railway.app/api/v1/user/register",
             {username, email, password},
             {
               headers: {
@@ -50,6 +51,7 @@ function SignUp() {
         console.log("Message -> ",message)
         console.log("Token -> ",token)
         console.log("Id -> ",id)
+        navigateToHomePage(id)
 
 
       } catch (err) {
@@ -58,10 +60,12 @@ function SignUp() {
       }
   }
   return (
-    
+
+ 
+
     <div className="sign-up">
       <div className="">
-        <p color="red">{errorMsg}</p>
+        <p color="red" background-color={'red'}>erroe message:{errorMsg}</p>
         <form onSubmit={handleSubmit}>
           <input
             class="m-2 p-4 w-4/5 rounded-xl border-2 border-purple-400 bg-transparent text-center text-xl"
@@ -102,6 +106,7 @@ function SignUp() {
         </form>
       </div>
     </div>
+  
   );
 }
 
