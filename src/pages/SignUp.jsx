@@ -62,9 +62,10 @@ function SignUp() {
       }
   }
   return (
+    <>
     <div className="sign-up">
       <div className="">
-        <p color="red">{errorMsg}</p>
+        <p color="red" background-color={'red'}>erroe message:{errorMsg}</p>
         <form onSubmit={handleSubmit}>
           <input
             class="m-2 p-4 w-4/5 rounded-xl border-2 border-purple-400 bg-transparent text-center text-xl"
@@ -104,6 +105,7 @@ function SignUp() {
         </form>
       </div>
     </div>
+    </>
   );
 }
 
