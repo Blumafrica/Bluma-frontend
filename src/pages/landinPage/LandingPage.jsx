@@ -120,7 +120,7 @@ function LandingPage() {
     <div className="landing-page">
       <NavBar />
       <HeroSection />
-      <AddArticleBtn />
+      {/* <AddArticleBtn /> */}
       <Tour />
       <div className="card-section">
         <Card
