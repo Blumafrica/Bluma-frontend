@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import BlumaLogo from "../../LandingComponent/Button&Search/BlumaLogo";
 import profilePix from "../../images/profilePix.jpg";
 import styled from "styled-components";
-import { useLocation } from "react-router-dom";
 
 const Container = styled.div`
   height: 100vh;
@@ -113,8 +112,6 @@ const ContactBtn =styled.button`
 `;
 
 const Profile = () => {
-
-  const user = useLocation()
   const [phoneNumber, setPhoneNumber]= useState("")
   const displayNumber =() =>{
     setPhoneNumber("")
@@ -164,7 +161,7 @@ const Profile = () => {
            </List>
 
            <TextInfo> 
-            <p>I am a nigerian who enjoys Nigeria </p>
+            <p>I am a nigerian who enjoys enjoys Nigeria </p>
             <p>beautiful heritage. Stay on my page,</p>
             <p> learn,and enjoy while i take you around Nigeria</p>
             <p>cheers</p>

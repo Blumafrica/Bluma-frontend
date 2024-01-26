@@ -91,12 +91,12 @@ const HeroSection = (props) => {
         {Slideritems.map((item) => (
           <Slide bg={item.bg} identity={item.id} className={item.class}>
             <TextContent>
-              <Caption>Seamless</Caption>
-              <Heading>{props.header}</Heading>
+              <Caption>Bluma-Africa</Caption>
+              <Heading>{props.heder}</Heading>
               <Text>{item.desc}</Text>
               <div style={{display: "flex", margin: "3rem 0rem",}}>
                 <SignUpBtn>Get Started</SignUpBtn>
-                <HeroBtn>View more</HeroBtn>
+                {/* <HeroBtn>View more</HeroBtn> */}
               </div>
             </TextContent>
           </Slide>
