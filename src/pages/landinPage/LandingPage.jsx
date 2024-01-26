@@ -131,13 +131,14 @@ function LandingPage() {
           class="card-item"
           coverPic={postImg}
           heading="A brief stroy about nigeria"
-          description="Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-         Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown 
-         printer took a galley of type and scrambled it to make a type specimen book. It has"
-          summary="It is a long established fact that a reader will be distracted by the readable content of a page when looking
-          at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed 
-          to using 'Content here, content here',
-          making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their"
+          description="Discover the allure of Nigeria's splendor at Bluma-Africa, where every moment is a celebration of the country's
+          breathtaking beauty and vibrant culture."
+          summary="Welcome to Bluma-Africa, your gateway to the extraordinary beauty of Nigeria. 
+          Immerse yourself in the diverse cultural tapestry and scenic wonders as you explore, 
+          share, and connect with others. This app invites you to express your admiration for 
+          Nigeria's charm by writing articles, sharing captivating videos and pictures, engaging in 
+          lively discussions, and embarking on virtual tours. Join our vibrant community and celebrate 
+          the rich tapestry of Nigeria's beauty together!"
           userPic={userPic}
           userName="John Ebubu Ehni"
           date="22th November 2017"

@@ -63,6 +63,49 @@ function SignUp(callback, deps) {
 
 
 
+    <div className="sign-up">
+      <div className="">
+        {/* <p color="red" background-color={'red'}>erroe message:{errorMsg}</p> */}
+        <form onSubmit={handleSubmit}>
+          <input
+            class="m-2 p-4 w-4/5 rounded-xl border-2 border-purple-400 bg-transparent text-center text-xl"
+            type="text"
+            placeholder="Username"
+            value={username}
+            onChange={(e) => setUsername(e.target.value)}
+          ></input>
+          <br></br>
+          <input
+            class="m-2 p-4 w-4/5 rounded-xl border-2 border-purple-400 bg-transparent text-center text-xl"
+            type="email"
+            placeholder="email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+          ></input>
+          <br></br>
+          <input
+            class="m-2 p-4 w-4/5 rounded-xl border-2 border-purple-400 bg-transparent text-center text-xl"
+            type="password"
+            placeholder="password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+          ></input>
+          <br></br>
+          <input
+            class="m-2 p-4 w-4/5 rounded-xl border-2 border-purple-400 bg-transparent text-center text-xl"
+            type="password"
+            placeholder="confirm password"
+            value={confirmPassword}
+            onChange={(e) => setConfirmPassword(e.target.value)}
+          ></input>
+          <br></br>
+          <input
+            type="submit"
+            class="m-2 p-4 w-4/5 rounded-xl border-2 border-purple-400 bg-purple-400 text-center text-xl"
+          />
+        </form>
+
+
       <div className="sign-up">
         <div className="">
           <p color="red" background-color={'red'}>erroe message:{errorMsg}</p>
@@ -105,6 +148,7 @@ function SignUp(callback, deps) {
             />
           </form>
         </div>
+
       </div>
 
   );
