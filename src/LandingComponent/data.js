@@ -2,16 +2,16 @@ export const Slideritems = [
   {
     id: 1,
     class: "one",
-    desc: "Lorem ipsum dolor sit, amet consectetur adipisicing elit Vero eius consequatur sint possimus architecto corrupti cupiditate ipsum porro dolore corporis qui labore mollitia beatae quaerat non, repudiandae vero?",
+    desc: "Embark on a visual journey that transcends borders, as Bluma-Africa becomes your window to the soul-stirring landscapes and vibrant cultures that define Nigeria. With every click, join a community passionate about preserving and sharing the kaleidoscope of experiences that make Nigeria a tapestry of wonder.",
   },
   {
     id: 2,
     class: "two",
-    desc: "Lorem ipsum dolor sit, amet consectetur adipisicing elit Vero eius consequatur sint possimus architecto corrupti cupiditate ipsum porro dolore corporis qui labore mollitia beatae quaerat non, repudiandae vero?",
+    desc: "Embark on a visual journey that transcends borders, as Bluma-Africa becomes your window to the soul-stirring landscapes and vibrant cultures that define Nigeria. With every click, join a community passionate about preserving and sharing the kaleidoscope of experiences that make Nigeria a tapestry of wonder.",
   },
   {
     id: 3,
     class: "three",
-    desc: "Lorem ipsum dolor sit, amet consectetur adipisicing elit Vero eius consequatur sint possimus architecto corrupti cupiditate ipsum porro dolore corporis qui labore mollitia beatae quaerat non, repudiandae vero?",
+    desc: "Embark on a visual journey that transcends borders, as Bluma-Africa becomes your window to the soul-stirring landscapes and vibrant cultures that define Nigeria. With every click, join a community passionate about preserving and sharing the kaleidoscope of experiences that make Nigeria a tapestry of wonder.",
   },
 ];

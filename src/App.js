@@ -27,7 +27,7 @@ function App() {
         <Route path="/PostView" element={<PostView/>}/>
         <Route path="/PostArticle" element={<Post/>}/>
         <Route path="/AdminLogin" element={<AdminLogin/>}/>
-         <Route path="/Login" element={<Login/>}/>
+        <Route path="/Login" element={<Login/>}/>
         <Route path="/Error" element={<Error/>}/>
         <Route path="/LandingPage" element={<LandingPage/>}/>
         {/* <Route path="/LandingPage" element={<LandingPage/>}/> */}
