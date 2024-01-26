@@ -120,7 +120,7 @@ function LandingPage() {
       <NavBar />
       <HeroSection />
 
-      <AddArticleBtn />
+      {/* <AddArticleBtn /> */}
       {/* <Tour /> */}
 
       {/* <AddArticleBtn /> */}
@@ -139,9 +139,6 @@ function LandingPage() {
           Nigeria's charm by writing articles, sharing captivating videos and pictures, engaging in 
           lively discussions, and embarking on virtual tours. Join our vibrant community and celebrate 
           the rich tapestry of Nigeria's beauty together!"
-          userPic={userPic}
-          userName="John Ebubu Ehni"
-          date="22th November 2017"
         />
         <Card
           class="card-item"
@@ -154,9 +151,6 @@ function LandingPage() {
           at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed 
           to using 'Content here, content here',
           making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their"
-          userPic={userPic}
-          userName="John Ebubu Ehni"
-          date="22th November 2017"
         />
         <Card
           class="card-item"
@@ -169,9 +163,6 @@ function LandingPage() {
           at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed 
           to using 'Content here, content here',
           making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their"
-          userPic={userPic}
-          userName="John Ebubu Ehni"
-          date="22th November 2017"
         />
         <Card
           class="card-item"
@@ -184,9 +175,6 @@ function LandingPage() {
           at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed 
           to using 'Content here, content here',
           making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their"
-          userPic={userPic}
-          userName="John Ebubu Ehni"
-          date="22th November 2017"
         />
       </div>
       <FestivalSlideShow />
