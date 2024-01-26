@@ -33,40 +33,28 @@ function PostView() {
         <span className="lines"></span>
         <h1>Post Header</h1>
         <div className="text-content">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-          aliquip ex ea commodo consequat. Duis aute irure dolor in
-          reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-          culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum
-          dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-          incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-          quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-          commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-          velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
-          occaecat cupidatat non proident, sunt in culpa qui officia deserunt
-          mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur
-          adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-          magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-          ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute
-          irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-          fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident,
-          sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem
-          ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-          tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-          veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
-          ea commodo consequat. Duis aute irure dolor in reprehenderit in
-          voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur
-          sint occaecat cupidatat non proident, sunt in culpa qui officia
-          deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet,
-          consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-          labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-          exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-          Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
-          dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-          proident, sunt in culpa qui officia deserunt mollit anim id est
-          laborum.
+        Nigeria, officially Federal Republic of Nigeria, Country, western Africa. Area: 356,669 sq mi (923,768 sq km). 
+        Population: (2023 est.) 222,486,000. Capital: Abuja. There are more than 250 ethnic groups, including Hausa, 
+        Fulani, Yoruba, and Igbo. Languages: English (official), Hausa. Religions: Christianity (Protestant, other 
+        Christians, Roman Catholic), Islam, traditional beliefs. Currency: naira.
+
+        Nigeria consists of plateaus and the lowlands between them, which are major river basins fed especially by the 
+        Niger River. It has a developing mixed economy based largely on petroleum production and agriculture; manufacturing 
+        is growing in importance. Services, trade, and transportation employ more than two-fifths of the workforce. Nigeria 
+        is a federal republic with two legislative bodies; its head of state and government is the president.
+
+        Inhabited for thousands of years, the region was the centre of the Nok culture from 500 bce to 200 ce and of several 
+        precolonial empires, including Kanem-Bornu, Benin, and Oyo. The Hausa and Fulani also had states. Visited in the 15th 
+        century by Europeans, it became a centre for the trade in enslaved people. The area began to come under British control 
+        in 1861 and was made a British colony in 1914. Nigeria gained independence in 1960 and became a republic in 1963. Ethnic 
+        strife soon led to military coups, and military groups ruled the country from 1966 to 1979 and from 1983 to 1999. Civil 
+        war between the federal government and the former Eastern region, Biafra (1967–70), ended in Biafra’s surrender after the 
+        death by starvation of perhaps a million Biafrans. In 1991 the capital was moved from Lagos to Abuja. The government’s 
+        execution of Ken Saro-Wiwa in 1995 led to international sanctions, and civilian rule was finally reestablished in 1999 with 
+        the election of a president. Ethnic strife—formerly held in check by periods of military rule—erupted in the early 21st century, 
+        as did protests over oil production in the Niger delta. Friction also increased between Muslims and Christians after some of 
+        the northern and central states adopted Islamic law (the Sharīʿah).
+        
         </div>
         <img
           src={like}

@@ -62,7 +62,7 @@ const Login = () => {
     return (
         <div className="login">
             <form onSubmit={handleSubmitEvent}>
-                <p color={'red'}>error message: {error}</p>
+                {/* <p color={'red'}>error message: {error}</p> */}
                 <input
                     className="m-2 p-4 w-4/5 rounded-xl border-2 border-purple-400 bg-transparent text-center text-xl"
                     type="email"
