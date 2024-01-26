@@ -12,7 +12,7 @@ function NavBar() {
   const navigate = useNavigate()
 
   const navigateToLoginPage = useCallback ((param) => {
-     navigate("/Login", {state: {value : param}})
+     navigate("/LoginAndSignUp", {state: {value : param}})
   }, [])
   return (
     <div className="nav-bar" background-color="transparent">
