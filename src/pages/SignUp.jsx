@@ -1,15 +1,15 @@
-import React from "react";
-import { useState , useCallback} from "react";
+import { useState , useCallback, React} from "react";
 import axios from "axios";
-import {useNavigate, useLocation} from "react-router-dom";
+import {useNavigate} from "react-router-dom";
 
 function SignUp() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [username, setUsername] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
-  const navigate = useNavigate()
-  // const [errorMsg, setErrorMsg] = useState("");
+  const [errorMessage, setErrorMessage] = useState("");
+  const navigate = useNavigate();
+  const [errorMsg, setErrorMsg] = useState("");
   // const [success, setSuccess] = useState(false);
 
   function checkPasswordEmpty() {
@@ -20,12 +20,13 @@ function SignUp() {
     return password === confirmPassword;
 
   }
-  // let catchError = useCallback ( (param) => {
-  //   useNavigate
-  // }, [])
 
+  const navigateToLandingPage = useCallback( (param)=>{
+    navigate("/LandingPage", {state:{value: param}})
+  })
   async function handleSubmit(e) {
     e.preventDefault();
+
     if (checkPasswordEmpty && checkPasswordMatch)
       try {
         const response =await axios.post(
@@ -39,20 +40,24 @@ function SignUp() {
               withCredentials: true
             }
         );
-        const {id,message,token} =  response.data;
+        console.log(response.data);
+        const {id, message, token} =  response.data;
         localStorage.setItem("authToken",token)
         console.log("Message -> ",message)
         console.log("Token -> ",token)
         console.log("Id -> ",id)
+        navigateToLandingPage(response.data);
 
 
       } catch (err) {
         console.log(err);
+        setErrorMsg(err)
       }
   }
   return (
     <div className="sign-up">
       <div className="">
+        <p color="red">{errorMsg}</p>
         <form onSubmit={handleSubmit}>
           <input
             class="m-2 p-4 w-4/5 rounded-xl border-2 border-purple-400 bg-transparent text-center text-xl"

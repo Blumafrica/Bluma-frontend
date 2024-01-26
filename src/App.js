@@ -10,6 +10,11 @@ import Post from "./pages/post/post";
 import LoginAndSignUp from "./pages/LoginAndSignUp";
 import AdminLogin from "./pages/admin/AdminLogin";
 
+import Error from "./pages/Error";
+import LandingPage from "./pages/landinPage/LandingPage";
+
+import Profile from "./pages/UserProfile/Profile";
+
 function App() {
   return (
     <Router>
@@ -22,7 +27,13 @@ function App() {
         <Route path="/events" element={<Events />} />
         <Route path="/PostView" element={<PostView/>}/>
         <Route path="/PostArticle" element={<Post/>}/>
-        <Route path="/AmdminLogin" element={<AdminLogin/>}/>
+        <Route path="/AdminLogin" element={<AdminLogin/>}/>
+
+        <Route path="/Error" element={<Error/>}/>
+        <Route path="/LandingPage" element={<LandingPage/>}/>
+        {/* <Route path="/LandingPage" element={<LandingPage/>}/> */}
+
+        <Route path ="/UserProfile" element={<Profile/>}/>
       </Routes>
     </Router>
   );

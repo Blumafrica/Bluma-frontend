@@ -7,7 +7,7 @@ import "./navbar.css"
 
 function NavBar() {
   return (
-    <div className="nav-bar">
+    <div className="nav-bar" background-color="transparent">
       <BlumaLogo />
       {/* <SearchBar/> */}
       <div className="links">
