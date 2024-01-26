@@ -26,7 +26,7 @@ function NavBar() {
       <div className="check-in">
         {/* <div onClick={navigateToLoginPage}>Log in</div> */}
       <Link to={`/Login`}>Log in</Link>
-        <SignInBtn />
+        {/* <SignInBtn /> */}
         {/* <SignUpBtn /> */}
       </div>
       <Hambuger />
