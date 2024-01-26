@@ -6,9 +6,14 @@ import settings from "../images/setting.svg";
 import team from "../images/team.svg";
 import favorite from "../images/favorite.svg";
 import draft from "../images/drafts.svg";
-
+import useNavigate from "react-router-dom"
 
 export default function ColumnPage(){
+
+    // const navigateToPost =()=>{
+    //     nav("/PostArticle")
+    // }
+
     return(
         <>
         <div class="flex justify-center">

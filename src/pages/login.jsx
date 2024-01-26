@@ -23,10 +23,10 @@ const Login = () => {
 
         if (input.email !== "" && input.password !== "") {
             try {
-                const url_ = "http://localhost:8080/login"
-                // const url = 'https://blumafricabackend-production.up.railway.app/api/v1/user/login';
+                // const url_ = "http://localhost:8080/login"
+                 const url = 'https://blumafricabackend-production.up.railway.app/login';
                 const response = await axios.post(
-                    url_,
+                    url,
                     input,
                     {
                         headers: {
