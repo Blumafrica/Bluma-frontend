@@ -18,7 +18,7 @@ export default function Homepage(){
                 <p class="sm:text-xl md:text-3xl xl:text-3xl text-white">It is a long established fact that a reader will be distracted 
                     by the readable content of a page when looking at its layout. 
                     The point of using Loremmby the readable content of a page
-                     when looking at its layout. The point of Bluma-Africa
+                     when looking at its layout. The point of using Lorem 
                 </p>
                 <div class="flex justify-center m-2">
                 <p class="sm:w-40 sm:p-2 xl:text-2xl font-bold xl:p-3 xl:w-60 bg-purple-600 border-none text-white m-3 rounded-3xl cursor-pointer">CLICK HERE</p>
@@ -27,6 +27,20 @@ export default function Homepage(){
 
         </div>
         <ColumnPage />
+        <div class="bg-black text-white p-3">
+            <div class="grid grid-cols-2 p-4">
+            <div class="p-2">
+                <h1 class="text-5xl font-mono">Building an Online Community </h1>
+                <p class="text-2xl">We're the leading company of all </p>
+            </div>
+            <div class="text-center">
+                <input class=" w-3/4 text-2xl p-4 text-center text-black" type="text" placeholder="Enter Message"></input>
+                <div class="flex justify-center">
+                <p class="cursor-pointer m-4 p-3 text-2xl w-1/3 bg-black text-white rounded-lg">Send Message</p>
+                </div>
+            </div>
+            </div>
+        </div>
         <Footer />
         </>
     )

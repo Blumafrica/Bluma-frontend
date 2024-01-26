@@ -12,7 +12,6 @@ import AdminLogin from "./pages/admin/AdminLogin";
 import Login from "./pages/login";
 import Error from "./pages/Error";
 import LandingPage from "./pages/landinPage/LandingPage";
-
 import Profile from "./pages/UserProfile/Profile";
 
 function App() {

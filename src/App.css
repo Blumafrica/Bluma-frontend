@@ -11,3 +11,18 @@
 .navBar{
     @apply text-3xl text-gray-500 uppercase font-medium
 }
+.feeds-content{
+    @apply grid xl:grid-cols-2;
+}
+.featured-article-content{
+    @apply grid xl:grid-cols-2
+}
+.recent-content{
+    @apply grid xl:grid-cols-2
+}
+.invi{
+    @apply hidden
+}
+.displayContent{
+    @apply visible
+}
