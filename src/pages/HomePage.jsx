@@ -18,7 +18,7 @@ export default function Homepage(){
                 <p class="sm:text-xl md:text-3xl xl:text-3xl text-white">It is a long established fact that a reader will be distracted 
                     by the readable content of a page when looking at its layout. 
                     The point of using Loremmby the readable content of a page
-                     when looking at its layout. The point of using Lorem 
+                     when looking at its layout. The point of Bluma-Africa
                 </p>
                 <div class="flex justify-center m-2">
                 <p class="sm:w-40 sm:p-2 xl:text-2xl font-bold xl:p-3 xl:w-60 bg-purple-600 border-none text-white m-3 rounded-3xl cursor-pointer">CLICK HERE</p>
