@@ -11,7 +11,7 @@ const AuthenticationProvider = async ({ children }) => {
     const login = async (data) => {
         try {
             const response = await axios.post(
-                "http://localhost:8080/api/v1/user/login",
+                "https://blumafricabackend-production.up.railway.app/login",
                 { email: data.email, password: data.password },
                 {
                     headers: {
