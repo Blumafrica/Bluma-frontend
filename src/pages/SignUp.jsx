@@ -149,7 +149,11 @@ function SignUp(callback, deps) {
           </form>
         </div>
 
-      </div>
+      
+        </div>
+        
+        </div>
+   </div>
 
   );
 }
