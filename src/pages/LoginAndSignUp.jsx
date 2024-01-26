@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import Login from "./login";
 import SignUp from "./SignUp";
-import "./loginandsignup.css";
 import BlumaLogo from "../LandingComponent/Button&Search/BlumaLogo"
 import BigBlumaLogo from "../LandingComponent/Button&Search/BigBlumaLogo";
 
@@ -26,7 +25,8 @@ export default function LoginAndSignUp() {
         <BigBlumaLogo/>
       </nav>
       <div className="container">
-        <div className="img-section  bg-gradient-to-tr from violet-500 to-fuchsia-500" > <BigBlumaLogo/> </div>
+        {/* <div className="img-section  " > <BigBlumaLogo/> </div> */}
+        <div className="img-section"></div>
         {/* <div class="h-14 bg-gradient-to-tr from violet-500 to-fuchsia-500 "></div> */}
         <div className="main-content">
           <div className="nav-btns">

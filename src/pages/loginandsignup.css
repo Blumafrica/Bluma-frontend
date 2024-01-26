@@ -27,3 +27,12 @@
 .login-and-signup .main-content {
   width: 100%;
 }
+
+@media (max-width: 1028px) {
+  .login-and-signup .container {
+    display: block;
+  }
+  .login-and-signup .img-section {
+    display: none;
+  }
+}
