@@ -3,8 +3,18 @@ import profileImage from "../images/Kashim.jpg";
 import likeIcon from "../images/like.svg";
 import commentIcon from "../images/comment.svg";
 import shareIcon from "../images/share.svg";
-
+import { useState } from "react";
 export default function Cards(props){
+    const [toggle, setToggle] = useState(false);
+    const [like, setLike] = useState(0);
+
+    function handleDisplay(){
+        setToggle(!toggle);
+    }
+
+    function countLike(){
+        setLike(like + 1);
+    }
     return(
         <>
         <div>
@@ -20,7 +30,15 @@ export default function Cards(props){
                     when looking at its layout. The point of using Lorem </p>
             </div>
             <div>
-                <p class="text-2xl font-mono font-bold flex justify-end p-3 cursor-pointer">Read More...</p>
+                <p onClick={() => {
+                    handleDisplay();
+                }} className="read-more text-2xl font-mono font-bold flex justify-end p-3 cursor-pointer">Read More...</p>
+                <div className={toggle === true ? "displayContent" : "invi"}>
+                <p class="text-2xl p-2">It is a long established fact that a reader will be distracted 
+                    by the readable content of a page when looking at its layout. 
+                    The point of using Loremmby the readable content of a page
+                    when looking at its layout. The point of using Lorem </p>
+                </div>
             </div>
             <div class="m-4">
                 <div class="flex">
@@ -35,9 +53,18 @@ export default function Cards(props){
 
 
                 <div class="flex justify-end">
-                    <img class="ml-5 w-9 cursor-pointer" src={likeIcon}></img>
+                    <div class="text-center justify-center">
+                    <img onClick={() => {
+                        countLike();
+                    }} class="ml-5 w-9 cursor-pointer" src={likeIcon}></img>
+                    <p>{like}</p>
+                    </div>
+                    <div>
                     <img class="ml-5 w-9 cursor-pointer" src={commentIcon}></img>
+                    </div>
+                    <div>
                     <img class="ml-5 w-9 cursor-pointer" src={shareIcon}></img>
+                    </div>
                 </div>
             </div>
             </div>

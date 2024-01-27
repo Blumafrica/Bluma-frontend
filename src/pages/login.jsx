@@ -1,10 +1,8 @@
-
-import React, { useState, useCallback } from "react";
-import { useAuth } from "../hooks/AuthenticationProvider";
-import { useNavigate } from "react-router-dom";
+import React, { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 
-const Login = () => {
+export default function SignUp() {
     const [input, setInput] = useState({
         email: "",
         password: "",
@@ -16,15 +14,15 @@ const Login = () => {
     });
     const [error, setError] = useState("");
     const navigate = useNavigate();
-    const loginAuthentication = useAuth();
+    // Assuming `useAuth` is a custom hook you have defined
+    // const loginAuthentication = useAuth();
 
     const handleSubmitEvent = async (e) => {
         e.preventDefault();
 
         if (input.email !== "" && input.password !== "") {
             try {
-                // const url_ = "http://localhost:8080/login"
-                 const url = 'https://blumafricabackend-production.up.railway.app/login';
+                const url = 'https://blumafricabackend-production.up.railway.app/login';
                 const response = await axios.post(
                     url,
                     input,
@@ -35,16 +33,17 @@ const Login = () => {
                     }
                 );
 
-                if (response.status === 200)
-                    navigateToHomePage(userData)
-                    const data = response.data;
-                    setUserData({
-                        ...userData,
-                        userId: data.id,
-                        userAuthority: data.authority,
-                        userToken: data.token,
-                    });
+                if (response.status === 200) {
+                    navigateToHomePage(userData);
+                }
 
+                const data = response.data;
+                setUserData({
+                    ...userData,
+                    userId: data.id,
+                    userAuthority: data.authority,
+                    userToken: data.token,
+                });
             } catch (error) {
                 console.error("Login failed", error);
                 alert("error message ==> " + error.message);
@@ -55,42 +54,28 @@ const Login = () => {
         }
     };
 
-    const navigateToHomePage = useCallback((parameter) => {
-        navigate("/HomePage", { state: { value: parameter } });
-    }, [navigate]);
+    // Assuming this is the missing function
+    const navigateToHomePage = (userData) => {
+        // Implement your navigation logic here
+        console.log("Navigate to home page with user data", userData);
+    };
 
     return (
-        <div className="login">
-            <form onSubmit={handleSubmitEvent}>
-
-                {/* <p color={'red'}>error message: {error}</p> */}
-
-                <p style={{ color: 'red' }}>error message: {error.message}</p>
-
-                <input
-                    className="m-2 p-4 w-4/5 rounded-xl border-2 border-purple-400 bg-transparent text-center text-xl"
-                    type="email"
-                    placeholder="email"
-                    value={input.email}
-                    onChange={(e) => setInput({ ...input, email: e.target.value })}
-                />
-                <br />
-                <input
-                    className="m-2 p-4 w-4/5 rounded-xl border-2 border-purple-400 bg-transparent text-center text-xl"
-                    type="password"
-                    placeholder="password"
-                    value={input.password}
-                    onChange={(e) => setInput({ ...input, password: e.target.value })}
-                />
-                <input
-                    type="submit"
-                    className="m-2 p-4 w-4/5 rounded-xl border-2 border-purple-400 bg-purple-400 text-center text-xl"
-                />
-            </form>
-            <br />
-        </div>
+        <>
+            <div className="w-1/4 absolute top-44 left-1/2">
+                <ul className="list-none flex justify-between p-4 text-xl font-semibold">
+                    <li className="border-b-4 hover:border-purple-600 pb-4">
+                        <Link onClick={() => swap(1)}><p>REGISTER</p></Link>
+                    </li>
+                    <br />
+                    <li className="border-b-4 hover:border-purple-600 pb-4">
+                        <Link onClick={() => swap(2)}><p>LOGIN</p></Link>
+                    </li>
+                </ul>
+            </div>
+            <div className="flex relative top-64 left-1/4 border-2 p-2 shadow-2xl border-grey-300 w-1/2">
+                {/* ... rest of your code */}
+            </div>
+        </>
     );
-};
-
-export default Login;
-
+}

@@ -23,9 +23,9 @@ function Card(props) {
             <p>{props.date}</p>
           </div>
           <div style={{marginLeft: "50%"}}>
-          <button>
+          {/* <button>
             <img src={likeIcon} alt="" className="like-icon"/>
-          </button>
+          </button> */}
           <span>{props.likecount}</span>
         </div>
         </div>
