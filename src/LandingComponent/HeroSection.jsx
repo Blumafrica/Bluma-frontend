@@ -91,8 +91,8 @@ const HeroSection = (props) => {
         {Slideritems.map((item) => (
           <Slide bg={item.bg} identity={item.id} className={item.class}>
             <TextContent>
-              <Caption>Bluma-Africa</Caption>
-              <Heading>{props.heder}</Heading>
+              <Caption>{item.title}</Caption>
+              {/* <Heading>{item.title}</Heading> */}
               <Text>{item.desc}</Text>
               <div style={{display: "flex", margin: "3rem 0rem",}}>
                 <SignUpBtn>Get Started</SignUpBtn>

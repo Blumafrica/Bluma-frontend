@@ -9,7 +9,7 @@
     @apply tracking-wider p-3 text-center text-purple-600 cursor-pointer;
 }
 .navBar{
-    @apply text-3xl text-gray-500 uppercase font-medium
+    @apply text-3xl uppercase font-medium
 }
 .feeds-content{
     @apply grid xl:grid-cols-2;

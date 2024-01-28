@@ -26,7 +26,7 @@ export default function Footer(){
             <div class="text-center">
                 <input class=" w-3/4 text-2xl p-4 text-center" type="text" placeholder="Send to Message"></input>
                 <div class="flex justify-center">
-                <p class="cursor-pointer m-4 p-3 text-2xl w-1/3 bg-black text-white rounded-lg">Send Message</p>
+                <p class="cursor-pointer m-4 p-2 w-50 w bg-black text-white rounded-lg">Send Message</p>
                 </div>
             </div>
         </div>
