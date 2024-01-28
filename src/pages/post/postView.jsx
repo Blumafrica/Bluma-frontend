@@ -1,6 +1,5 @@
 import React from "react";
 import BlumaLogo from "../../LandingComponent/Button&Search/BlumaLogo";
-import NavBar from "../../LandingComponent/NavBar";
 import Notification from "../../LandingComponent/notification/Notification";
 import { NavLink } from "react-router-dom";
 import img from "../../LandingComponent/assets/rectangle2.svg";
