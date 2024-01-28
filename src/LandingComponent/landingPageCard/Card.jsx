@@ -22,14 +22,7 @@ function Card(props) {
             <p>{props.userName}</p>
             <p>{props.date}</p>
           </div>
-          <div style={{marginLeft: "50%"}}>
-          {/* <button>
-            <img src={likeIcon} alt="" className="like-icon"/>
-          </button> */}
-          <span>{props.likecount}</span>
         </div>
-        </div>
-       
       </div>
       </div>
     </div>
