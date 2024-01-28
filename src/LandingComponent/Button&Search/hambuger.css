@@ -12,7 +12,7 @@
     margin-bottom: 2px;
     border-radius: 5px;
 }
-@media (max-width: 1344px) {
+@media (max-width: 570px) {
     .hambuger{
         display: block;
         

@@ -1,5 +1,4 @@
 .tour {
-  height: 40rem;
   color: white;
   background-color: rgb(221, 217, 217);
 }
@@ -13,7 +12,7 @@
     height: 100%;
 } */
 @media (max-width: 700px) {
-  .tour {
+  /* .tour {
     display: none;
-  }
+  } */
 }
