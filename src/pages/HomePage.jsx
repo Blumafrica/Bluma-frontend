@@ -9,7 +9,7 @@ export default function Homepage(){
     return(
         <>
         <HomeHeader />
-        <div class="relative">
+        {/* <div class="relative">
             <div class="brightness-">
                 <img class="w-screen h-fit brightness-75 brigh bg-fixed" src={background} alt="slide"></img>
             </div>
@@ -36,7 +36,7 @@ export default function Homepage(){
                 </div>
             </div>
 
-        </div>
+        </div> */}
         <ColumnPage />
         <div class="bg-black text-white p-3">
             <div class="grid grid-cols-2 p-4">

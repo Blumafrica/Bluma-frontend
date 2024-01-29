@@ -22,25 +22,25 @@ function NavBar() {
   // }, [])
 
   return (
-    <>
-    <Header />
-    </>
-    // <div className="nav-bar" background-color="transparent">
-    //   <BlumaLogo />
-    //   {/* <SearchBar/> */}
-    //   <div className="links">
-    //     <NavLink to="about">About</NavLink>
-    //     <NavLink to="products">Products</NavLink>
-    //     <NavLink to="events">Events</NavLink>
-    //   </div>
-    //   <div className="check-in">
-    //     {/* <div onClick={navigateToLoginPage}>Log in</div> */}
-    //   <Link to={`/Login`}>Log in</Link>
-    //     {/* <SignInBtn /> */}
-    //     {/* <SignUpBtn /> */}
-    //   </div>
-    //   <Hambuger />
-    // </div>
+    // <>
+    // <Header />
+    // </>
+    <div className="nav-bar" background-color="transparent">
+      <BlumaLogo />
+      {/* <SearchBar/> */}
+      <div className="links">
+        <NavLink to="about">About</NavLink>
+        <NavLink to="products">Products</NavLink>
+        <NavLink to="events">Events</NavLink>
+      </div>
+      <div className="check-in">
+        {/* <div onClick={navigateToLoginPage}>Log in</div> */}
+      <Link to={`/Login`}>Log in</Link>
+        {/* <SignInBtn /> */}
+        {/* <SignUpBtn /> */}
+      </div>
+      <Hambuger />
+    </div>
   );
 }
 
