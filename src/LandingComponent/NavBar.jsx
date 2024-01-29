@@ -12,9 +12,15 @@ function NavBar() {
   
   // const navigate = useNavigate()
 
+
+  // const navigateToLoginPage = useCallback ((param) => {
+  //    navigate("/LoginAndSignUp", {state: {value : param}})
+  // }, [])
+
   // const navigateToLoginPage = useCallback ((param) => {
   //    navigate("/Login", {state: {value : param}})
   // }, [])
+
   return (
     <>
     <Header />

@@ -41,10 +41,12 @@ function Post() {
       posterId: userId,
       authority: userAuthority
     }
+    const authToken = "";
     const response = await fetch(url, {
        method : 'POST',
        headers :{
-        'Content-Type' : 'application/json'
+        'Content-Type' : 'application/json',
+         'Authorization': `${authToken}`
        },
        body : JSON.stringify(data)
     })
