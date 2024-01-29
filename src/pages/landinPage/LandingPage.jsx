@@ -9,109 +9,89 @@ import oral from "../../images/Oral.jpg"
 import respectElder from "../../images/respect_elders.jpg"
 import festivalCelebration from "../../images/festival.png"
 import FestivalSlideShow from "../../LandingComponent/festivalsSlide/FestivalSlideShow";
-import Footer from "../../layout/Footer";
+import Footer from "../../LandingComponent/footer";
 import { useState, useCallback } from "react";
 import { useNavigate } from "react-router-dom";
-import "./landingpage.css"
+import "./landingpage.css";
 import axios from "axios";
 function LandingPage() {
+  const [post, setPosts] = useState([]);
+  const [user, setUser] = useState();
+  const [profile, setProfile] = useState("");
+  const [userName, setUserName] = useState("");
+  const [authority, setAuthority] = useState("");
+  const [id, setId] = useState("");
+  const navigate = useNavigate();
+  let data = {};
 
-
-
-   const [post, setPosts] = useState([]);
-   const [user, setUser] = useState();
-   const [profile, setProfile] = useState('')
-   const [userName, setUserName] = useState('')
-   const [authority, setAuthority] = useState('')
-   const [id , setId] = useState('')
-   const navigate = useNavigate()
-   let data = {}
-
-
-  
-
-
-    async function getPost  (e){
-      e.priventDefault();
-      try{
-      const response = await axios.get('/api/v1/getAdminPost')
+  async function getPost(e) {
+    e.priventDefault();
+    try {
+      const response = await axios.get("/api/v1/getAdminPost");
       console.log(response.data);
       setPosts(response.data);
-
-      }catch (error){
-        console.log(error);
-      }
+    } catch (error) {
+      console.log(error);
     }
-    const navigateToError = useCallback ((param) =>{
-      navigate("/Error", {state: {value : param}})
-      
-    }, [])
-    const getUserProfile = useCallback(async (userId, userAuthority) =>{
-
-      try{
-      const url = ''
-      const data = {userId, userAuthority}
-      const response = await fetch(url , {
-        headers : {
-          'Content-Type' : 'application/json'
+  }
+  const navigateToError = useCallback((param) => {
+    navigate("/Error", { state: { value: param } });
+  }, []);
+  const getUserProfile = useCallback(async (userId, userAuthority) => {
+    try {
+      const url = "";
+      const data = { userId, userAuthority };
+      const response = await fetch(url, {
+        headers: {
+          "Content-Type": "application/json",
         },
-        body: JSON.stringify(data)
-      })
+        body: JSON.stringify(data),
+      });
 
-      if(response.ok){
+      if (response.ok) {
         const foundProfile = await response.json();
         console.log(foundProfile);
         setProfile(foundProfile);
       }
-    }catch(error){
-      console.log(error)
-       navigateToError(error);
+    } catch (error) {
+      console.log(error);
+      navigateToError(error);
     }
-    })
+  });
 
-
-    const getUser = useCallback (async () => {
-      let data = {id, authority}
-      const url = "/api/getUser/"
-      let response = await fetch(url, {
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(data)
-      })
-      if(response.ok){
-        const foundUser = await response.json();
-        console.log(foundUser)
-        setUser(foundUser);
-        const profile = getUserProfile(foundUser.id, foundUser.authority);
-        setProfile(profile.id)
-      }
-    })
-    const useMemo = ( () => {
-
+  const getUser = useCallback(async () => {
+    let data = { id, authority };
+    const url = "/api/getUser/";
+    let response = await fetch(url, {
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(data),
+    });
+    if (response.ok) {
+      const foundUser = await response.json();
+      console.log(foundUser);
+      setUser(foundUser);
+      const profile = getUserProfile(foundUser.id, foundUser.authority);
+      setProfile(profile.id);
+    }
+  });
+  const useMemo = () => {
     return post.map((object, position) => (
       <div className="landing-page">
-       {setId(object.postOwnerId)}{setAuthority(object.postOwnerAuthority)}
+        {setId(object.postOwnerId)}
+        {setAuthority(object.postOwnerAuthority)}
         {getUser(object.postOwnerId)}
-        <NavBar/>
-        <HeroSection/>
-        <Tour/>
+        <NavBar />
+        <HeroSection />
+        <AddArticleBtn />
+        <Tour />
         <div className="card-section">
-          <Card class="card-item"
-          coverPic={postImg}
-          >
-          </Card>
-        </div> 
-
+          <Card class="card-item" coverPic={postImg}></Card>
+        </div>
       </div>
-    ))
-  
-
-   });
-    
-      
-
-
+    ));
+  };
 
   return (
     <div className="landing-page">

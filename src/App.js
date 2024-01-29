@@ -1,6 +1,6 @@
 import "./App.css";
 import About from "./pages/About";
-import Events from "./pages/Events";
+import Events from "./pages/Events/Events";
 import HomeOrLanding from "./pages/HomeOrLanding";
 import HomePage from "./pages/HomePage";
 import Products from "./pages/Products";

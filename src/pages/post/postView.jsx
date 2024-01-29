@@ -1,4 +1,4 @@
-import React from "react";
+import {useState} from "react";
 import BlumaLogo from "../../LandingComponent/Button&Search/BlumaLogo";
 import Notification from "../../LandingComponent/notification/Notification";
 import { NavLink } from "react-router-dom";
@@ -6,12 +6,23 @@ import img from "../../LandingComponent/assets/rectangle2.svg";
 import like from "../../LandingComponent/assets/like 1.svg";
 import "./postView.css";
 import Footer from "../../LandingComponent/footer";
+import styled from "styled-components";
+
+const CommentBox = styled.input`
+    border: 1px solid gray;
+    display: ${props => props.status ? "block" : "none"}
+  `;
+  const CommentBtn = styled.button``;
+  const LikeBtn = styled.button``;
+  const NoOfLikes = styled.span``;
+  const NofComments = styled.span``;
+
 
 function PostView() {
-
-   
-
-
+  const [commentSecDis, setcommentSecDis] = useState(false)
+  function showCommentBox(){
+    setcommentSecDis(true)
+  }
 
   return (
     <div className="post-view">
@@ -55,15 +66,9 @@ function PostView() {
         the northern and central states adopted Islamic law (the Sharīʿah).
         
         </div>
-        <img
-          src={like}
-          alt="likes"
-          className="likes"
-          style={{ height: "1rem" }}
-        />
-      </div>
-      <div className="comment">
-
+        <CommentBtn onClick={showCommentBox}></CommentBtn>
+        <LikeBtn></LikeBtn>
+        <CommentBox status ={commentSecDis}></CommentBox>
       </div>
       <Footer />
     </div>
