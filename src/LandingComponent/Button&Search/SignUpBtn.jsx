@@ -1,5 +1,5 @@
 import React from 'react'
-import { useNavigate } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 
 function SignUpBtn() {
   const navigate = useNavigate();
@@ -7,7 +7,9 @@ function SignUpBtn() {
     navigate("/LoginAndSignUp")
   }
   return (
-    <div className='sign-up'><button onClick={goToSignUpPage}>Sign up</button></div>
+    <Link to="/Login">
+      <div className='sign-up'><button onClick={goToSignUpPage}>Sign up</button></div>
+    </Link>
   )
 }
 

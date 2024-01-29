@@ -1,5 +1,5 @@
 import React from "react";
-import BlumaLogo from "../LandingComponent/Button&Search/BlumaLogo";
+import HomeHeader from "../layout/HomeHeader";
 import styled from "styled-components";
 
 const Details = styled.div`
@@ -30,13 +30,9 @@ const Container = styled.div`
 const About = () => {
 
   return (
-
+    <>
+      <HomeHeader/>
     <Container>
-      <Logo>
-      <BlumaLogo />
-      <br />
-      </Logo>
-    
       <Details>
       <h1 style={{fontWeight:'bold', fontSize:'25px', textAlign:'center', display:'block'}}>
       About
@@ -65,10 +61,8 @@ const About = () => {
         Explore, connect, and share your love for Nigeria at Bluma-Africa - where the beauty of Nigeria comes to life!"</h2>
 
       </Details>
-     
-    
-    
     </Container>
+    </>
     
 
   );
