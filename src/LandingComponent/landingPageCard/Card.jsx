@@ -12,7 +12,7 @@ function Card(props) {
     <div id="card" className={props.class} onClick={goToPost}>
       <img src={props.coverPic} alt="" className="cover-pic" />
       <div className="container">
-      <h3>{props.heading}</h3>
+      <h2>{props.heading}</h2>
       <h5>{props.description}</h5>
       <p>{props.summary}</p>
       <div className="post-info">
