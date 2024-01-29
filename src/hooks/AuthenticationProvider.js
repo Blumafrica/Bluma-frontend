@@ -23,7 +23,7 @@ const AuthenticationProvider = async ({ children }) => {
 
             const returnResponse = response.data;
 
-            if (returnResponse.data) {
+            if (returnResponse === 200) {
                 setUser(returnResponse.data.user);
                 setToken(returnResponse.token);
                 localStorage.setItem("token", returnResponse.token);
