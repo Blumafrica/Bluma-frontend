@@ -108,12 +108,19 @@ import { useAuth } from "../hooks/AuthenticationProvider";
 
 import { useState } from "react";
 import axios from "axios";
+import { useFormik, Formik } from "formik";
 
 function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [errorMsg, setErrorMsg] = useState("");
   const [success, setSuccess] = useState(false);
+
+  const [initialValue, setInitialValue ] = useState({
+    email: '',
+    password : ''
+  })
+
   async function handleSubmit(e) {
     try {
       e.preventDefault();

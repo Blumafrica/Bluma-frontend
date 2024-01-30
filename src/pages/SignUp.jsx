@@ -4,6 +4,9 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { useFormik, Form } from "formik";
 import * as Yup from 'yup'
+import '../pages/SignUp.css'
+
+
 function SignUp() {
   
   const navigate = useNavigate();
@@ -15,11 +18,15 @@ function SignUp() {
     password: '',
     confirmPassword: ''
   })
-  const SignUpValidation = Yup.object({
-    username: Yup.string().min(6).required("please enter a username"),
-    email: Yup.string().email("please enter a valid email").required("please a enter an email"),
-    password: Yup.string().min(4).required("please enter a password"),
-    confirmPassword: Yup.string().oneOf([Yup.ref("password")], "password not matched")
+  const [emailError, setEmailError ] = useState("")
+  const [nameError , setNameError] = useState('')
+  const [passwordError , setPasswordError] = useState("")
+
+
+   const SignUpValidation = Yup.object({
+    username: Yup.string().min(6).required("Please Enter a Username"),
+    email: Yup.string().email("Please Enter a Valid Email").required("Please Enter an Email"),
+    password: Yup.string().min(4).required("Please Enter a Password"),
   })
 
   const {handleBlur, handleChange, handleSubmit, values , errors} = useFormik({
@@ -31,6 +38,7 @@ function SignUp() {
       handleSubmits();
     }
   })
+  
 
   const navigateToHomePage = useCallback((param) => {
     navigate("/HomePage", { state: { value: param } });
@@ -60,7 +68,7 @@ function SignUp() {
         navigateToHomePage(id);
       } catch (err) {
         console.error(err);
-        // setErrorMsg(err.message); // Assuming error has a 'message' property
+
       }
     
   }
@@ -68,75 +76,51 @@ function SignUp() {
   return (
       <div className="sign-up"> 
         <div className="image">
-
+            <p className="bluma-tag">BLUMA</p>
         </div>
-        <div className="">
+        <div className="input-field">
           <form >
-            
-            {errors.username && <small>{errors.username}</small>}
-            <p>{errors.username}</p>
-            
-           
+
+            <p className="error">{errors.username}</p>
             <input
-                className="m-2 p-4 w-4/5 rounded-xl border-2 border-purple-400 bg-transparent text-center text-xl"
+                className="m-2 p-4 w-4/5 rounded-xl border-2 border-purple-400 bg-transparent text-center text-xl  space-x-2 md:space-x-8"
                 type="text"
                 placeholder="Username"
-                // value={values.username}
+                value={values.username}
                 name="username"
-                onChange={(e) => setInitialValue({ ...initialValue, username: e.target.value})}
-                // onBlur={handleBlur}
+                onChange={handleChange}
+                // onChange={(e) => setInitialValue({ ...initialValue, username: e.target.value})}
+                onBlur={handleBlur}
             />
             <br />
-             <p>{errors.username}</p>
-            {errors.email && <small>{errors.email}</small>}
-             <p>{errors.email}</p>
-          
-          
+
+            <p className="error">{errors.email}</p>
             <input
                 className="m-2 p-4 w-4/5 rounded-xl border-2 border-purple-400 bg-transparent text-center text-xl"
                 type="email"
                 placeholder="Email"
                 name="email"
-                // value={values.email}
-                // onBlur={handleBlur}
-                onChange={(e) => setInitialValue({ ...initialValue, email: e.target.value})}
-            />
+                value={values.email}
+                onBlur={handleBlur}
+                onChange={handleChange}/>
             <br />
-           <p>{errors.email}</p>
-            {errors.password && <small>{errors.password } ooooo</small>}
-             <p>{errors.password} oooo</p>
-           
-          
+
+            <p className="error">{errors.password}</p>
             <input
                 className="m-2 p-4 w-4/5 rounded-xl border-2 border-purple-400 bg-transparent text-center text-xl"
                 type="password"
                 placeholder="Password"
                 name="password"
-                // value={values.password}
-                // onChange={handleChange}
-                // onBlur={handleBlur}
-                onChange={(e) => setInitialValue({... initialValue, password: e.target.value}) }
+                value={values.password}
+                onChange={handleChange}
+                onBlur={handleBlur}
             />
             <br />
-            <p>{errors.password}</p>
            
-             {errors.confirmPassword && <small>{errors.confirmPassword}</small>}
-            <p>{errors.confirmPassword}</p>
-            {/* <input? */}
-            {/* //     className="m-2 p-4 w-4/5 rounded-xl border-2 border-purple-400 bg-transparent text-center text-xl"
-            //     type="password"
-            //     placeholder="Confirm Password"
-            //     name="confirmpassword"
-            //     value={values.confirmPassword}
-            //     onChange={(e) => setInitialValue( {... initialValue, })}
-            //     // onBlur={handleBlur}
-            // />
-            // <br /> */}
-            <p>{errors.confirmPassword}</p>
             <input
                 type="submit"
                 className="m-2 p-4 w-4/5 rounded-xl border-2 border-purple-400 bg-purple-400 text-center text-xl"
-                onClick={handleSubmits}
+                onClick={handleSubmit}
             />
           </form>
         </div>
