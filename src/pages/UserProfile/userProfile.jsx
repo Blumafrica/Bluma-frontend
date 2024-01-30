@@ -107,7 +107,7 @@ const Profile = () => {
 
     useEffect(() => {
         const fetchData = async () => {
-            const token = "your_valid_token";
+            const token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE3MDY2MjYxOTcsImV4cCI6MTcwNjcxMjU5NywiaXNzIjoiQmx1bWFmcmljYSAuIiwic3ViIjoiYWRpb2xkbWpAZ21haWwuY29tIiwiY2xhaW1zIjpbIlVTRVIiXX0.DDl0oocf-FzEFzOYRHVloX05MzHelGIaIEYgXRTQDc0";
             try {
                 const response = await axios.post(
                     "http://localhost:8080/api/v1/user/profile",
