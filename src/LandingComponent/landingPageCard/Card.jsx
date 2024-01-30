@@ -5,8 +5,8 @@ import { useNavigate } from "react-router-dom";
 
 function Card(props) {
   const navigate = useNavigate();
-  function goToPost(){
-    navigate("/PostView")
+  function goToPost() {
+    navigate("/PostView");
   }
   return (
     <div id="card" className={props.class}>
