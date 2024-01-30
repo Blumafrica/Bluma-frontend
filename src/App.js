@@ -13,7 +13,7 @@ import Error from "./pages/Error";
 import LandingPage from "./pages/landinPage/LandingPage";
 import Profile from "./pages/UserProfile/Profile";
 import PostArticlePage from "./pages/PostArticlePage";
-// import { Login } from "./pages/login";
+import { Login } from "./pages/login";
 import MobileNav from "./pages/mobileNav";
 
 function App() {

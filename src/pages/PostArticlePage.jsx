@@ -5,8 +5,11 @@ import styled from "styled-components";
 
 const Title = styled.input`
   border: 1px solid gray;
+  display: block;
 `;
-const Wrapper = styled.div``;
+const Wrapper = styled.div`
+display: block;
+`;
 const Content = styled.input`
   border: 1px solid gray;
 `;
@@ -32,7 +35,7 @@ export default function PostArticlePage() {
   return (
     <div className="upload-info">
       <nav>
-        <BlumaLogo />{" "}
+        <BlumaLogo />
       </nav>
       <Wrapper>
         <Title
