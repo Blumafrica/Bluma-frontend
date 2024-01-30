@@ -103,17 +103,17 @@ const Profile = () => {
     useEffect(() => {
         const formattedDate = new Date().toLocaleDateString();
         setCurrentDate(formattedDate);
-    }, []);
+    }, []); // Fixed the dependency array
 
     useEffect(() => {
         const fetchData = async () => {
-            const token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE3MDY2MjYxOTcsImV4cCI6MTcwNjcxMjU5NywiaXNzIjoiQmx1bWFmcmljYSAuIiwic3ViIjoiYWRpb2xkbWpAZ21haWwuY29tIiwiY2xhaW1zIjpbIlVTRVIiXX0.DDl0oocf-FzEFzOYRHVloX05MzHelGIaIEYgXRTQDc0";
+            const token = "your_valid_token"; // Replace with a valid token
             try {
                 const response = await axios.post(
                     "http://localhost:8080/api/v1/user/profile",
                     { fullName, age, gender, contact, about },
                     {
-                        "Content-Type": "application/json",
+                        "Content-Type": "application/json", // Fixed header
                         Authorization: `Bearer ${token}`,
                     }
                 );
@@ -124,7 +124,7 @@ const Profile = () => {
         };
 
         fetchData();
-    }, [fullName, age, gender, contact, about]);
+    }, [fullName, age, gender, contact, about]); // Added dependencies
 
     return (
         <MainContainer>
