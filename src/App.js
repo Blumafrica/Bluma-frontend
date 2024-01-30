@@ -11,7 +11,8 @@ import AdminLogin from "./pages/admin/AdminLogin";
 // import Login from "./pages/login";
 import Error from "./pages/Error";
 import LandingPage from "./pages/landinPage/LandingPage";
-import Profile from "./pages/UserProfile/Profile";
+import Profile from "./pages/UserProfile/userProfile";
+
 import PostArticlePage from "./pages/PostArticlePage";
 import { Login } from "./pages/login";
 
@@ -31,6 +32,7 @@ function App() {
         <Route path="/Error" element={<Error/>}/>
         <Route path="/PostArticlePage" element={<PostArticlePage/>}/>
         <Route path ="/UserProfile" element={<Profile/>}/>
+        
       </Routes>
     </Router>
   );

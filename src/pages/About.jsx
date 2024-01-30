@@ -3,23 +3,28 @@ import HomeHeader from "../layout/HomeHeader";
 import styled from "styled-components";
 
 const Details = styled.div`
-  flex: 5;
+  flex: 5rem;
   justify-content: center;
   padding-left: 25px;
+  padding-right: 25px;
   border: 2px dotted #7520ec;
+  
+  max-height: 70rem;
+  
 
 `;
 
 
 const Logo= styled.div`
   padding-left: 1px
-  `;
+
+`;
 
 const Container = styled.div`
   height: 100vh;
   padding: 5rem;
   border: 2px solid #7520ec;
-  background-color:ash;
+  background-color:ash; 
 `;
 
 const About = () => {
@@ -35,7 +40,7 @@ const About = () => {
       <br />
       <br />
       <br />
-      <h2 style={{fontStyle:'italic'}}> Welcome to Bluma-Africa, a platform designed to
+      <h2 style={{fontStyle:'italic', textAlign:'center'}}> Welcome to Bluma-Africa, a platform designed to
         capture and celebrate the unparalleled beauty 
         of Nigeria. Our app is more than just a virtual space; 
         it's a vibrant community where individuals 
