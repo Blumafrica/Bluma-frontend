@@ -17,7 +17,7 @@ const MainContainer = styled.div`
     display: grid;
     justify-content: space-between;
     align-items: flex-start;
-    background-color:  #e2d7e2;
+    background-color: white;
 
 `;
 const LeftContents = styled.div`
@@ -121,8 +121,9 @@ const Profile = ()=>{
 
     useEffect(() => {
         const fetchData = async () => {
+            conta
            try {
-                const response = await axios.post("your-api-endpoint");
+                const response = await axios.post("http://localhost:8080/api/v1/user/profile");
                 setProfileData(response.data);
                 } catch (error) {
                     console.error("Error fetching data:", error);
