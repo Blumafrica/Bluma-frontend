@@ -81,7 +81,6 @@ function LandingPage() {
         {getUser(object.postOwnerId)}
         <NavBar />
         <HeroSection />
-        <AddArticleBtn />
         <Tour />
         <div className="card-section">
           <Card class="card-item" coverPic={postImg}></Card>
