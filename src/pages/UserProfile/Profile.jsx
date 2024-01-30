@@ -1,7 +1,5 @@
 
 import React,{useState, useEffect} from "react";
-i
-import React,{useState, useEffect} from "react";
 import {Routes, Route, useNavigate} from 'react-router-dom';
 import {users} from "../UserProfile/metaData"
 import styled from "styled-components";
@@ -172,8 +170,6 @@ const Profile = ()=>{
 }
 
 export default Profile;
-
-
 
 // import React, { useState, useEffect } from "react";
 // import BlumaLogo from "../../LandingComponent/Button&Search/BlumaLogo";
