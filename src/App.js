@@ -1,6 +1,6 @@
 import "./App.css";
 import About from "./pages/About";
-import Events from "./pages/Events";
+import Events from "./pages/Events/Events";
 import HomeOrLanding from "./pages/HomeOrLanding";
 import HomePage from "./pages/HomePage";
 import Products from "./pages/Products";
@@ -8,12 +8,13 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import PostView from "./pages/post/postView";
 import Post from "./pages/post/post";
 import AdminLogin from "./pages/admin/AdminLogin";
-import Login from "./pages/login";
+// import Login from "./pages/login";
 import Error from "./pages/Error";
 import LandingPage from "./pages/landinPage/LandingPage";
 import Profile from "./pages/UserProfile/userProfile";
 
 import PostArticlePage from "./pages/PostArticlePage";
+import { Login } from "./pages/login";
 
 function App() {
   return (

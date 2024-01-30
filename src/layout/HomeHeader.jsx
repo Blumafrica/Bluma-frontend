@@ -15,7 +15,7 @@ export default function Header(){
 
         <div class="navBar sm:text-2xl">
             <nav class="p-4">
-                <ul class="sm:text-2xl md:text-3xl xl:text-3xl md:flex xl:flex justify-center">
+                <ul class="sm:text-4xl md:text-3xl xl:text-3xl md:flex xl:flex justify-center">
                     <Link to="/HomePage">
                         <li class="border-b-4 px-4 border-purple-600 py-4 sm:pt-2 sm:mr-5 md:mr-10 xl:mr-10 cursor-pointer hover:bg-slate-300">Home</li>
                     </Link>
