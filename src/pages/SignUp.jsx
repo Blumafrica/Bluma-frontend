@@ -2,14 +2,15 @@
 import React, { useState, useCallback } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-
+import { useFormik, Form } from "formik";
+import * as Yup from 'yup'
 function SignUp() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [username, setUsername] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
   const navigate = useNavigate();
-  const [errorMsg, setErrorMsg] = useState("");
+  const [errorMsg, setErrorMsg] = useState('')
 
   function checkPasswordEmpty() {
     return !(password === "" || confirmPassword === "");
@@ -19,11 +20,25 @@ function SignUp() {
     return password === confirmPassword;
   }
 
+  const initialValue = useState({
+    email: '',
+    username: '',
+    password: '',
+    confirmPassword: ''
+  })
+
+  const {handleBlur, handleChange, handleSubmit, values } = useFormik({
+    initialValues: initialValue,
+    onSubmit: (values) =>{
+      console.log("user inputs => ",values)
+    }
+  })
+
   const navigateToHomePage = useCallback((param) => {
     navigate("/HomePage", { state: { value: param } });
   }, [navigate]);
 
-  async function handleSubmit(e) {
+  async function handleSubmits(e) {
     e.preventDefault();
 
     if (checkPasswordEmpty() && checkPasswordMatch()) {
@@ -54,41 +69,47 @@ function SignUp() {
 
   return (
       <div className="sign-up">
+        <div className="image">
+
+        </div>
         <div className="">
-          <p style={{ color: "red", backgroundColor: "red" }}>
-            Error message: {errorMsg}
-          </p>
           <form onSubmit={handleSubmit}>
             <input
                 className="m-2 p-4 w-4/5 rounded-xl border-2 border-purple-400 bg-transparent text-center text-xl"
                 type="text"
                 placeholder="Username"
-                value={username}
-                onChange={(e) => setUsername(e.target.value)}
+                value={values.username}
+                onChange={handleChange}
+                onBlur={handleBlur}
             />
             <br />
             <input
                 className="m-2 p-4 w-4/5 rounded-xl border-2 border-purple-400 bg-transparent text-center text-xl"
                 type="email"
                 placeholder="Email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
+                name="email"
+                value={values.email}
+                onBlur={handleBlur}
+                onChange={handleChange}
+                
             />
             <br />
             <input
                 className="m-2 p-4 w-4/5 rounded-xl border-2 border-purple-400 bg-transparent text-center text-xl"
                 type="password"
                 placeholder="Password"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
+                value={values.password}
+                onChange={handleChange}
+                onBlur={handleBlur}
             />
             <br />
             <input
                 className="m-2 p-4 w-4/5 rounded-xl border-2 border-purple-400 bg-transparent text-center text-xl"
                 type="password"
                 placeholder="Confirm Password"
-                value={confirmPassword}
-                onChange={(e) => setConfirmPassword(e.target.value)}
+                value={values.confirmPassword}
+                onChange={handleChange}
+                onBlur={handleBlur}
             />
             <br />
             <input
