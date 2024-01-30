@@ -14,7 +14,9 @@ import LandingPage from "./pages/landinPage/LandingPage";
 import Profile from "./pages/UserProfile/userProfile";
 
 import PostArticlePage from "./pages/PostArticlePage";
-import { Login } from "./pages/login";
+// import { Login } from "./pages/login";
+import Login from "./pages/login";
+import SignUp from "./pages/SignUp";
 
 function App() {
   return (
@@ -32,7 +34,8 @@ function App() {
         <Route path="/Error" element={<Error/>}/>
         <Route path="/PostArticlePage" element={<PostArticlePage/>}/>
         <Route path ="/UserProfile" element={<Profile/>}/>
-        
+        <Route path="/SignUp" element={<SignUp/>}/>
+
       </Routes>
     </Router>
   );
