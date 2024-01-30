@@ -56,7 +56,6 @@ function PostView() {
           <NavLink to="/product">Product</NavLink>
           <NavLink to="/post-view">view posts</NavLink>
         </div>
-        <Notification />
       </nav>
       <div className="wrapper">
         <div className="post-img">

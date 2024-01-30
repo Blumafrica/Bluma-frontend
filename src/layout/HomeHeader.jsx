@@ -1,4 +1,12 @@
 import { Link, useNavigate } from "react-router-dom";
+import Notification from "../LandingComponent/notification/Notification";
+import styled from "styled-components";
+
+const Container= styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+`
 
 export default function Header() {
   const navigateTo = useNavigate();
@@ -6,7 +14,7 @@ export default function Header() {
     alert("bluma@bluma.com");
   };
   return (
-    <>
+    <Container>
       <header class="header">
         <div class="p-3 uppercase">
           <div className="w-3/5">
@@ -45,6 +53,7 @@ export default function Header() {
           </ul>
         </nav>
       </div>
-    </>
+      <Notification/>
+    </Container>
   );
 }

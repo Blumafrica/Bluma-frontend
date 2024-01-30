@@ -3,12 +3,15 @@ import HomeHeader from "../layout/HomeHeader"
 import background from "../images/background.jpg";
 import ColumnPage from "../component/ColumnPage";
 import Footer from "../layout/Footer";
+import Notification from "../LandingComponent/notification/Notification";
 
 
 export default function Homepage(){
     return(
         <>
+        <nav>
         <HomeHeader />
+        </nav>
         {/* <div class="relative">
             <div class="brightness-">
                 <img class="w-screen h-fit brightness-75 brigh bg-fixed" src={background} alt="slide"></img>

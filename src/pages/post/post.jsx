@@ -42,6 +42,7 @@ function Post() {
     <div className="user-post">
       <nav className="nav-bar">
         <BlumaLogo />
+        <Notification/>
         <div className="links">
           <NavLink to="/About" color="white">
             About

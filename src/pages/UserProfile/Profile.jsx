@@ -132,6 +132,7 @@ const Profile = () => {
             <Wrapper>
                 <NavBar>
                     <BlumaLogo />
+                   
 
                     <br />
                     <br />

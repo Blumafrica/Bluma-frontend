@@ -8,12 +8,12 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import PostView from "./pages/post/postView";
 import Post from "./pages/post/post";
 import AdminLogin from "./pages/admin/AdminLogin";
-// import Login from "./pages/login";
+import Login from "./pages/login";
 import Error from "./pages/Error";
 import LandingPage from "./pages/landinPage/LandingPage";
 import Profile from "./pages/UserProfile/Profile";
 import PostArticlePage from "./pages/PostArticlePage";
-import { Login } from "./pages/login";
+// import { Login } from "./pages/login";
 import MobileNav from "./pages/mobileNav";
 
 function App() {
