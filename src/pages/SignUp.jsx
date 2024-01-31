@@ -30,9 +30,11 @@ function SignUp() {
     }, [navigate]);
 
     async function handleSubmits() {
+        const url = "http://localhost:8080/api/v1/user/register"
         try {
-            const response = await axios.post(
-                "https://blumafricabackend-production.up.railway.app/api/v1/user/register",
+             const response = await axios.post(
+            //     "https://blumafricabackend-production.up.railway.app/api/v1/user/register",
+                 url,
                 values,
                 {
                     headers: {
@@ -42,15 +44,17 @@ function SignUp() {
                 }
             );
 
-            const { id, message, token } = response.data;
+            const { id, message, token,authority } = response.data;
             localStorage.setItem("authToken", token);
+            localStorage.setItem("userId",id)
+            localStorage.setItem("authority",authority)
             console.log("Message -> ", message);
             console.log("Token -> ", token);
             console.log("Id -> ", id);
             navigateToHomePage(id);
         } catch (err) {
             console.error(err);
-            // setErrorMsg(err.message); // Assuming error has a 'message' property
+             //setErrorMsg(err.response?.data?.message);
         }
     }
 

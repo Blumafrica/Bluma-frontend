@@ -85,3 +85,110 @@ export const posts = [
       "Nigeria's cultural vibrancy is manifested in its diverse festivals and celebrations, each reflecting the unique traditions of various ethnic groups. From the colorful and energetic Durbar festival in the north to the flamboyant and rhythmic Carnival in the south, these celebrations are a testament to the richness of Nigeria's cultural mosaic. Festivals serve as occasions for communal bonding, expressions of spirituality, and showcases of artistic prowess. They bring people together, transcending linguistic and regional boundaries, and offer a platform for the preservation and promotion of cultural values, ensuring that the spirit of celebration remains an integral part of Nigeria's identity",
   },
 ];
+// import React, { useState } from "react";
+// import axios from "axios";
+// import BlumaLogo from "../../LandingComponent/Button&Search/BlumaLogo";
+//
+// const Post = () => {
+//   const [state, setState] = useState({
+//     description: "",
+//     content: "",
+//     fileUrl: "",
+//     userId: "106",
+//     userAuthority: "user",
+//     imgUpload: null,
+//   });
+//
+//   const uploadImage = async () => {
+//     const { imgUpload } = state;
+//
+//     if (!imgUpload) {
+//       console.error("Please select an image");
+//       return;
+//     }
+//
+//     const formData = new FormData();
+//     formData.append("file", imgUpload);
+//     formData.append("upload_preset", "myCloud");
+//
+//     try {
+//       const response = await axios.post(
+//           "https://api.cloudinary.com/v1/duc8kpcl9/image/upload",
+//           formData
+//       );
+//
+//       const fileUrl = response.data.url;
+//       setState((prev) => ({ ...prev, fileUrl }));
+//       console.log(fileUrl);
+//     } catch (error) {
+//       console.error("Cloudinary Upload Error:", error);
+//     }
+//   };
+//
+//   const post = async () => {
+//     const { description, content, fileUrl, userAuthority, userId } = state;
+//
+//     try {
+//       const response = await axios.post(
+//           "http://localhost:8080/api/v1/post/post",
+//           {
+//             description,
+//             content,
+//             imageUrl: fileUrl,
+//             authority: userAuthority,
+//             userId,
+//           },
+//           {
+//             headers: {
+//               Authorization: `Bearer ${localStorage.getItem("authToken")}`,
+//               "Content-Type": "application/json",
+//             },
+//           }
+//       );
+//
+//       console.log(response.data);
+//     } catch (error) {
+//       console.error("Error:", error);
+//     }
+//   };
+//
+//   const handleInputChange = (e, field) => {
+//     setState((prev) => ({ ...prev, [field]: e.target.value }));
+//   };
+//
+//   return (
+//       <div className="user-post">
+//         {/* ... (unchanged code) */}
+//         <div className="container">
+//           <h1 font-size={"bold"}>Create Post</h1>
+//           <input
+//               type="text"
+//               placeholder="Enter title"
+//               className="title-input"
+//               value={state.description}
+//               onChange={(e) => handleInputChange(e, "description")}
+//           />
+//           <br />
+//           <label htmlFor="post">Write post</label>
+//           <textarea
+//               name="post"
+//               id=""
+//               cols="30"
+//               rows="10"
+//               value={state.content}
+//               onChange={(e) => handleInputChange(e, "content")}
+//           ></textarea>
+//           <input
+//               type="file"
+//               className="image"
+//               onChange={(e) => setState((prev) => ({ ...prev, imgUpload: e.target.files[0] }))}
+//           />
+//         </div>
+//         <button className="create-post" onClick={post}>
+//           post
+//         </button>
+//       </div>
+//   );
+// };
+//
+// export default Post;

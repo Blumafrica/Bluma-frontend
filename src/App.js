@@ -13,7 +13,7 @@ import Error from "./pages/Error";
 import LandingPage from "./pages/landinPage/LandingPage";
 import Profile from "./pages/UserProfile/userProfile";
 
-import PostArticlePage from "./pages/PostArticlePage";
+// import PostArticlePage from "./pages/PostArticlePage";
 // import { Login } from "./pages/login";
 import Login from "./pages/login";
 import SignUp from "./pages/SignUp";
@@ -32,7 +32,7 @@ function App() {
           <Route path="/AdminLogin" element={<AdminLogin/>}/>
           <Route path="/Login" element={<Login/>}/>
           <Route path="/Error" element={<Error/>}/>
-          <Route path="/PostArticlePage" element={<PostArticlePage/>}/>
+          {/*<Route path="/PostArticlePage" element={<PostArticlePage/>}/>*/}
           <Route path ="/UserProfile" element={<Profile/>}/>
           <Route path="/SignUp" element={<SignUp/>}/>
 

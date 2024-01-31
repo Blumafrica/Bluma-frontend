@@ -1,42 +1,77 @@
+
 import BlumaLogo from "../../LandingComponent/Button&Search/BlumaLogo";
 import { NavLink, useLocation } from "react-router-dom";
 import Notification from "../../LandingComponent/notification/Notification";
 import "./post.css";
 import { useState, useCallback } from "react";
 import axios from "axios";
+import Axios from "axios";
 
 function Post() {
-  const [description, setDescription] = useState("");
-  const [content, setContent] = useState("")
-  const [fileUrl, setFileUrl] = useState("");
-  const [userId] = useState("106");
-  const [userAuthority] = useState("user");
-
   const [imgUpload, setImgUpload] = useState(null);
+  const [content, setContent] = useState("");
+  const [description, setDescription] = useState("");
 
-  function uploadImage() {
+  const handleInputChange = (e, setState) => {
+    setState(e.target.value);
+  };
+  console.log("here -->")
+
+  const uploadImage = async () => {
+    console.log("here again --->")
     if (!imgUpload) {
       console.error("Please select an image");
       return;
     }
+
     const formData = new FormData();
+    console.log("here here -->>")
     formData.append("file", imgUpload);
     formData.append("upload_preset", "myCloud");
-    const response = axios.post(
-      "https://api.cloudinary.com/v1_1/duc8kpcl9/image/upload",
-      formData
-    ).then((res) => {
-      console.log(res.data.url);
-    });
-    setFileUrl(response.data.url)
-  }
 
-  const post = async (e) => {
-  
+    try {
+      const cloudinaryResponse = await Axios.post(
+          "https://api.cloudinary.com/v1_1/duc8kpcl9/image/upload",
+          formData
+      );
+      const imageUrl = cloudinaryResponse.data.url;
+
+      const postOwnerId = localStorage.getItem("userId");
+      const authority = localStorage.getItem("authority");
+
+      const postResponse = await Axios.post(
+          "http://localhost:8080/api/v1/post/post",
+          {
+            content:content,
+            description:description,
+            fileUrl:imageUrl,
+            authority:authority,
+            posterId:Number(postOwnerId)
+            // description:description,
+            // content:content,
+            // fileUrl:imageUrl,
+            // authority:authority,
+            // posterId:Number(postOwnerId),
+          },
+          {
+            headers: {
+              Authorization: `Bearer ${localStorage.getItem("authToken")}`,
+              "Content-Type": "application/json",
+            },
+            withCredentials:true
+
+          }
+      );
+
+      const { timePosted, postId, userPostId, message } = postResponse.data;
+      console.log("time posted --> ", timePosted);
+      console.log("post ID --> ", postId);
+      console.log("post Owner --> ", userPostId);
+      console.log("message --> ", message);
+    } catch (error) {
+      console.error("Error:", error);
+    }
   };
-  const apiKeys = "524936472486191";
-  const apiSecret = "AykjJccAQF3-wdK83CqfvS2vvz8";
-  const name = "BlumaAfrica";
 
   return (
     <div className="user-post">
@@ -76,7 +111,7 @@ function Post() {
         ></textarea>
         <input type="file" className="image" onChange={(e)=> setImgUpload(e.target.files[0])} />
       </div>
-      <button className="create-post" onClick={post}>
+      <button className="create-post" onClick={uploadImage}>
         post
       </button>
     </div>
@@ -84,3 +119,4 @@ function Post() {
 }
 
 export default Post;
+
