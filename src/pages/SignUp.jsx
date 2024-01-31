@@ -16,11 +16,7 @@ function SignUp() {
     email: '',
     username: '',
     password: '',
-    confirmPassword: ''
   })
-  const [emailError, setEmailError ] = useState("")
-  const [nameError , setNameError] = useState('')
-  const [passwordError , setPasswordError] = useState("")
 
 
    const SignUpValidation = Yup.object({
@@ -30,12 +26,11 @@ function SignUp() {
   })
 
   const {handleBlur, handleChange, handleSubmit, values , errors} = useFormik({
-  
     initialValues: initialValue,
     validationSchema: SignUpValidation,
     onSubmit: (values) =>{
       console.log("user inputs => ",values)
-      handleSubmits();
+      signUp();
     }
   })
   
@@ -44,17 +39,19 @@ function SignUp() {
     navigate("/HomePage", { state: { value: param } });
   }, [navigate]);
 
-  async function handleSubmits(e) {
-    e.preventDefault();
-
+  async function signUp() {
+    // e.preventDefault();
+     let url = '/api/v1/user/register'
       try {
         const response = await axios.post(
-            "https://blumafricabackend-production.up.railway.app/api/v1/user/register",
+            // "https://blumafricabackend-production.up.railway.app/api/v1/user/register",
+            url,
             {initialValue},
             {
               headers: {
                 "Content-Type": "application/json",
               },
+              method:  'POST',
               withCredentials: true,
             }
         );
@@ -68,7 +65,7 @@ function SignUp() {
         navigateToHomePage(id);
       } catch (err) {
         console.error(err);
-
+        navigate("/Error", err.message)
       }
     
   }
