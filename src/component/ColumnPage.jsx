@@ -54,7 +54,7 @@ export default function ColumnPage(){
                 <div class="col-span-2 bg-slate-100">
                     <div class="flex justify-end">
                         <div class="bg-purple-500 p-2 m-3 sm:w-44 xl:w-72 text-center rounded-xl">
-                            <Link to="/PostArticlePage">
+                            <Link to="/PostArticle">
                                 <p class="sm:text-xl sm:p-2 font-mono xl:text-3xl xl:p-4 text-white cursor-pointer">Post Article</p>
                             </Link>
                         </div>

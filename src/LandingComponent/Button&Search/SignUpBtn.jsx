@@ -8,6 +8,7 @@ function SignUpBtn() {
   }
   return (
     <Link to="/SignUp">
+    
       <div className='sign-up'><button onClick={goToSignUpPage}>Sign up</button></div>
     </Link>
   )

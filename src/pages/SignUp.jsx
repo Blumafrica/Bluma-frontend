@@ -1,4 +1,3 @@
-
 import React, { useState, useCallback } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
@@ -6,16 +5,15 @@ import { useFormik, Form } from "formik";
 import * as Yup from 'yup'
 import '../pages/SignUp.css'
 
-
 function SignUp() {
-  
-  const navigate = useNavigate();
-  
+    const navigate = useNavigate();
+
 
   const [initialValue, setInitialValue] = useState({
     email: '',
     username: '',
     password: '',
+    confirmPassword: ''
   })
 
 
@@ -23,6 +21,7 @@ function SignUp() {
     username: Yup.string().min(6).required("Please Enter a Username"),
     email: Yup.string().email("Please Enter a Valid Email").required("Please Enter an Email"),
     password: Yup.string().min(4).required("Please Enter a Password"),
+    confirmPassword: Yup.string().oneOf([Yup.ref("password")], "Passwords do not match"),
   })
 
   const {handleBlur, handleChange, handleSubmit, values , errors} = useFormik({
@@ -112,6 +111,15 @@ function SignUp() {
                 onChange={handleChange}
                 onBlur={handleBlur}
             />
+           < input
+                        className="m-2 p-4 w-4/5 rounded-xl border-2 border-purple-400 bg-transparent text-center text-xl"
+                        type="password"
+                        placeholder="Confirm Password"
+                        name="confirmPassword"
+                        value={values.confirmPassword}
+                        onChange={handleChange}
+                        onBlur={handleBlur}
+                    />
             <br />
            
             <input
@@ -123,9 +131,11 @@ function SignUp() {
         </div>
       </div>
   );
+
+   
+
+
+
 }
 
-
 export default SignUp;
-
-

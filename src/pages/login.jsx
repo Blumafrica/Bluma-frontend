@@ -1,9 +1,8 @@
-import {Link} from "react-router-dom"
 import '../pages/login.css'
 import { useState } from "react";
-import axios from "axios";
 import { useFormik, Formik } from "formik";
 import * as Yup from 'yup'
+import axios from "axios";
 
 function Login() {
   const [email, setEmail] = useState("");
@@ -24,12 +23,12 @@ function Login() {
     validationSchema: loginValidation,
     onSubmit: (values) =>{
       console.log("user inputs => " ,values)
-      // handleSubmit(values)
+      logIn(values)
     }
   })
 
 
-  async function login( userData ) {
+  async function logIn( userData ) {
     try {
       // e.preventDefault();
       const response = await fetch("/api/v1/user/login", {
@@ -43,10 +42,12 @@ function Login() {
         localStorage.setItem("userId", userId);
         localStorage.setItem("userAuthority" , userAuthority)
       }
-    } catch (error) {
-      console.log(error);
+    }catch(error){
+
     }
   }
+
+    
 
   return (
     <div className="login">
@@ -79,9 +80,31 @@ function Login() {
           <button className="submit" onClick={handleSubmit}>Submit</button>
          </form>
          {/* </div> */}
+
+      <form onSubmit={handleSubmit}>
+        <input
+          class="m-2 p-4 w-4/5 rounded-xl border-2 border-purple-400 bg-transparent text-center text-xl"
+          type="email"
+          placeholder="email"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+        ></input>
+        <br></br>
+        <input
+          class="m-2 p-4 w-4/5 rounded-xl border-2 border-purple-400 bg-transparent text-center text-xl"
+          type="password"
+          placeholder="password"
+          value={password} 
+          onChange={(e) => setPassword(e.target.value)}
+        ></input>
+        <button >Submit</button>
+      </form>
       <br></br>
     </div>
   );
 }
+  
+
+
 
 export default Login;
