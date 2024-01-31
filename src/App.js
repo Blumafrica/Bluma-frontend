@@ -12,9 +12,6 @@ import AdminLogin from "./pages/admin/AdminLogin";
 import Error from "./pages/Error";
 import LandingPage from "./pages/landinPage/LandingPage";
 import Profile from "./pages/UserProfile/userProfile";
-
-// import PostArticlePage from "./pages/PostArticlePage";
-// import { Login } from "./pages/login";
 import Login from "./pages/login";
 import SignUp from "./pages/SignUp";
 

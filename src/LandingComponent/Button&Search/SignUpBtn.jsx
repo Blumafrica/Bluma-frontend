@@ -7,7 +7,8 @@ function SignUpBtn() {
     navigate("/LoginAndSignUp")
   }
   return (
-    <Link to="/signup">
+    <Link to="/SignUp">
+    
       <div className='sign-up'><button onClick={goToSignUpPage}>Sign up</button></div>
     </Link>
   )
