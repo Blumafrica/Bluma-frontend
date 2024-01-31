@@ -1,7 +1,11 @@
+
 import '../pages/login.css'
 import { useState } from "react";
 import { useFormik, Formik } from "formik";
 import * as Yup from 'yup'
+import {Link} from "react-router-dom"
+import { useAuth } from "../hooks/AuthenticationProvider";
+import { useState } from "react";
 import axios from "axios";
 
 function Login() {
@@ -9,6 +13,7 @@ function Login() {
   const [password, setPassword] = useState("");
   const [errorMsg, setErrorMsg] = useState("");
   const [success, setSuccess] = useState(false);
+
 
   const [initialValue, setInitialValue ] = useState({
     email: '',
@@ -79,32 +84,11 @@ function Login() {
           {/* <button type="submit" onClick={handleSubmit} className="button">Submit</button> */}
           <button className="submit" onClick={handleSubmit}>Submit</button>
          </form>
-         {/* </div> */}
+         </div>
+         )
 
-      <form onSubmit={handleSubmit}>
-        <input
-          class="m-2 p-4 w-4/5 rounded-xl border-2 border-purple-400 bg-transparent text-center text-xl"
-          type="email"
-          placeholder="email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-        ></input>
-        <br></br>
-        <input
-          class="m-2 p-4 w-4/5 rounded-xl border-2 border-purple-400 bg-transparent text-center text-xl"
-          type="password"
-          placeholder="password"
-          value={password} 
-          onChange={(e) => setPassword(e.target.value)}
-        ></input>
-        <button >Submit</button>
-      </form>
-      <br></br>
-    </div>
-  );
-}
+
   
+}
 
-
-
-export default Login;
+  export default Login;
