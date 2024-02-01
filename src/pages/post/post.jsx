@@ -47,11 +47,6 @@ function Post() {
             fileUrl:imageUrl,
             authority:authority,
             posterId:Number(postOwnerId)
-            // description:description,
-            // content:content,
-            // fileUrl:imageUrl,
-            // authority:authority,
-            // posterId:Number(postOwnerId),
           },
           {
             headers: {
@@ -62,12 +57,15 @@ function Post() {
 
           }
       );
-
-      const { timePosted, postId, userPostId, message } = postResponse.data;
-      console.log("time posted --> ", timePosted);
-      console.log("post ID --> ", postId);
-      console.log("post Owner --> ", userPostId);
-      console.log("message --> ", message);
+      if(postResponse.data === 200) {
+        const {description, content, postId, timePosted, posterId, message} = postResponse.data;
+        console.log("time posted --> ", timePosted);
+        console.log("post ID --> ", postId);
+        console.log("post Owner --> ", posterId);
+        console.log("message --> ", message);
+        console.log("description -->", description)
+        console.log("content -->", content)
+      }
     } catch (error) {
       console.error("Error:", error);
     }
