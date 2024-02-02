@@ -103,11 +103,11 @@ const Profile = () => {
     useEffect(() => {
         const formattedDate = new Date().toLocaleDateString();
         setCurrentDate(formattedDate);
-    }, []); // Fixed the dependency array
+    }, []);
 
     useEffect(() => {
         const fetchData = async () => {
-            const token = "your_valid_token"; // Replace with a valid token
+            const token = "your_valid_token";
             try {
                 const response = await axios.post(
                     "http://localhost:8080/api/v1/user/profile",

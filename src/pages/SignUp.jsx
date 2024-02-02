@@ -1,75 +1,65 @@
 import React, { useState, useCallback } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-import { useFormik, Form } from "formik";
-import * as Yup from 'yup'
-import '../pages/SignUp.css'
+import { useFormik } from "formik";
+import * as Yup from 'yup';
 
 function SignUp() {
     const navigate = useNavigate();
 
+    const SignUpValidation = Yup.object({
+        username: Yup.string().min(6).required("Please enter a username"),
+        email: Yup.string().email("Please enter a valid email").required("Please enter an email"),
+        password: Yup.string().min(4).required("Please enter a password"),
+        confirmPassword: Yup.string().oneOf([Yup.ref("password")], "Passwords do not match"),
+    });
 
-  const [initialValue, setInitialValue] = useState({
-    email: '',
-    username: '',
-    password: '',
-    confirmPassword: ''
-  })
+    const { handleBlur, handleChange, handleSubmit, values, errors } = useFormik({
+        initialValues: {
+            email: '',
+            username: '',
+            password: '',
+            confirmPassword: ''
+        },
+        validationSchema: SignUpValidation,
+        onSubmit: handleSubmits,
+    });
 
+    const navigateToHomePage = useCallback((param) => {
+        navigate("/HomePage", { state: { value: param } });
+    }, [navigate]);
 
-   const SignUpValidation = Yup.object({
-    username: Yup.string().min(6).required("Please Enter a Username"),
-    email: Yup.string().email("Please Enter a Valid Email").required("Please Enter an Email"),
-    password: Yup.string().min(4).required("Please Enter a Password"),
-    confirmPassword: Yup.string().oneOf([Yup.ref("password")], "Passwords do not match"),
-  })
+    async function handleSubmits() {
+        const url = "http://localhost:8080/api/v1/user/register"
+        try {
+            const response = await axios.post(
+                //     "https://blumafricabackend-production.up.railway.app/api/v1/user/register",
+                url,
+                values,
+                {
+                    headers: {
+                        "Content-Type": "application/json",
+                    },
+                    withCredentials: true,
+                }
+            );
 
-  const {handleBlur, handleChange, handleSubmit, values , errors} = useFormik({
-    initialValues: initialValue,
-    validationSchema: SignUpValidation,
-    onSubmit: (values) =>{
-      console.log("user inputs => ",values)
-      signUp();
+            const { id, message, token,authority } = response.data;
+            localStorage.setItem("authToken", token);
+            localStorage.setItem("userId",id)
+            localStorage.setItem("authority",authority)
+            console.log("Message -> ", message);
+            console.log("Token -> ", token);
+            console.log("Id -> ", id);
+            navigateToHomePage(id);
+        } catch (err) {
+            console.error(err);
+            //setErrorMsg(err.response?.data?.message);
+        }
     }
-  })
-  
 
-  const navigateToHomePage = useCallback((param) => {
-    navigate("/HomePage", { state: { value: param } });
-  }, [navigate]);
 
-  async function signUp() {
-    // e.preventDefault();
-     let url = '/api/v1/user/register'
-      try {
-        const response = await axios.post(
-            // "https://blumafricabackend-production.up.railway.app/api/v1/user/register",
-            url,
-            {initialValue},
-            {
-              headers: {
-                "Content-Type": "application/json",
-              },
-              method:  'POST',
-              withCredentials: true,
-            }
-        );
-      
-
-        const { id, message, token } = response.data;
-        localStorage.setItem("authToken", token);
-        console.log("Message -> ", message);
-        console.log("Token -> ", token);
-        console.log("Id -> ", id);
-        navigateToHomePage(id);
-      } catch (err) {
-        console.error(err);
-        navigate("/Error", err.message)
-      }
-    
-  }
-
-  return (
+    return (
       <div className="sign-up"> 
         <div className="image">
             <p className="bluma-tag">BLUMA</p>
