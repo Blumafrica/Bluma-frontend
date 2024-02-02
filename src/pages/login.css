@@ -2,12 +2,24 @@
 .login{
     width: 40rem;
     height: 30rem;
-    box-shadow: 10px 10px 10px 10px rgb(241, 129, 241);
+    box-shadow: 10px 10px 10px 10px grey;
     border-radius: 10px 10px 10px 10px;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 10rem;
+    margin-top: 7rem;
     display: flex;
+}
+.africa{
+    color: white;
+    font-size: 90px;
+    font-weight: 50px;
+    margin-left: 70px;
+    margin-bottom: 50px;
+}
+.bluma-tag{
+    color: white;
+    margin-top: 25px;
+
 }
 .background-image {
     width: 40rem;

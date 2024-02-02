@@ -8,7 +8,6 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import PostView from "./pages/post/postView";
 import Post from "./pages/post/post";
 import AdminLogin from "./pages/admin/AdminLogin";
-// import Login from "./pages/login";
 import Error from "./pages/Error";
 import LandingPage from "./pages/landinPage/LandingPage";
 import Profile from "./pages/UserProfile/userProfile";
@@ -32,7 +31,7 @@ function App() {
           {/*<Route path="/PostArticlePage" element={<PostArticlePage/>}/>*/}
           <Route path ="/UserProfile" element={<Profile/>}/>
           <Route path="/SignUp" element={<SignUp/>}/>
-
+          <Route path="/Error" element={<Error/>}/>
         </Routes>
       </Router>
   );
