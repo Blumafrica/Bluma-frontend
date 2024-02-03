@@ -1,153 +1,123 @@
-import {Link} from "react-router-dom"
-import { useAuth } from "../hooks/AuthenticationProvider";
 
+
+import '../pages/login.css'
 import { useState } from "react";
-import axios from "axios";
+import React from 'react';
+import { useFormik, Formik } from "formik";
+import * as Yup from 'yup';
+import { Modal } from "@mui/material";
+import Box from '@mui/material/Box';
+import Button from '@mui/material/Button';
+import Typography from '@mui/material/Typography';
 
 function Login() {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [errorMsg, setErrorMsg] = useState("");
+ 
+  const [error, setError] = useState("");
   const [success, setSuccess] = useState(false);
-  async function handleSubmit(e) {
+  const [openModal , setOpenModal] = React.useState(false)
+  const handleOpen = (state) => setOpenModal(state)
+  const handleClose = () => setOpenModal(false)
+
+
+  const [initialValue, setInitialValue ] = useState({
+    email: '',
+    password : ''
+  })
+  const loginValidation = Yup.object({
+    email: Yup.string().email("please enter an email").required("please enter email"),
+    password: Yup.string("please enter password").required("please enter your password")
+  })
+  const {handleSubmit, handleBlur, values, errors, handleChange } = useFormik({
+    initialValues: initialValue,
+    validationSchema: loginValidation,
+    onSubmit: (values) =>{
+      console.log("user inputs => " ,values)
+      logIn(values)
+    }
+  })
+  const style = {
+    position: 'absolute' ,
+    top: '50%',
+    left: '50%',
+    transform: 'translate(-50%, -50%)',
+    width: 400,
+    bgcolor: 'background.paper',
+    border: '2px solid #000',
+    boxShadow: 24,
+    p: 4,
+  }
+
+  async function logIn( userData ) {
     try {
-      e.preventDefault();
-      const response = await axios
-        .post("http://localhost:8080/api/v1/user/login")
-        .then((result) => console.log(result.data));
-    } catch (error) {
-      console.log(error);
+      const response = await fetch("/api/v1/user/login", {
+        method: 'POST',
+         headers : {"Content-Type" : "application/json"},
+        body: JSON.stringify(userData)
+
+      })
+      if(response.ok){
+        const {userId, userAuthority} = response.json()
+        localStorage.setItem("userId", userId);
+        localStorage.setItem("userAuthority" , userAuthority)
+      }
+    }catch(error){
+      setError(error.message)
+      console.log("error => ", error.message);
+      handleOpen(true)
+      console.log("modal state => ", openModal);
     }
   }
 
+    
+
   return (
     <div className="login">
-      <form onSubmit={handleSubmit}>
-        <input
-          class="m-2 p-4 w-4/5 rounded-xl border-2 border-purple-400 bg-transparent text-center text-xl"
+      <div className="background-image">
+        <p className='bluma-tag'>Bluma</p>
+        <p className='africa'>Africa</p>
+      </div>
+         <form onSubmit={handleSubmit}>
+          <p color="red" margin-left={'20px'}className="error">{errors.email}</p>
+          <input
+          class="m-2 p-4 w-4/5 rounded-xl border-2 border-purple-400 bg-transparent text-center text-xl items-start"
           type="email"
           placeholder="email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-        ></input>
-        <br></br>
-        <input
-          class="m-2 p-4 w-4/5 rounded-xl border-2 border-purple-400 bg-transparent text-center text-xl"
+          name="email"
+          value={values.email}
+          onChange={handleChange}
+          onBlur={handleBlur}
+          ></input>
+          <br></br>
+          <p color="red" margin-left={'20px'} className="error">{errors.password}</p>
+          <input
+          class="m-2 p-4 w-4/5 rounded-xl border-2 border-purple-400 bg-transparent text-center text-xl items-center"
           type="password"
           placeholder="password"
-          value={password} 
-          onChange={(e) => setPassword(e.target.value)}
-        ></input>
-        <button >Submit</button>
-      </form>
-      <br></br>
-    </div>
-  );
+          name="password"
+          value={values.password} 
+          onChange={handleChange}
+          onBlur={handleBlur}
+          ></input>
+          <button className="submit" onClick={handleSubmit}>Submit</button>
+         </form>
+         {openModal? 
+         <Modal>
+          <Box sx={style}>
+              <Typography id="modal-modal-title" variant="h6" component="h2">
+                Error has occur
+              </Typography>
+              <Typography id="modal-modal-description" sx={{ mt: 2 }}>
+                {error}
+              </Typography>
+            </Box>
+          </Modal>
+         : null}
+         </div>
+         )
+
+
+  
 }
 
-export default Login;
-// export const Login = () => {
-//     const [input, setInput] = useState({
-//         email: "",
-//         password: "",
-//     });
-
-//     const loginAuthentication = useAuth();
-
-//     const handleSubmitEvent = async (e) => {
-//         e.preventDefault();
-//         if (input.email !== "" && input.password !== "") {
-//             try {
-//                 const response = await loginAuthentication.login(input);
-//                 console.log("Login successful", response);
-//             } catch (error) {
-//                 console.error("Login failed", error);
-//                 // alert("Login failed. Please try again.");
-//             }
-//         } else {
-//             alert("Please provide a valid input");
-//         }
-//     };
-
-//     return (
-//         <>
-//             <div className="login">
-//                 <form onSubmit={handleSubmitEvent}>
-//                     <input
-//                         className="m-2 p-4 w-4/5 rounded-xl border-2 border-purple-400 bg-transparent text-center text-xl"
-//                         type="email"
-//                         placeholder="email"
-//                         value={input.email}
-//                         onChange={(e) => setInput({ ...input, email: e.target.value })}
-//                     ></input>
-//                     <br></br>
-//                     <input
-//                         className="m-2 p-4 w-4/5 rounded-xl border-2 border-purple-400 bg-transparent text-center text-xl"
-//                         type="password"
-//                         placeholder="password"
-//                         value={input.password}
-//                         onChange={(e) => setInput({ ...input, password: e.target.value })}
-//                     ></input>
-//                     <input type="submit"  
-//                     class="m-2 p-4 w-4/5 rounded-xl border-2 border-purple-400 bg-purple-400 text-center text-xl"/>
-//                 </form>
-//                 <br></br>
-//                 <li class="border-b-4 hover:border-purple-600 pb-4">
-//                 <Link onClick={() => swap(2)}><p>LOGIN</p></Link>
-//                 </li>
-                
-//             </div>
-//             <div class="flex relative top-64 left-1/4 border-2 p-2 shadow-2xl border-grey-300 w-1/2">
-                
-//                 <div class="w-1/2 m-3">
-//                     <p>Image</p>
-//                 </div>
-//                 <div class="w-1/2">
-//                     <div className={swapPage === 1 ? "register" : "invi"}>
-//                     <form>
-//                         <h2 class="uppercase text-3xl font-semibold text-center m-3">Register</h2>
-//                         <input class="m-2 p-4 w-4/5 rounded-xl border-2 border-purple-400 bg-transparent text-center text-xl" type="text" placeholder="First Name"></input>
-//                         <br></br>
-//                         <input class="m-2 p-4 w-4/5 rounded-xl border-2 border-purple-400 bg-transparent text-center text-xl" type="text" placeholder="Last Name"></input>
-//                         <br></br>
-//                         <input class="m-2 p-4 w-4/5 rounded-xl border-2 border-purple-400 bg-transparent text-center text-xl" type="email" placeholder="Email"></input>
-//                         <br></br>
-//                         <input class="m-2 p-4 w-4/5 rounded-xl border-2 border-purple-400 bg-transparent text-center text-xl" type="text" placeholder="Create Password"></input>
-//                         <br></br>
-//                         <input class="m-2 p-4 w-4/5 rounded-xl border-2 border-purple-400 bg-transparent text-center text-xl" type="text" placeholder="Conform Paasowrd"></input>
-//                         <br></br>
-//                         <div class="m-4">
-//                         <label class="text-xl font-semibold m-3">Choose your Gender: </label>
-//                         <label class="text-xl font-semibold m-3">Male</label>
-//                         <input class="p-3 w-30" type="radio" value="male" checked></input>
-//                         <label class="text-xl font-semibold m-3">Female</label>
-//                         <input class="p-3 w-30" type="radio" value="female"></input>
-//                         </div>
-//                         <br></br>
-//                         <div class="flex justify-center mr-32">
-//                         <Link to="/HomePage">
-//                         <p class="btn border-2 w-4/5 border-purple-600 m-5 rounded">Submit</p>
-//                         </Link>
-//                         </div>
-//                     </form>
-//                     </div>
-
-//                         <div className={swapPage === 2 ? "register" : "invi"}>
-//                             <form>
-//                                 <h2 className="uppercase text-3xl font-semibold text-center m-3">Login</h2>
-//                                 <input class="m-2 p-4 w-4/5 rounded-xl border-2 border-purple-400 bg-transparent text-center text-xl" type="email" placeholder="Email"></input>
-//                                 <br></br>
-//                                 <input class="m-2 p-4 w-4/5 rounded-xl border-2 border-purple-400 bg-transparent text-center text-xl" type="password" placeholder="Enter Password"></input>
-//                                 <div class="flex justify-center mr-32">
-//                                     <Link to="/HomePage">
-//                                         <p class="btn border-2 w-4/5 border-purple-600 m-5 rounded">Submit</p>
-//                                     </Link>
-//                                 </div>
-//                             </form>
-//                         </div>
-//                     </div>
-//                 </div>
-//         </>
-//     )
-// }
+  export default Login;
 
