@@ -96,8 +96,9 @@ const Profile = () => {
     const [profileData, setProfileData] = useState({});
     const navigate = useNavigate();
 
-    const navigateToHome = () => {
-        navigate("./pages/HomePage");
+    const navigateToEditProfile = () => {
+        // navigate("./pages/HomePage");
+        navigate("./pages/UserProfile/editProfile");
     };
 
     useEffect(() => {
@@ -135,9 +136,9 @@ const Profile = () => {
 
             <CenterContents>
                 <ProfilePicture>
-                    <UserPicture onClick={navigateToHome} src={profilePix} />
+                    <UserPicture onClick={navigateToEditProfile} src={profilePix} />
                     <EditButton>
-                        <ContactBtn onClick={navigateToHome}> Edit Profile</ContactBtn>
+                        <ContactBtn onClick={navigateToEditProfile}> Edit Profile</ContactBtn>
                     </EditButton>
                 </ProfilePicture>
 
