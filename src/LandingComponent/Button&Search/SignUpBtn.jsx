@@ -19,10 +19,12 @@ function SignUpBtn() {
     navigate("/LoginAndSignUp");
   }
   return (
+
     <Link to="/signup">
       <div className="sign-up">
         <Button onClick={goToSignUpPage}>Sign up</Button>
       </div>
+
     </Link>
   );
 }
