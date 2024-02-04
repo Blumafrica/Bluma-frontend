@@ -102,7 +102,7 @@ function SignUp() {
   
 
   return (
-      <div className="sign-up"> 
+      <div className="sign-up-section"> 
         <div className="image">
             {/* <p className="bluma-tag">Join</p> */}
             <p className="bluma-tag">Bluma</p>
