@@ -1,10 +1,9 @@
 .landing-page .card-section{
     display: grid;
     grid-template-columns: 1fr 1fr;
+    margin: 5rem auto;
     width: fit-content;
-    gap: 9rem;
-    margin: auto;
-    margin-top: 3rem;
+    gap: 25px;
 }
 .landing-page{
     background-color: rgb(252, 248, 248);

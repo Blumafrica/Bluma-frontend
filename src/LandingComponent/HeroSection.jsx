@@ -5,7 +5,6 @@ import ArrowRightOutlinedIcon from "@mui/icons-material/ArrowForwardIos";
 import { Slideritems } from "./data";
 import SignUpBtn from "./Button&Search/SignUpBtn";
 import "./heroSection.css";
-import NavBar from "./NavBar";
 
 const Container = styled.div`
   width: 100%;

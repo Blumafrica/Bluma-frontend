@@ -9,10 +9,10 @@ function Card(props) {
     navigate("/PostView")
   }
   return (
-    <div id="card" className={props.class} onClick={goToPost}>
+    <div id="card" className={props.class}>
       <img src={props.coverPic} alt="" className="cover-pic" />
-      <div className="container">
-      <h3>{props.heading}</h3>
+      <div className="card-container">
+      <h2>{props.heading}</h2>
       <h5>{props.description}</h5>
       <p>{props.summary}</p>
       <div className="post-info">

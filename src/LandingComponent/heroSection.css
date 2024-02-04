@@ -1,6 +1,6 @@
 .one {
   background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
-    url(./assets/tradition.png);
+    url(./assets/hero6.png);
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
@@ -9,7 +9,7 @@
 }
 .two {
   background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
-    url(./assets/9ja_five.jpeg);
+    url(./assets/hero5.png);
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
@@ -18,7 +18,7 @@
 }
 .three {
   background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
-    url(./assets/9ja_six.jpeg);
+    url(./assets/hero4.png);
   background-size: cover;
   background-position: center;
   background-attachment: fixed;

@@ -1,101 +1,129 @@
 import BlumaLogo from "../../LandingComponent/Button&Search/BlumaLogo";
-import { NavLink , useLocation} from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 import Notification from "../../LandingComponent/notification/Notification";
 import "./post.css";
 import { useState, useCallback } from "react";
-import Footer from "../../LandingComponent/footer";
+import axios from "axios";
+import Axios from "axios";
+import Homepage from "../HomePage";
 
 function Post() {
-  // const userDetails = useLocation.state;
-  const apiKey= "";
-  const apiName ="";
-  const [image, setImage] = useState([]);
-  const [discription, setDiscription] = useState('description')
-  const [context, setContext] = useState('context')
-  const url = 'http://localhost:2005/api/v1/post/';
-  const [userId] = useState('106')
-  const [userAuthority] = useState('user')
+  const [imgUpload, setImgUpload] = useState(null);
+  const [content, setContent] = useState("");
+  const [description, setDescription] = useState("");
+  const [postSuccess, setPostSuccess] = useState(false);
 
-  function uploadImg(event){
-    const file = event.target.file[0]
-    const formData = new FormData('')
-    formData.append("file", file)
-    formData.append("upload_preset",apiKey)
-    
-  }
-  const handleDiscription = (e) => {
-    const data = e.target.value;
-     setDiscription(data)
-  }
-  const handleContext = (e) => {
-    const data = e.target.value;
-    setContext(data)
-  }
+  const handleInputChange = (e, setState) => {
+    setState(e.target.value);
+  };
+  console.log("here -->");
 
-  const post = async (e) => {
-    e.preventDefault();
-    try{
-    const data = {
-      contexts : context,
-      descriptions: discription,
-      posterId: userId,
-      authority: userAuthority
+  const uploadImage = async () => {
+    console.log("here again --->");
+    if (!imgUpload) {
+      console.error("Please select an image");
+      return;
     }
-    const response = await fetch(url, {
-       method : 'POST',
-       headers :{
-        'Content-Type' : 'application/json'
-       },
-       body : JSON.stringify(data)
-    })
-    if(response.ok){
-      const {time, postId, postOwnerId, message} = response.data;
-      console.log("time posted => " ,time);
-      console.log("postId => ", postId)
-      console.log("postOwnerId => ", postOwnerId);
-      console.log("message => ", message);
 
+    const formData = new FormData();
+    console.log("here here -->>");
+    formData.append("file", imgUpload);
+    formData.append("upload_preset", "myCloud");
 
+    try {
+      const cloudinaryResponse = await Axios.post(
+        "https://api.cloudinary.com/v1_1/duc8kpcl9/image/upload",
+        formData
+      );
+      const imageUrl = cloudinaryResponse.data.url;
+
+      const postOwnerId = localStorage.getItem("userId");
+      const authority = localStorage.getItem("authority");
+
+      const postResponse = await Axios.post(
+        "http://localhost:8080/api/v1/post/post",
+        {
+          content: content,
+          description: description,
+          fileUrl: imageUrl,
+          authority: authority,
+          posterId: Number(postOwnerId),
+          // description:description,
+          // content:content,
+          // fileUrl:imageUrl,
+          // authority:authority,
+          // posterId:Number(postOwnerId),
+        },
+        {
+          headers: {
+            Authorization: `Bearer ${localStorage.getItem("authToken")}`,
+            "Content-Type": "application/json",
+          },
+          withCredentials: true,
+        }
+      );
+
+      const { timePosted, postId, userPostId, message } = postResponse.data;
+      console.log("time posted --> ", timePosted);
+      console.log("post ID --> ", postId);
+      console.log("post Owner --> ", userPostId);
+      console.log("message --> ", message);
+      setPostSuccess(true);
+    } catch (error) {
+      console.error("Error:", error);
     }
-  }catch(error){
-    console.log(error);
-  }
-  }
-  const apiKeys = '524936472486191'
-  const apiSecret = 'AykjJccAQF3-wdK83CqfvS2vvz8'
-  const name = 'BlumaAfrica'
-  
-
+  };
 
   return (
-    <div className="user-post" >
-      <nav className="nav-bar">
-        <BlumaLogo />
-        <div className="links">
-          <NavLink to="/About" color="white">About</NavLink>
-          <NavLink to="/products" color="white">Product</NavLink>
-          <NavLink to="/post-view" background-color="white">view posts</NavLink>
-        </div>
-        {/* <Notification /> */}
-      </nav>
+    <div className="user-post">
+      {postSuccess ? (
+        <Homepage />
+      ) : (
+        <>
+          <nav className="nav-bar">
+            <BlumaLogo />
+            <div className="links">
+              <NavLink to="/About" style={{ color: "white" }}>
+                About
+              </NavLink>
+              <NavLink to="/products" style={{ color: "white" }}>
+                Product
+              </NavLink>
+              <NavLink to="/post-view" style={{ backgroundColor: "white" }}>
+                view posts
+              </NavLink>
+            </div>
+          </nav>
 
-      <div className="container">
-        <h1 font-size={'bold'}>Create Post</h1>
-        {/* <label htmlFor="">Title</label> */}
-        <input type="text" placeholder="Enter title" className="title-input"  onChange={handleDiscription}/>
-        <br />
-        {/* <label htmlFor="">Description</label>
-        <input type="text" placeholder="Write Summary" />
-        <br /> */}
-        <label htmlFor="post">Write post</label>
-        <textarea name="post" id="" cols="30" rows="10" onChange={handleContext} ></textarea>
-        <input type="file" className="image" onChange={uploadImg} />
-      </div>
-      {/* <div className="btns"> */}
-        <button className="create-post" onClick={post}>post</button>
-        {/* <button className="reset-post">reset</button> */}
-      {/* </div> */}
-      {/* <Footer/> */}
+          <div className="container">
+            <h1 style={{ fontSize: "bold" }}>Create Post</h1>
+            <input
+              type="text"
+              placeholder="Enter title"
+              className="title-input"
+              value={description}
+              onChange={(e) => setDescription(e.target.value)}
+            />
+            <br />
+            <label htmlFor="post">Write post</label>
+            <textarea
+              name="post"
+              cols="30"
+              rows="10"
+              value={content}
+              onChange={(e) => setContent(e.target.value)}
+            ></textarea>
+            <input
+              type="file"
+              className="image"
+              onChange={(e) => setImgUpload(e.target.files[0])}
+            />
+          </div>
+          <button className="create-post" onClick={uploadImage}>
+            post
+          </button>
+        </>
+      )}
     </div>
   );
 }

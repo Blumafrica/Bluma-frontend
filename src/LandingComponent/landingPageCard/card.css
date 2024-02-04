@@ -1,37 +1,46 @@
-#card{
-    width: 40rem;
-    color: rgb(78, 77, 77);
-    border-radius: 15px;
-    box-shadow: 0px 10px 15px -3px rgba(0,0,0,0.1);
-    margin: 5px;
+#card {
+  width: 40rem;
+  color: rgb(78, 77, 77);
+  border-radius: 15px;
+  box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+  margin: 15px;
 }
-#card .cover-pic{
-    width: 100%;
-    border-radius: 15px 15px 0 0 ;
+#card:hover {
+  transform: scale(1.05);
 }
-#card .container{
-    padding: 1rem;
-    background-color: rgb(250, 249, 249);
+#card h2 {
+  font-size: 28px;
+  font-weight: bolder;
+  border-bottom: 2px solid rgb(244, 167, 244);
+  margin-bottom: 5px;
 }
-#post-info{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+#card .cover-pic {
+  width: 100%;
+  border-radius: 15px 15px 0 0;
 }
-#card .user-pic{
-    height: 40px;
+#card .card-container {
+  padding: 1rem;
+  background-color: rgb(250, 249, 249);
 }
-#card button{
-    background: none; 
+#post-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
-#card .like-icon{
-    height: 16px;
+#card .user-pic {
+  height: 40px;
+}
+#card button {
+  background: none;
+}
+#card .like-icon {
+  height: 16px;
 }
 @media (max-width: 1344px) {
-    #card{
-        width: 70%;
-        margin: auto;
-        margin-bottom: 2rem;
-    }
-
+  #card {
+    width: 70%;
+    margin: auto;
+    margin-bottom: 2rem;
+  }
 }
