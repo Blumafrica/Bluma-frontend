@@ -2,7 +2,7 @@ import React from "react";
 import { Link, useNavigate } from "react-router-dom";
 import styled from "styled-components";
 
-const Button = styled.button`
+const ActionBtn = styled.button`
   border-radius: 10px;
   background-color: rgb(129, 52, 201);
   padding: 10px;
@@ -22,7 +22,7 @@ function SignUpBtn() {
 
     <Link to="/signup">
       <div className="sign-up">
-        <Button onClick={goToSignUpPage}>Sign up</Button>
+        <ActionBtn onClick={goToSignUpPage}>Sign up</ActionBtn>
       </div>
 
     </Link>
