@@ -71,7 +71,7 @@ function Login() {
     
 
   return (
-    <div className="login">
+    <div className="login-section">
       <div className="background-image">
         <p className='bluma-tag'>Bluma</p>
         <p className='africa'>Africa</p>
