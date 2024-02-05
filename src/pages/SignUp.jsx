@@ -6,7 +6,6 @@ import * as Yup from 'yup'
 import '../pages/SignUp.css'
 import { Modal } from "@mui/material";
 import Box from '@mui/material/Box';
-import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 
 function SignUp() {
@@ -118,7 +117,6 @@ function SignUp() {
                 value={values.username}
                 name="username"
                 onChange={handleChange}
-                // onChange={(e) => setInitialValue({ ...initialValue, username: e.target.value})}
                 onBlur={handleBlur}
             />
             <br />
@@ -194,3 +192,4 @@ function SignUp() {
 }
 
 export default SignUp;
+

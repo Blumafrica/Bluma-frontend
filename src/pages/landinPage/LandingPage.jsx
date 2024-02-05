@@ -7,10 +7,12 @@ import postImg from "../../LandingComponent/assets/rectangle2.svg";
 import FestivalSlideShow from "../../LandingComponent/festivalsSlide/FestivalSlideShow";
 import Footer from "../../LandingComponent/footer";
 import { useState, useCallback } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { posts } from "../../posts";
 import "./landingpage.css";
 import axios from "axios";
+
+
 function LandingPage() {
   const [post, setPosts] = useState([]);
   const [user, setUser] = useState();
@@ -20,7 +22,7 @@ function LandingPage() {
   const [id, setId] = useState("");
   const navigate = useNavigate();
   let data = {};
-  const maxWord =400;
+  const maxWord = 400;
   async function getPost(e) {
     e.priventDefault();
     try {
@@ -97,15 +99,17 @@ function LandingPage() {
 
       <div className="card-section">
         {posts.slice(0, 4).map((post) => (
-          <Card
-            heading={post.title}
-            coverPic={post.imgUrl}
-            description={
-              post.content && post.content.length > maxWord
-                ? `${post.content.substring(0, maxWord)}............`
-                : post.content
-            }
-          />
+          <Link to={`/PostView/${post.id-1}`}>
+            <Card
+              heading={post.title}
+              coverPic={post.imgUrl}
+              description={
+                post.content && post.content.length > maxWord
+                  ? `${post.content.substring(0, maxWord)}............`
+                  : post.content
+              }
+            />
+          </Link>
         ))}
       </div>
       <FestivalSlideShow />
