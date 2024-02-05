@@ -1,17 +1,14 @@
 
+
 import '../pages/login.css'
 import { useState } from "react";
 import React from 'react';
 import { useFormik, Formik } from "formik";
-import {Link} from "react-router-dom"
-import { useAuth } from "../hooks/AuthenticationProvider";
-import axios from "axios";
 import * as Yup from 'yup';
 import { Modal } from "@mui/material";
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
-
 
 function Login() {
  
@@ -74,7 +71,7 @@ function Login() {
     
 
   return (
-    <div className="login">
+    <div className="login-section">
       <div className="background-image">
         <p className='bluma-tag'>Bluma</p>
         <p className='africa'>Africa</p>

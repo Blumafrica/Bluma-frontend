@@ -11,7 +11,7 @@ function Card(props) {
   return (
     <div id="card" className={props.class}>
       <img src={props.coverPic} alt="" className="cover-pic" />
-      <div className="container">
+      <div className="card-container">
       <h2>{props.heading}</h2>
       <h5>{props.description}</h5>
       <p>{props.summary}</p>

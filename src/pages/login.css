@@ -1,5 +1,5 @@
 
-.login{
+.login-section{
     width: 40rem;
     height: 30rem;
     box-shadow: 10px 10px 10px 10px grey;
@@ -42,8 +42,6 @@
 .button{
     width: 5rem;
     height: 4rem;
-    /* border-radius: 14px 15px 15px 15px;
-     */
      box-shadow: 10px red;
     background-image: rgb(219, 14, 219);
     color: white;

@@ -1,3 +1,4 @@
+
 {
   "name": "bluma-frontend-project",
   "version": "0.1.0",
@@ -52,3 +53,4 @@
     "tailwindcss": "^3.3.6"
   }
 }
+
