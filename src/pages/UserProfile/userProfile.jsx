@@ -103,17 +103,17 @@ const Profile = () => {
     useEffect(() => {
         const formattedDate = new Date().toLocaleDateString();
         setCurrentDate(formattedDate);
-    }, []); // Fixed the dependency array
+    }, []); 
 
     useEffect(() => {
         const fetchData = async () => {
-            const token = "your_valid_token"; // Replace with a valid token
+            const token = "your_valid_token"; 
             try {
                 const response = await axios.post(
                     "http://localhost:8080/api/v1/user/profile",
                     { fullName, age, gender, contact, about },
                     {
-                        "Content-Type": "application/json", // Fixed header
+                        "Content-Type": "application/json", 
                         Authorization: `Bearer ${token}`,
                     }
                 );
@@ -124,7 +124,7 @@ const Profile = () => {
         };
 
         fetchData();
-    }, [fullName, age, gender, contact, about]); // Added dependencies
+    }, [fullName, age, gender, contact, about]); 
 
     return (
         <MainContainer>
