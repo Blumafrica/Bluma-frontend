@@ -48,7 +48,7 @@ function Login() {
 
   async function logIn( userData ) {
     try {
-      const response = await fetch("/api/v1/user/login", {
+      const response = await fetch("http://localhost:8080/api/v1/user/login/", {
         method: 'POST',
          headers : {"Content-Type" : "application/json"},
         body: JSON.stringify(userData)
@@ -58,6 +58,7 @@ function Login() {
         const {userId, userAuthority} = response.json()
         localStorage.setItem("userId", userId);
         localStorage.setItem("userAuthority" , userAuthority)
+        
       }
     }catch(error){
       setError(error.message)
@@ -99,14 +100,19 @@ function Login() {
           ></input>
           <button className="submit" onClick={handleSubmit}>Submit</button>
          </form>
-         {openModal? 
-         <Modal>
+         {openModal ? 
+         <Modal
+         open={openModal}
+         onClose={handleClose}
+         aria-labelledby="modal-modal-title"
+            aria-describedby="modal-modal-description"
+         >
           <Box sx={style}>
               <Typography id="modal-modal-title" variant="h6" component="h2">
                 Error has occur
               </Typography>
               <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-                {error}
+                error message: {error}
               </Typography>
             </Box>
           </Modal>

@@ -56,7 +56,7 @@ function SignUp() {
   }, [navigate]);
 
   async function signUp() {
-     let url = 'http://localhost:8080/api/v1/user/register'
+     let url = 'http://localhost:8080/api/v1/user/register/'
       try {
         const response = await axios.post(
             // "https://blumafricabackend-production.up.railway.app/api/v1/user/register",
@@ -175,7 +175,7 @@ function SignUp() {
                 Error has occur
               </Typography>
               <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-                {error}
+                error message: {error}
               </Typography>
             </Box>
           </Modal>
