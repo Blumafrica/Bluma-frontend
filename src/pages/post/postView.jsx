@@ -10,6 +10,10 @@ import Footer from "../../LandingComponent/footer";
 import styled from "styled-components";
 import { posts } from "../../posts";
 import FavoriteIcon from '@mui/icons-material/Favorite';
+import { Modal } from "@mui/material";
+import Box from '@mui/material/Box';
+import Typography from '@mui/material/Typography';
+
 
 const StyledFavoriteBorderIcon = styled(FavoriteIcon)`
   color: ${(props) => (props.likeState ? "rgb(129, 52, 201)" : "black")};
@@ -26,13 +30,32 @@ const LikeBtn = styled.button``;
 const NoOfLikes = styled.span``;
 const NofComments = styled.span``;
 
+
+const style = {
+  position: 'absolute' ,
+  top: '50%',
+  left: '50%',
+  transform: 'translate(-50%, -50%)',
+  width: 800,
+  bgcolor: 'background.paper',
+  border: '1px solid #000',
+  borderRadius: "15px 15px 15px 15px",
+  boxShadow: 24,
+  p: 4,
+  // objectWrap  
+};
+
 function PostView() {
   const { id } = useParams();
   const [commentSecDis, setcommentSecDis] = useState(false);
   const [isLiked, setIsLiked] = useState(false);
   const [noOfLikes, setNoOfLikes] = useState(0);
   const [noOfComments, setNoOfComments] = useState(0);
-
+  const [openModal, setOpenModal] = React.useState(false)
+  const handleClose = () => setOpenModal(false)
+  const handleOpen = (state) => setOpenModal(state)
+  const [content, setContent] = useState("write something....")
+ 
   function showCommentBox() {
     setcommentSecDis(!commentSecDis);
   }
@@ -45,6 +68,13 @@ function PostView() {
       setIsLiked(false);
       setNoOfLikes(noOfLikes - 1);
     }
+  }
+
+  function openComent () {
+    {handleOpen(true)}
+  }
+  function handleContent (e)  {
+    setContent(e.target.value)
   }
 
   return (
@@ -70,7 +100,7 @@ function PostView() {
         <span className="lines"></span>
         <h1>{posts[id].title}</h1>
         <div className="text-content">{posts[id].content}</div>
-        <CommentBtn onClick={showCommentBox}>
+        <CommentBtn onClick={openComent}>
           <MarkChatReadOutlined />
         </CommentBtn>
         <NofComments>{noOfComments}</NofComments>
@@ -79,6 +109,25 @@ function PostView() {
         </LikeBtn>
         <NoOfLikes>{noOfLikes + posts[id].likeCount}</NoOfLikes>
         <CommentBox status={commentSecDis}></CommentBox>
+         
+        {
+            openModal ? 
+            <Modal
+            open={openModal}
+            onClose={handleClose}
+            aria-labelledby="modal-modal-title"
+            aria-describedby="modal-modal-description"
+          >
+            <Box sx={style}>
+                 <div >
+                     <div>{content}</div><br></br>
+                     <input className="input" onChange={handleContent}></input><br></br>
+                     <button className="commentButton">comment</button>
+                 </div>
+            </Box>
+          </Modal>
+          :null
+          }
       </div>
       <Footer />
     </div>

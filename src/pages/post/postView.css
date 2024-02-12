@@ -8,6 +8,10 @@
     border: 1px solid rgb(209, 203, 203);
     margin-top: 2rem;
 }
+.input{
+    width: 80%;
+
+}
 .post-view .lines{
     height: 3px;
     background-color: rgb(42, 41, 41);
