@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useMemo } from "react";
 import BlumaLogo from "../../LandingComponent/Button&Search/BlumaLogo";
 import Notification from "../../LandingComponent/notification/Notification";
 import { NavLink, useParams } from "react-router-dom";
@@ -49,15 +49,18 @@ const style = {
 
 function PostView() {
   const { id } = useParams();
+  
   const [commentSecDis, setcommentSecDis] = useState(false);
   const [isLiked, setIsLiked] = useState(false);
   const [noOfLikes, setNoOfLikes] = useState(0);
   const [noOfComments, setNoOfComments] = useState(0);
   const [openModal, setOpenModal] = React.useState(false)
+  const [isComment, setIsComment] = React.useState(false)
+  const showComment = () => setIsComment(true)
   const handleClose = () => setOpenModal(false)
   const handleOpen = (state) => setOpenModal(state)
   const [content, setContent] = useState("write something....")
-  const list = []
+  const [list, setList] = useState(["cnmndmd", "flo mili ", "never wanna lose me"])
  
   function showCommentBox() {
     setcommentSecDis(!commentSecDis);
@@ -76,21 +79,49 @@ function PostView() {
   function openComent () {
     {handleOpen(true)}
   }
+
+  
   function handleContent (e)  {
     setContent(e.target.value)
+    console.log("content", content);
+    {showComment()}
   }
 
 
-  function getComments () {
-    list.map((comment, position) => {
-       return (
-        <div className="eachComent">
-            <div className="imgCard">
-                <img></img>
-            </div>
+  const getComments =  useMemo(() => {
+    console.log(" at get list ==>  ", list)
+    console.log("at get lenght ---> ", list.length);
+      let time = new Date();
+      let now = time.getTime();
+       return list.map((comment, position) => (
+       <div>
+          <div className="eachComent" key={position}>
+            <img className="images" src={Roddy}></img>
+         <div>
+          <div>
+          <div className="nametime">
+             <p>username</p> <p>{position} </p><p>{now}</p>
+         </div>
+         <div className="userComment">
+           {comment}
+          </div>
+          </div>
+         
         </div>
-       )
-    })
+       </div>
+      </div>
+      ))
+    
+   
+  }, [list, ])
+
+  const createComment = () => {
+    // list.push(content)
+    setList([...list, content])
+    console.log("list after add ==z> ", list, "length" , list.length);
+    {handleClose()}
+    // {getComments()}
+
   }
   
 
@@ -120,7 +151,7 @@ function PostView() {
         <CommentBtn onClick={openComent}>
           <MarkChatReadOutlined />
         </CommentBtn>
-        <NofComments>{noOfComments}</NofComments>
+        <NofComments>{list.length}</NofComments>
         <LikeBtn onClick={toogleLikeBtn}>
           <StyledFavoriteBorderIcon likeState={isLiked} />
         </LikeBtn>
@@ -139,7 +170,7 @@ function PostView() {
                  <div >
                      <div>{content}</div><br></br>
                      <input className="inputs" onChange={handleContent}></input>
-                     <button className="commentButton">comment</button>
+                     <button className="commentButton" onClick={createComment}>comment</button>
                  </div>
             </Box>
           </Modal>
@@ -147,18 +178,33 @@ function PostView() {
           }
       </div>
       <div className="commentSection">
-        comment
-        <div className="eachComent">
-            <div className="imgCard">
-                <img className="image" src={Roddy}></img>
+        number of comment: {list.length}
+        {/* www %
+        <div>{getComments}</div>
+        wsuhwusiw */}
+        <div>{getComments}</div>
+        {/* <>
+
+        {list.map((comment, position) => (
+         <div>
+            <div className="eachComent" key={position}>
+              <img className="images" src={Roddy}></img>
+           <div>
+            <div>
+            <div className="nametime">
+               <p>username</p> <p>ieieie</p>
+           </div>
+           <div className="userComment">
+             {comment}
             </div>
-        </div>
-        <div className="eachComent">
-            <div className="imgCard">
-                <img src={Roddy}></img>
             </div>
-        </div>
            
+          </div>
+         </div>
+        </div>
+        ))}
+        </> */}
+
       </div>
       <Footer />
     </div>
