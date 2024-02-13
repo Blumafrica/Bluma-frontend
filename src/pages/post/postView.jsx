@@ -13,6 +13,7 @@ import FavoriteIcon from '@mui/icons-material/Favorite';
 import { Modal } from "@mui/material";
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
+import Roddy from '../../images/roddy-dec-14.jpg'
 
 
 const StyledFavoriteBorderIcon = styled(FavoriteIcon)`
@@ -42,7 +43,8 @@ const style = {
   borderRadius: "15px 15px 15px 15px",
   boxShadow: 24,
   p: 4,
-  // objectWrap  
+  wordWrap: "break-word",
+
 };
 
 function PostView() {
@@ -55,6 +57,7 @@ function PostView() {
   const handleClose = () => setOpenModal(false)
   const handleOpen = (state) => setOpenModal(state)
   const [content, setContent] = useState("write something....")
+  const list = []
  
   function showCommentBox() {
     setcommentSecDis(!commentSecDis);
@@ -76,6 +79,20 @@ function PostView() {
   function handleContent (e)  {
     setContent(e.target.value)
   }
+
+
+  function getComments () {
+    list.map((comment, position) => {
+       return (
+        <div className="eachComent">
+            <div className="imgCard">
+                <img></img>
+            </div>
+        </div>
+       )
+    })
+  }
+  
 
   return (
     <div className="post-view">
@@ -121,13 +138,27 @@ function PostView() {
             <Box sx={style}>
                  <div >
                      <div>{content}</div><br></br>
-                     <input className="input" onChange={handleContent}></input><br></br>
+                     <input className="inputs" onChange={handleContent}></input>
                      <button className="commentButton">comment</button>
                  </div>
             </Box>
           </Modal>
           :null
           }
+      </div>
+      <div className="commentSection">
+        comment
+        <div className="eachComent">
+            <div className="imgCard">
+                <img className="image" src={Roddy}></img>
+            </div>
+        </div>
+        <div className="eachComent">
+            <div className="imgCard">
+                <img src={Roddy}></img>
+            </div>
+        </div>
+           
       </div>
       <Footer />
     </div>
