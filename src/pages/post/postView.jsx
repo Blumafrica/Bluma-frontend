@@ -100,7 +100,7 @@ function PostView() {
          <div>
           <div>
           <div className="nametime">
-             <p>username</p> <p>{position} </p><p>{now}</p>
+             <p>username</p> <p>{position} </p><p>{now}</p><p>p</p>
          </div>
          <div className="userComment">
            {comment}
