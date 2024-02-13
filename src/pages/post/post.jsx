@@ -1,3 +1,4 @@
+
 import BlumaLogo from "../../LandingComponent/Button&Search/BlumaLogo";
 import { NavLink, useLocation } from "react-router-dom";
 import Notification from "../../LandingComponent/notification/Notification";
@@ -129,3 +130,4 @@ function Post() {
 }
 
 export default Post;
+

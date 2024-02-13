@@ -48,7 +48,8 @@ function Login() {
 
   async function logIn( userData ) {
     try {
-      const response = await fetch("http://localhost:8080/api/v1/user/login/", {
+      // const response = await fetch("http://localhost:8080/api/v1/user/login/", {
+      const response = await fetch("/api/v1/user/login", {
         method: 'POST',
          headers : {"Content-Type" : "application/json"},
         body: JSON.stringify(userData)
@@ -58,7 +59,7 @@ function Login() {
         const {userId, userAuthority} = response.json()
         localStorage.setItem("userId", userId);
         localStorage.setItem("userAuthority" , userAuthority)
-        
+
       }
     }catch(error){
       setError(error.message)
@@ -72,6 +73,7 @@ function Login() {
 
   return (
     <div className="login">
+    <div className="login-section">
       <div className="background-image">
         <p className='bluma-tag'>Bluma</p>
         <p className='africa'>Africa</p>
@@ -113,10 +115,12 @@ function Login() {
               </Typography>
               <Typography id="modal-modal-description" sx={{ mt: 2 }}>
                 error message: {error}
+                {error}
               </Typography>
             </Box>
           </Modal>
          : null}
+         </div>
          </div>
          )
 
@@ -129,4 +133,4 @@ function Login() {
 
 
  
-    
+

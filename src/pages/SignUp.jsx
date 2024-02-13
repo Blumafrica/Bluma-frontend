@@ -6,6 +6,17 @@ import * as Yup from 'yup'
 import '../pages/SignUp.css'
 import { Modal } from "@mui/material";
 import Box from '@mui/material/Box';
+
+// import React, { useState, useCallback } from "react";
+// import axios from "axios";
+// import { useNavigate } from "react-router-dom";
+// import { useFormik } from "formik";
+// import * as Yup from 'yup';
+// import '../pages/SignUp.css'
+// import { Modal } from "@mui/material";
+// import Box from '@mui/material/Box';
+// import Button from '@mui/material/Button';
+
 import Typography from '@mui/material/Typography';
 
 function SignUp() {
@@ -143,16 +154,8 @@ function SignUp() {
                 onBlur={handleBlur}
             />
             <p className="error">{errors.confirmPassword}</p>
-           < input
-                        className="m-2 p-4 w-4/5 rounded-xl border-2 border-purple-400 bg-transparent text-center text-xl"
-                        type="password"
-                        placeholder="Confirm Password"
-                        name="confirmPassword"
-                        value={values.confirmPassword}
-                        onChange={handleChange}
-                        onBlur={handleBlur}
-                    />
-            <br />
+           {/* < input
+            // <br /> */}
            
             <input
                 type="submit"
@@ -193,3 +196,44 @@ function SignUp() {
 
 export default SignUp;
 
+// =======
+//                     <br />
+//                     <input
+//                         type="submit"
+//                         className="m-2 p-4 w-4/5 rounded-xl border-2 border-purple-400 bg-purple-400 text-center text-xl"
+//                         onClick={handleSubmit}
+//                     />
+
+                    {/*<Button*/}
+                    {/*    variant="contained"*/}
+                    {/*    className="m-2 p-4 w-4/5 rounded-xl bg-purple-400 text-center text-xl"*/}
+                    {/*    onClick={handleSubmit}*/}
+                    {/*>*/}
+                    {/*    Submit*/}
+                    {/*</Button>*/}
+                // </form>
+                // {openModal &&
+                //     <Modal
+                //         open={openModal}
+                //         onClose={handleClose}
+                //         aria-labelledby="modal-modal-title"
+//                         aria-describedby="modal-modal-description"
+//                     >
+//                         <Box sx={style}>
+//                             <Typography id="modal-modal-title" variant="h6" component="h2">
+//                                 Error has occurred
+//                             </Typography>
+//                             <Typography id="modal-modal-description" sx={{ mt: 2 }}>
+//                                 {error}
+//                             </Typography>
+//                         </Box>
+//                     </Modal>
+//                 }
+
+//             </div>
+//         </div>
+//     );
+// }
+
+// export default SignUp;
+// >>>>>>> 226180f188863ef91080481a5adbd8a59bd1e386

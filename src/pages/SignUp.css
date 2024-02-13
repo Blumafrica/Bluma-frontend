@@ -22,7 +22,7 @@
 .image {
     height: 40rem;
     width: 35rem;
-    background-image: linear-gradient(purple, rgb(241, 132, 241));
+    background-image: linear-gradient(purple, rgb(86, 66, 175));
     display: table-row;
     border-radius: 15px 15px;
 }
