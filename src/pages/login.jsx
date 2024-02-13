@@ -1,5 +1,4 @@
 
-
 import '../pages/login.css'
 import { useState } from "react";
 import React from 'react';
@@ -49,6 +48,7 @@ function Login() {
 
   async function logIn( userData ) {
     try {
+      // const response = await fetch("http://localhost:8080/api/v1/user/login/", {
       const response = await fetch("/api/v1/user/login", {
         method: 'POST',
          headers : {"Content-Type" : "application/json"},
@@ -59,6 +59,7 @@ function Login() {
         const {userId, userAuthority} = response.json()
         localStorage.setItem("userId", userId);
         localStorage.setItem("userAuthority" , userAuthority)
+
       }
     }catch(error){
       setError(error.message)
@@ -71,6 +72,7 @@ function Login() {
     
 
   return (
+    <div className="login">
     <div className="login-section">
       <div className="background-image">
         <p className='bluma-tag'>Bluma</p>
@@ -100,18 +102,25 @@ function Login() {
           ></input>
           <button className="submit" onClick={handleSubmit}>Submit</button>
          </form>
-         {openModal? 
-         <Modal>
+         {openModal ? 
+         <Modal
+         open={openModal}
+         onClose={handleClose}
+         aria-labelledby="modal-modal-title"
+            aria-describedby="modal-modal-description"
+         >
           <Box sx={style}>
               <Typography id="modal-modal-title" variant="h6" component="h2">
                 Error has occur
               </Typography>
               <Typography id="modal-modal-description" sx={{ mt: 2 }}>
+                error message: {error}
                 {error}
               </Typography>
             </Box>
           </Modal>
          : null}
+         </div>
          </div>
          )
 
@@ -120,3 +129,8 @@ function Login() {
 }
 
   export default Login;
+
+
+
+ 
+
