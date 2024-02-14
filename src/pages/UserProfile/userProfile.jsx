@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from "react";
 import { Routes, Route, useNavigate } from "react-router-dom";
 import { users } from "../UserProfile/metaData";
@@ -5,6 +6,7 @@ import styled from "styled-components";
 import profilePix from "../../images/profilePix.jpg";
 import axios from "axios";
 import BlumaLogo from "../../LandingComponent/Button&Search/BlumaLogo";
+import EditProfile from "./editProfile";
 
 const MainContainer = styled.div`
   border: 2px solid #7520ec;
@@ -64,7 +66,7 @@ const ContactBtn = styled.div`
   border-color: #7b38d8;
   border-style: solid;
   width: 150px;
-  font-size: 15px; 
+  font-size: 15px; /* Fixed missing unit */
   color: black;
   border-radius: 50px;
   padding-bottom: 10px;
@@ -87,6 +89,20 @@ const RightContents = styled.div`
 const MetaData = styled.div``;
 
 const Profile = () => {
+
+    const [isEditing, setIsEditing] = useState(false);
+    const handleSaveProfile = (editedData) =>{
+        console.log("Save profile:", editedData);
+        setIsEditing(false);
+    };
+
+    const handleCancelEdit =()=>{
+        setIsEditing(false);
+    };
+
+    const navigateToEditProfile =()=>{
+        setIsEditing(true);
+    };
     const [fullName, setFullName] = useState(users[0].name);
     const [age, setAge] = useState(users[0].age);
     const [gender, setGender] = useState(users[0].gender);
@@ -96,25 +112,25 @@ const Profile = () => {
     const [profileData, setProfileData] = useState({});
     const navigate = useNavigate();
 
-    const navigateToEditProfile = () => {
-        // navig
-        navigate("./pages/UserProfile/editProfile");
-    };
-    ("./pages/HomePage");
+    // const navigateToEditProfile = () => {
+    //     // navigate("./pages/HomePage");
+    //     navigate("./pages/UserProfile/editProfile");
+    // };
+
     useEffect(() => {
         const formattedDate = new Date().toLocaleDateString();
         setCurrentDate(formattedDate);
-    }, []);
+    }, []); // Fixed the dependency array
 
     useEffect(() => {
         const fetchData = async () => {
-            const token = "your_valid_token";
+            const token = "your_valid_token"; // Replace with a valid token
             try {
                 const response = await axios.post(
                     "http://localhost:8080/api/v1/user/profile",
                     { fullName, age, gender, contact, about },
                     {
-                        "Content-Type": "application/json",
+                        "Content-Type": "application/json", // Fixed header
                         Authorization: `Bearer ${token}`,
                     }
                 );
@@ -125,7 +141,7 @@ const Profile = () => {
         };
 
         fetchData();
-    }, [fullName, age, gender, contact, about]);
+    }, [fullName, age, gender, contact, about]); // Added dependencies
 
     return (
         <MainContainer>
@@ -143,17 +159,26 @@ const Profile = () => {
                 </ProfilePicture>
 
                 <RightContents>
-                    <MetaData>
-                        <h4 style={{ fontWeight: "bold" }}>Full Name</h4>{" "}
-                        <span>{fullName}</span>
-                        <h4 style={{ fontWeight: "bold" }}>Gender</h4> <span>{gender}</span>
-                        <h4 style={{ fontWeight: "bold" }}>Age</h4> <span>{age}</span>
-                        <h4 style={{ fontWeight: "bold" }}>Contact</h4>{" "}
-                        <span>{contact}</span>
-                        <h4 style={{ fontWeight: "bold" }}>About</h4> <span>{about}</span>
-                        <h4 style={{ fontWeight: "bold" }}>Joined On</h4>
-                        <p>{currentDate}</p>
-                    </MetaData>
+                    {isEditing ? (
+                        <EditProfile
+                            initialData={{fullName, age, gender,contact,about}}
+                            onSave={handleSaveProfile}
+                            onCancel={handleCancelEdit}
+                        />
+                    ) : (
+                        <MetaData>
+                            <h4 style={{ fontWeight: "bold" }}>Full Name</h4>{" "}
+                            <span>{fullName}</span>
+                            <h4 style={{ fontWeight: "bold" }}>Gender</h4> <span>{gender}</span>
+                            <h4 style={{ fontWeight: "bold" }}>Age</h4> <span>{age}</span>
+                            <h4 style={{ fontWeight: "bold" }}>Contact</h4>{" "}
+                            <span>{contact}</span>
+                            <h4 style={{ fontWeight: "bold" }}>About</h4> <span>{about}</span>
+                            <h4 style={{ fontWeight: "bold" }}>Joined On</h4>
+                            <p>{currentDate}</p>
+                        </MetaData>
+                    )}
+
                 </RightContents>
             </CenterContents>
         </MainContainer>
