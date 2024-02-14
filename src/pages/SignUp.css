@@ -7,12 +7,12 @@
 .sign-up-section {
     width: 60rem;
     height: 40rem;
-    box-shadow: 10px 10px 10px 10px grey;
+    box-shadow: 10px 10px 10px 10px rgb(211, 210, 210);
     border-radius: 15px 15px 15px 15px;
     display: flex;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 3rem;
+    margin-top: 8rem;
 }
 .input-field{
     height: 40rem;
