@@ -1,0 +1,10 @@
+
+.posts{
+    height: 40rem;
+    width: 99%;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: rgb(209, 130, 219);
+    box-shadow: 15px 15px 15px 15px rgb(201, 196, 196);
+    border-radius: 15px 15px 15px 15px ;
+}

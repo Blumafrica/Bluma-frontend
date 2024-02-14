@@ -3,12 +3,16 @@ import HomeHeader from "../layout/HomeHeader"
 import background from "../images/background.jpg";
 import ColumnPage from "../component/ColumnPage";
 import Footer from "../layout/Footer";
+import "../layout/HomePage.css"
 
 
 export default function Homepage(){
     return(
         <>
         <HomeHeader />
+        <div className="posts">
+           uhuhijlioj
+        </div>
         {/* <div class="relative">
             <div class="brightness-">
                 <img class="w-screen h-fit brightness-75 brigh bg-fixed" src={background} alt="slide"></img>
@@ -37,7 +41,7 @@ export default function Homepage(){
             </div>
 
         </div> */}
-        <ColumnPage />
+        {/* <ColumnPage /> */}
         <div class="bg-black text-white p-3">
             <div class="grid grid-cols-2 p-4">
             <div class="p-2">
