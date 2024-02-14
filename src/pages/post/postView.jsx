@@ -2,8 +2,6 @@ import React, { useState, useMemo } from "react";
 import BlumaLogo from "../../LandingComponent/Button&Search/BlumaLogo";
 import Notification from "../../LandingComponent/notification/Notification";
 import { NavLink, useParams } from "react-router-dom";
-import img from "../../LandingComponent/assets/rectangle2.svg";
-import like from "../../LandingComponent/assets/like 1.svg";
 import "./postView.css";
 import { MarkChatReadOutlined} from "@mui/icons-material";
 import Footer from "../../LandingComponent/footer";
@@ -12,7 +10,6 @@ import { posts } from "../../posts";
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import { Modal } from "@mui/material";
 import Box from '@mui/material/Box';
-import Typography from '@mui/material/Typography';
 import Roddy from '../../images/roddy-dec-14.jpg'
 
 
@@ -116,11 +113,9 @@ function PostView() {
   }, [list, ])
 
   const createComment = () => {
-    // list.push(content)
     setList([...list, content])
     console.log("list after add ==z> ", list, "length" , list.length);
     {handleClose()}
-    // {getComments()}
 
   }
   
@@ -179,31 +174,9 @@ function PostView() {
       </div>
       <div className="commentSection">
         number of comment: {list.length}
-        {/* www %
         <div>{getComments}</div>
-        wsuhwusiw */}
-        <div>{getComments}</div>
-        {/* <>
-
-        {list.map((comment, position) => (
-         <div>
-            <div className="eachComent" key={position}>
-              <img className="images" src={Roddy}></img>
-           <div>
-            <div>
-            <div className="nametime">
-               <p>username</p> <p>ieieie</p>
-           </div>
-           <div className="userComment">
-             {comment}
-            </div>
-            </div>
-           
-          </div>
-         </div>
-        </div>
-        ))}
-        </> */}
+        
+        
 
       </div>
       <Footer />
