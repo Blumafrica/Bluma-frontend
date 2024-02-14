@@ -64,7 +64,7 @@ const ContactBtn = styled.div`
   border-color: #7b38d8;
   border-style: solid;
   width: 150px;
-  font-size: 15px; /* Fixed missing unit */
+  font-size: 15px; 
   color: black;
   border-radius: 50px;
   padding-bottom: 10px;
@@ -97,25 +97,25 @@ const Profile = () => {
     const navigate = useNavigate();
 
     const navigateToEditProfile = () => {
-        // navigate("./pages/HomePage");
+        // navig
         navigate("./pages/UserProfile/editProfile");
     };
-
+    ("./pages/HomePage");
     useEffect(() => {
         const formattedDate = new Date().toLocaleDateString();
         setCurrentDate(formattedDate);
-    }, []); // Fixed the dependency array
+    }, []);
 
     useEffect(() => {
         const fetchData = async () => {
-            const token = "your_valid_token"; // Replace with a valid token
+            const token = "your_valid_token";
             try {
                 const response = await axios.post(
                     "http://localhost:8080/api/v1/user/profile",
                     { fullName, age, gender, contact, about },
                     {
-                        "Content-Type": "application/json", // Fixed header
-                        Authorization: Bearer ${token},
+                        "Content-Type": "application/json",
+                        Authorization: `Bearer ${token}`,
                     }
                 );
                 setProfileData(response.data);
@@ -125,7 +125,7 @@ const Profile = () => {
         };
 
         fetchData();
-    }, [fullName, age, gender, contact, about]); // Added dependencies
+    }, [fullName, age, gender, contact, about]);
 
     return (
         <MainContainer>

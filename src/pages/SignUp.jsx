@@ -45,11 +45,11 @@ function SignUp() {
                     }
                 );
 
-                const { id, message, token } = response.data;
+                const { id, message, token,authority } = response.data;
                 localStorage.setItem("authToken", token);
-                console.log("Message -> ", message);
-                console.log("Token -> ", token);
-                console.log("Id -> ", id);
+                localStorage.setItem("User_Id", id);
+                localStorage.setItem("authority", authority);
+                console.log(message)
                 navigateToHomePage(id);
             } catch (err) {
                 console.error(err);
