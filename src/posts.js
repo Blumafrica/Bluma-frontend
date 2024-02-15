@@ -84,6 +84,45 @@ export const posts = [
     content:
       "Nigeria's cultural vibrancy is manifested in its diverse festivals and celebrations, each reflecting the unique traditions of various ethnic groups. From the colorful and energetic Durbar festival in the north to the flamboyant and rhythmic Carnival in the south, these celebrations are a testament to the richness of Nigeria's cultural mosaic. Festivals serve as occasions for communal bonding, expressions of spirituality, and showcases of artistic prowess. They bring people together, transcending linguistic and regional boundaries, and offer a platform for the preservation and promotion of cultural values, ensuring that the spirit of celebration remains an integral part of Nigeria's identity",
   },
+  {id: 9,
+  posterId: 2,
+  likeCount: 21,
+  commentCount: 1,
+  title: "Our beautify country",
+  imgUrl: festivalCelebration,
+  content: 
+  "Nigeria's cultural richness is encapsulated in its vibrant oral tradition, where stories, myths, and histories are passed down through generations with an artistry that transcends time. Elders become living repositories of wisdom, narrating tales that connect the past with the present. This oral tradition is a living testament to Nigeria's diverse heritage, encapsulating the nuances of different ethnic groups. Through the rhythmic cadence of storytelling, values, moral lessons, and cultural pride are preserved, ensuring that the essence of Nigeria's history remains alive in the collective memory of its people.",
+
+},
+{id: 9,
+  posterId: 2,
+  likeCount: 21,
+  commentCount: 1,
+  title: "Our  country",
+  imgUrl: festivalCelebration,
+  content: 
+  "Nigeria's cultural richness is encapsulated in its vibrant oral tradition, where stories, myths, and histories are passed down through generations with an artistry that transcends time. Elders become living repositories of wisdom, narrating tales that connect the past with the present. This oral tradition is a living testament to Nigeria's diverse heritage, encapsulating the nuances of different ethnic groups. Through the rhythmic cadence of storytelling, values, moral lessons, and cultural pride are preserved, ensuring that the essence of Nigeria's history remains alive in the collective memory of its people.",
+
+},
+{id: 9,
+  posterId: 2,
+  likeCount: 21,
+  commentCount: 1,
+  title: "Our ",
+  imgUrl: festivalCelebration,
+  content: 
+  "Nigeria's cultural richness is encapsulated in its vibrant oral tradition, where stories, myths, and histories are passed down through generations with an artistry that transcends time. Elders become living repositories of wisdom, narrating tales that connect the past with the present. This oral tradition is a living testament to Nigeria's diverse heritage, encapsulating the nuances of different ethnic groups. Through the rhythmic cadence of storytelling, values, moral lessons, and cultural pride are preserved, ensuring that the essence of Nigeria's history remains alive in the collective memory of its people.",
+
+},
+{id: 9,
+  posterId: 2,
+  likeCount: 21,
+  commentCount: 1,
+  title: "Our beautify ",
+  imgUrl: festivalCelebration,
+  content: 
+  "Nigeria's cultural richness is encapsulated in its vibrant oral tradition, where stories, myths, and histories are passed down through generations with an artistry that transcends time. Elders become living repositories of wisdom, narrating tales that connect the past with the present. This oral tradition is a living testament to Nigeria's diverse heritage, encapsulating the nuances of different ethnic groups. Through the rhythmic cadence of storytelling, values, moral lessons, and cultural pride are preserved, ensuring that the essence of Nigeria's history remains alive in the collective memory of its people, Nigeria's cultural richness is encapsulated in its vibrant oral tradition, where stories, myths, and histories are passed down through generations with an artistry that transcends time. Elders become living repositories of wisdom, narrating tales that connect the past with the present. This oral tradition is a living testament to Nigeria's diverse heritage, encapsulating the nuances of different ethnic groups. Through the rhythmic cadence of storytelling, values, moral lessons, and cultural pride are preserved, ensuring that the essence of Nigeria's history remains alive in the collective memory of its people   Nigeria's cultural richness is encapsulated in its vibrant oral tradition, where stories, myths, and histories are passed down through generations with an artistry that transcends time. Elders become living repositories of wisdom, narrating tales that connect the past with the present. This oral tradition is a living testament to Nigeria's diverse heritage, encapsulating the nuances of different ethnic groups. Through the rhythmic cadence of storytelling, values, moral lessons, and cultural pride are preserved, ensuring that the essence of Nigeria's history remains alive in the collective memory of its people Nigeria's cultural richness is encapsulated in its vibrant oral tradition, where stories, myths, and histories are passed down through generations with an artistry that transcends time. Elders become living repositories of wisdom, narrating tales that connect the past with the present. This oral tradition is a living testament to Nigeria's diverse heritage, encapsulating the nuances of different ethnic groups. Through the rhythmic cadence of storytelling, values, moral lessons, and cultural pride are preserved, ensuring that the essence of Nigeria's history remains alive in the collective memory of its people  Nigeria's cultural richness is encapsulated in its vibrant oral tradition, where stories, myths, and histories are passed down through generations with an artistry that transcends time. Elders become living repositories of wisdom, narrating tales that connect the past with the present. This oral tradition is a living testament to Nigeria's diverse heritage, encapsulating the nuances of different ethnic groups. Through the rhythmic cadence of storytelling, values, moral lessons, and cultural pride are preserved, ensuring that the essence of Nigeria's history remains alive in the collective memory of its people  Nigeria's cultural richness is encapsulated in its vibrant oral tradition, where stories, myths, and histories are passed down through generations with an artistry that transcends time. Elders become living repositories of wisdom, narrating tales that connect the past with the present. This oral tradition is a living testament to Nigeria's diverse heritage, encapsulating the nuances of different ethnic groups. Through the rhythmic cadence of storytelling, values, moral lessons, and cultural pride are preserved, ensuring that the essence of Nigeria's history remains alive in the collective memory of its people.,"
+},
 ];
 // import React, { useState } from "react";
 // import axios from "axios";

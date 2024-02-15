@@ -1,10 +1,22 @@
 
+.card-section{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin: 5rem auto;
+    width: fit-content;
+    gap: 25px;
+}
 .posts{
-    height: 40rem;
+    height: auto;
     width: 99%;
     margin-left: auto;
     margin-right: auto;
-    background-color: rgb(209, 130, 219);
-    box-shadow: 15px 15px 15px 15px rgb(201, 196, 196);
+    /* background-color: rgb(209, 130, 219); */
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     border-radius: 15px 15px 15px 15px ;
+    margin-bottom: 10px;
+}
+
+.m-2{
+    margin-left: 20px;
 }

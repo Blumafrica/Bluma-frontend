@@ -58,6 +58,7 @@ function PostView() {
   const handleOpen = (state) => setOpenModal(state)
   const [content, setContent] = useState("write something....")
   const [list, setList] = useState(["cnmndmd", "flo mili ", "never wanna lose me"])
+  const [postId , setPostId] = useState()
  
   function showCommentBox() {
     setcommentSecDis(!commentSecDis);
@@ -91,7 +92,6 @@ function PostView() {
       let time = new Date();
       let now = time.getTime();
        return list.map((comment, position) => (
-       <div>
           <div className="eachComent" key={position}>
             <img className="images" src={Roddy}></img>
          <div>
@@ -99,14 +99,12 @@ function PostView() {
           <div className="nametime">
              <p>username</p> <p>{position} </p><p>{now}</p><p>p</p>
          </div>
-         <div className="userComment">
-           {comment}
-          </div>
+             {comment}
           </div>
          
         </div>
        </div>
-      </div>
+       
       ))
     
    
@@ -175,9 +173,6 @@ function PostView() {
       <div className="commentSection">
         number of comment: {list.length}
         <div>{getComments}</div>
-        
-        
-
       </div>
       <Footer />
     </div>

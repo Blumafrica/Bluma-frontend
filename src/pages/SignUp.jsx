@@ -8,9 +8,9 @@ import { useFormik } from "formik";
 import * as Yup from 'yup';
 import '../pages/SignUp.css';
 import Box from '@mui/material/Box';
-import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import Modal from '@mui/material/Modal';
+import Cookies from "js-cookie"
 
 function SignUp() {
     const navigate = useNavigate();
@@ -67,6 +67,9 @@ function SignUp() {
         localStorage.setItem("authToken", token);
         localStorage.setItem("User_Id", id);
         localStorage.setItem("authority", authority);
+        Cookies.set("userId", id)
+        Cookies.set("userAuthority", authority)
+        Cookies.set("userToken", token)
         console.log(message);
         navigateToHomePage(id);
     };
@@ -84,7 +87,7 @@ function SignUp() {
     };
 
     return (
-        <div className="sign-up">
+        <div className="sign-up-section">
             <div className="image">
                 <p className="bluma-tag">Bluma</p>
                 <p className="africa">Africa</p>
