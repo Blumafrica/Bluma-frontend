@@ -11,6 +11,8 @@ import FavoriteIcon from '@mui/icons-material/Favorite';
 import { Modal } from "@mui/material";
 import Box from '@mui/material/Box';
 import Roddy from '../../images/roddy-dec-14.jpg'
+import Thuy from '../../LandingComponent/assets/download (2).jpeg'
+import Cookies from "js-cookie";
 
 
 const StyledFavoriteBorderIcon = styled(FavoriteIcon)`
@@ -59,6 +61,7 @@ function PostView() {
   const [content, setContent] = useState("write something....")
   const [list, setList] = useState(["cnmndmd", "flo mili ", "never wanna lose me"])
   const [postId , setPostId] = useState()
+  const userId = Cookies.get("userId")
  
   function showCommentBox() {
     setcommentSecDis(!commentSecDis);
@@ -89,15 +92,15 @@ function PostView() {
   const getComments =  useMemo(() => {
     console.log(" at get list ==>  ", list)
     console.log("at get lenght ---> ", list.length);
-      let time = new Date();
-      let now = time.getTime();
+      console.log("userId ", userId)
+
        return list.map((comment, position) => (
           <div className="eachComent" key={position}>
             <img className="images" src={Roddy}></img>
          <div>
           <div>
           <div className="nametime">
-             <p>username</p> <p>{position} </p><p>{now}</p><p>p</p>
+             <p>username</p> <p>{position} </p><p></p><p>p</p>
          </div>
              {comment}
           </div>
@@ -130,6 +133,12 @@ function PostView() {
         <Notification />
       </nav>
       <div className="wrapper">
+        <div className="userInfo"> 
+           <img className="images" src={Thuy}></img>
+           <p className="p">username</p>
+           <p className="p">Time posted</p>
+          
+        </div>
         <div className="post-img">
           <img
             src={posts[id].imgUrl}

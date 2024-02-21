@@ -99,7 +99,7 @@ function LandingPage() {
 
       <div className="card-section">
         {posts.slice(0, 4).map((post) => (
-          <Link to={`/PostView/${post.id-1}`}>
+          <Link to={`/Login`}>
             <Card
               heading={post.title}
               coverPic={post.imgUrl}

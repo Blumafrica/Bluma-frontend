@@ -5,9 +5,26 @@
     align-items: center;
     text-align: center;
     padding: 2rem;
+    height: auto;
     /* border: 1px solid rgb(209, 203, 203); */
-    /* box-shadow:  rgba(0, 0, 0, 0.35) 0px 5px 15px; */
+    box-shadow:  rgba(0, 0, 0, 0.35) 0px 5px 15px;
     margin-top: 2rem;
+}
+.userInfo{
+    width: auto;
+    height: 8rem;
+    margin-bottom: 10px;
+    /* box-shadow:  rgba(0, 0, 0, 0.35) 0px 5px 15px; */
+    display: grid;
+    grid-template-columns: 10% 10% 20%;
+
+}
+.p{
+    margin-right: 70rem;
+    /* margin-bottom: 50px; */
+    background-color: blueviolet;
+    /* display: ; */
+    margin-top: 50px;
 }
 .inputs{
     width: 80%;

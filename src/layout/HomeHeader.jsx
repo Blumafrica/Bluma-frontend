@@ -40,7 +40,6 @@ export default function Header() {
                 <p className="words" > <img src={pic} alt="" style={{width:"30px"}} /></p>
 
                 </Link>
-                {/* <p className="words" onClick={navigateToUserProfile}> <img src={pic} alt="" style={{width:"30px"}} /></p> */}
                    
            </div>
       </header>

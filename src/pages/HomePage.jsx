@@ -5,9 +5,8 @@ import ColumnPage from "../component/ColumnPage";
 import axios from "axios";
 import { useMemo, useCallback, useState } from "react";
 import Card from "../LandingComponent/landingPageCard/Card";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { posts } from "../posts";
-// import pic from "../assets/profile.svg";
 import pic from "../LandingComponent/assets/profile.svg"
 
 import Footer from "../layout/Footer";
@@ -15,11 +14,14 @@ import "../layout/HomePage.css"
 
 
 export default function Homepage(){
-   const [Post, setPost] = useState([])
+   const [foundPosts, setFoundPosts] = useState([posts])
     const maxWord = 400;
-    const getPostUrl = ""
+    const getPostUrl = "http://localhost:3000/api/v1/getAdminPost"
+    const ur = "/getAdminPost";
+    const navigate = useNavigate()
 
    const fetchPost = async () => {
+    try{
     const response = await axios.get(
       getPostUrl,
       {headers: {
@@ -27,24 +29,34 @@ export default function Homepage(){
       },
         withCredentials: true}
     )
+    const posts = await response.json(); 
+    setFoundPosts(posts);
+      console.log( "received ==>", posts)
+      
+    }catch(error){
+      console.log("error ", error)
+    }
    
-
-
-         
-    
-
    }
-
+   const handlePost =  (para) => {
+        navigate("/PostArticle", {state: {value: para}})
+   }
     return(
         <>
         <HomeHeader />
+        {fetchPost}
         <div className="posts">
-           {/* <p className="words">Latest post</p> */}
-           <p className="m-2 p-4 w-4/5 text-purple-500 font-bold sm:text-2xl ">Latest posts</p>
+          <div className="const"> 
+            
+           <p className="m-2 p-4 w-4/5 text-purple-500 font-bold sm:text-2xl " onClick={fetchPost}>Latest posts</p>
+           {/* <p className="m-3 p-4 w-4/5 text-purple-500 font-bold sm:text-2xl " onClick={handlePost}>create post</p> */}
+           <button className="button">create post</button>
+          </div>
+
 
            <div className="card-section">
             {posts.slice(0, posts.length).map((post) => (
-          <Link to={`/PostView/${post.id-1}`}>
+          <Link to={`/PostView/${posts.id-1}`}>
             <Card
               heading={post.title}
               coverPic={post.imgUrl}

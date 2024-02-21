@@ -153,6 +153,8 @@ function SignUp() {
                         aria-describedby="modal-modal-description"
                     >
                         <Box sx={style}>
+                        <p onClick={handleClose}>X</p>
+
                             <Typography id="modal-modal-title" variant="h6" component="h2">
                                 Error has occurred
                             </Typography>
