@@ -10,6 +10,9 @@
     display: grid;
     grid-template-columns: 50% 50%;
 }
+.her{
+    display: block;
+}
 .posts{
     height: auto;
     width: 99%;
