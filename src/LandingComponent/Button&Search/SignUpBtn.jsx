@@ -6,11 +6,12 @@ const ActionBtn = styled.button`
   border-radius: 10px;
   background-color: rgb(129, 52, 201);
   padding: 10px;
-  font-size: 24px;
+  font-size: 20px;
+  width: 8rem; 
 
-  &:hover {
-    background-color: rgb(160, 95, 221);
-  }
+  // &:hover {
+  //   background-color: rgb(160, 95, 221);
+  // }
 `;
 
 function SignUpBtn() {

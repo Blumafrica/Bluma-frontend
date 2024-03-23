@@ -7,7 +7,7 @@ const Details = styled.div`
   flex: 5;
   justify-content: center;
   padding-left: 25px;
-  border: 2px dotted #7520ec;
+  // border: 2px dotted #7520ec;
 `;
 
 const Logo = styled.div`
@@ -17,7 +17,9 @@ const Logo = styled.div`
 const Container = styled.div`
   height: 100vh;
   padding: 5rem;
-  border: 2px solid #7520ec;
+  widht: 99%;
+  box-shadow: rgb(206, 206, 206) 0px 5px 15px;
+  // border: 2px solid #7520ec;
   background-color: ash;
 `;
 
@@ -64,7 +66,7 @@ const About = () => {
           </h2>
         </Details>
       </Container>
-      <Footer/>
+      {/* <Footer/> */}
     </>
   );
 };

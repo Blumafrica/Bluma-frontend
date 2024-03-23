@@ -102,19 +102,13 @@ function Login() {
                         onBlur={handleBlur}
                     ></input>
                     <button className="submit" onClick={handleSubmit}>Submit</button>
-                    {/* <p>Don't have an account? create account</p> */}
                     <Link to="/SignUp">
-                        <p>Don't have an account? create account</p>
+                        <div className='text-xl '>Don't have an account? create account</div>
 
                     </Link>
 
                 </form>
-                {/* </div> */}
-                {/* <Link to="/SignUp">
-                    <p>Don't have an account? create account</p>
-
-                </Link> */}
-                {/* <p>Don't have an account? create account</p> */}
+                
                 
                 {openModal ?
                     <Modal

@@ -1,9 +1,7 @@
 
 
 .header{
-    /* background-color: aquamarine; */
-    /* box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px; */
-    box-shadow: rgba(221, 116, 205) 0px 5px 15px;
+    box-shadow: rgb(206, 206, 206) 0px 5px 15px;
     border-radius: 15px 15px 15px 15px ;
     margin-bottom: 15px;
     margin-top: 15px;

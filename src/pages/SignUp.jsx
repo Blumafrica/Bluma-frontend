@@ -11,6 +11,7 @@ import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import Modal from '@mui/material/Modal';
 import Cookies from "js-cookie"
+import ClearIcon from '@mui/icons-material/Clear';
 
 function SignUp() {
     const navigate = useNavigate();
@@ -81,7 +82,8 @@ function SignUp() {
         transform: 'translate(-50%, -50%)',
         width: 400,
         backgroundColor: 'white',
-        border: '2px solid #000',
+        // border: '2px solid #000',
+        borderRadius: 2,
         boxShadow: '24px',
         p: 4,
     };
@@ -153,7 +155,7 @@ function SignUp() {
                         aria-describedby="modal-modal-description"
                     >
                         <Box sx={style}>
-                        <p onClick={handleClose}>X</p>
+                        <ClearIcon style={{marginLeft : '20rem', marginBottom: '5px'}} onClick={handleClose}/>
 
                             <Typography id="modal-modal-title" variant="h6" component="h2">
                                 Error has occurred

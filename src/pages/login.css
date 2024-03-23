@@ -2,7 +2,7 @@
 .login-section{
     width: 50rem;
     height: 35rem;
-    box-shadow: 10px 10px 10px 10px grey;
+    box-shadow: rgb(206, 206, 206) 0px 5px 15px;
     border-radius: 10px 10px 10px 10px;
     margin-left: auto;
     margin-right: auto;
@@ -56,11 +56,12 @@ m-3{
     border: 10px purple;
 }
 .submit{
-    background-color: rgb(241, 101, 230);
-    border-radius: 30px ;
+    background-color: rgb(192, 132, 252);
+    border-radius: 15px ;
     margin-top: 20px;
     margin-left: 10px;
-    width: 15rem;
-    height: 5rem;
-    border: 3px solid black;
+    width: 25rem;
+    height: 4.5rem;
+    /* color: white; */
+    /* border: 3px solid black; */
 }
