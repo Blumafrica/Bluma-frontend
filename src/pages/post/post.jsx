@@ -61,10 +61,10 @@ function Post() {
       console.log("post ID --> ", postId);
       console.log("post Owner --> ", userPostId);
       console.log("message --> ", message);
-      setPostSuccess(true);p
+      setPostSuccess(true);
     } catch (error) {
       console.error("Error:", error);
-    }p
+    }
   };
 
   return (

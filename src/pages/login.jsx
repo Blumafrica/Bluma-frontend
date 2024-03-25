@@ -6,8 +6,8 @@ import { useFormik, Formik } from "formik";
 import * as Yup from 'yup';
 import { Modal } from "@mui/material";
 import Box from '@mui/material/Box';
-import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
+import { Link } from 'react-router-dom';
 
 function Login() {
 
@@ -78,6 +78,7 @@ function Login() {
                     <p className='bluma-tag'>Bluma</p>
                     <p className='africa'>Africa</p>
                 </div>
+                {/* <div className='m-3'> */}
                 <form onSubmit={handleSubmit}>
                     <p color="red" margin-left={'20px'}className="error">{errors.email}</p>
                     <input
@@ -101,7 +102,14 @@ function Login() {
                         onBlur={handleBlur}
                     ></input>
                     <button className="submit" onClick={handleSubmit}>Submit</button>
+                    <Link to="/SignUp">
+                        <div className='text-xl '>Don't have an account? create account</div>
+
+                    </Link>
+
                 </form>
+                
+                
                 {openModal ?
                     <Modal
                         open={openModal}

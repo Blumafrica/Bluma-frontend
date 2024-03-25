@@ -16,21 +16,20 @@ const Wrapper = styled.div`
 `;
 const Left = styled.div`
   flex: 2;
-  border: 2px solid green;
+  // border: 2px solid green;
 `;
 const Middle = styled.div`
   flex: 8;
   display: flex;
-
-  border: 2px solid rgb(244, 167, 244);
+  // border: 2px solid rgb(244, 167, 244);
   border-radius: 15px;
   padding: 2rem;
   width: fit-content;
-  border: 2px solid blue;
+  // border: 2px solid blue;
 `;
 const InnerSectionRight = styled.div`
   flex: 2;
-  border: 2px solid pink;
+  // border: 2px solid pink;
 `;
 const Advertising = styled.div`
   padding: 2rem;
@@ -62,7 +61,7 @@ const Educational = styled.section``;
 function Events() {
   return (
     <div>
-      <nav className="nav-bar"></nav>
+      {/* <nav className="nav-bar"></nav> */}
       <Wrapper>
         <Left>
           <BlumaLogo />
@@ -102,7 +101,7 @@ function Events() {
         </Middle>
 
       </Wrapper>
-      <Footer/>
+      {/* <Footer/> */}
     </div>
   );
 }

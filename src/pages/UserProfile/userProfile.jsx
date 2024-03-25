@@ -112,11 +112,6 @@ const Profile = () => {
     const [profileData, setProfileData] = useState({});
     const navigate = useNavigate();
 
-    // const navigateToEditProfile = () => {
-    //     // navigate("./pages/HomePage");
-    //     navigate("./pages/UserProfile/editProfile");
-    // };
-
     useEffect(() => {
         const formattedDate = new Date().toLocaleDateString();
         setCurrentDate(formattedDate);

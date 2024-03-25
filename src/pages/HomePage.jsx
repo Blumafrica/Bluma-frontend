@@ -2,42 +2,76 @@
 import HomeHeader from "../layout/HomeHeader"
 import background from "../images/background.jpg";
 import ColumnPage from "../component/ColumnPage";
+import axios from "axios";
+import { useMemo, useCallback, useState } from "react";
+import Card from "../LandingComponent/landingPageCard/Card";
+import { Link, useNavigate } from "react-router-dom";
+import { posts } from "../posts";
+import pic from "../LandingComponent/assets/profile.svg"
+
 import Footer from "../layout/Footer";
+import "../layout/HomePage.css"
 
 
 export default function Homepage(){
+   const [foundPosts, setFoundPosts] = useState([posts])
+    const maxWord = 400;
+    const getPostUrl = "http://localhost:3000/api/v1/getAdminPost"
+    const ur = "/getAdminPost";
+    const navigate = useNavigate()
+
+   const fetchPost = async () => {
+    try{
+    const response = await axios.get(
+      getPostUrl,
+      {headers: {
+        "Content-Type": "application/json"
+      },
+        withCredentials: true}
+    )
+    const posts = await response.json(); 
+    setFoundPosts(posts);
+      console.log( "received ==>", posts)
+      
+    }catch(error){
+      console.log("error ", error)
+    }
+   
+   }
+   const handlePost =  (para) => {
+        navigate("/PostArticle", {state: {value: para}})
+   }
     return(
         <>
         <HomeHeader />
-        {/* <div class="relative">
-            <div class="brightness-">
-                <img class="w-screen h-fit brightness-75 brigh bg-fixed" src={background} alt="slide"></img>
-            </div>
+        {fetchPost}
+        <div className="posts">
+          <div className="const"> 
+            
+           <p className="m-2 p-4 w-4/5 text-purple-500 font-bold sm:text-2xl " onClick={fetchPost}>Latest posts</p>
+           {/* <p className="m-3 p-4 w-4/5 text-purple-500 font-bold sm:text-2xl " onClick={handlePost}>create post</p> */}
+           <button className="button">create post</button>
+          </div>
 
-            <div class="absolute backdrop-brightness-110 bg-black/30 p-3 sm:w-fit xl:w-3/4 text-center sm:bottom-10 xl:bottom-20 xl:left-48">
-                <h3 class="sm:text-3xl md:text-5xl xl:text-7xl font-bold text-white">WELCOME TO BLUMA</h3>
-                <p class="sm:text-xl md:text-3xl xl:text-3xl text-white">
-                Today, we address a vital concern – the loss 
-                of cultural value. In a rapidly changing world, 
-                our heritage faces challenges, and it's more 
-                than fading artifacts; 
-                <br></br>
-                it's the stories and 
-                traditions slipping away. Yet, in acknowledging 
-                this loss, we find an opportunity for renewal. 
-                As custodians of our cultural tapestry, let's 
-                unite to breathe life into fading traditions. 
-                Through education, awareness, and collective commitment, 
-                we can pave the way for a future where our cultural 
-                values not only endure but thrive.
-                </p>
-                <div class="flex justify-center m-2">
-                <p class="sm:w-40 sm:p-2 xl:text-2xl font-bold xl:p-3 xl:w-60 bg-purple-600 border-none text-white m-3 rounded-3xl cursor-pointer">CLICK HERE</p>
-                </div>
-            </div>
 
-        </div> */}
-        <ColumnPage />
+           <div className="card-section">
+            {posts.slice(0, posts.length).map((post) => (
+          <Link to={`/PostView/${posts.id-1}`}>
+            <Card
+              heading={post.title}
+              coverPic={post.imgUrl}
+              description={
+                post.content && post.content.length > maxWord
+                  ? `${post.content.substring(0, maxWord)}............`
+                  : post.content
+              }
+            />
+          </Link>
+             ))}
+            </div>
+        </div>
+       
+             
         <div class="bg-black text-white p-3">
             <div class="grid grid-cols-2 p-4">
             <div class="p-2">
@@ -56,3 +90,4 @@ export default function Homepage(){
         </>
     )
 }
+

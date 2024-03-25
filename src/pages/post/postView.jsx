@@ -2,8 +2,6 @@ import React, { useState, useMemo } from "react";
 import BlumaLogo from "../../LandingComponent/Button&Search/BlumaLogo";
 import Notification from "../../LandingComponent/notification/Notification";
 import { NavLink, useParams } from "react-router-dom";
-import img from "../../LandingComponent/assets/rectangle2.svg";
-import like from "../../LandingComponent/assets/like 1.svg";
 import "./postView.css";
 import { MarkChatReadOutlined} from "@mui/icons-material";
 import Footer from "../../LandingComponent/footer";
@@ -12,8 +10,9 @@ import { posts } from "../../posts";
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import { Modal } from "@mui/material";
 import Box from '@mui/material/Box';
-import Typography from '@mui/material/Typography';
 import Roddy from '../../images/roddy-dec-14.jpg'
+import Thuy from '../../LandingComponent/assets/download (2).jpeg'
+import Cookies from "js-cookie";
 
 
 const StyledFavoriteBorderIcon = styled(FavoriteIcon)`
@@ -61,6 +60,8 @@ function PostView() {
   const handleOpen = (state) => setOpenModal(state)
   const [content, setContent] = useState("write something....")
   const [list, setList] = useState(["cnmndmd", "flo mili ", "never wanna lose me"])
+  const [postId , setPostId] = useState()
+  const userId = Cookies.get("userId")
  
   function showCommentBox() {
     setcommentSecDis(!commentSecDis);
@@ -91,36 +92,31 @@ function PostView() {
   const getComments =  useMemo(() => {
     console.log(" at get list ==>  ", list)
     console.log("at get lenght ---> ", list.length);
-      let time = new Date();
-      let now = time.getTime();
+      console.log("userId ", userId)
+
        return list.map((comment, position) => (
-       <div>
           <div className="eachComent" key={position}>
             <img className="images" src={Roddy}></img>
          <div>
           <div>
           <div className="nametime">
-             <p>username</p> <p>{position} </p><p>{now}</p><p>p</p>
+             <p>username</p> <p>{position} </p><p></p><p>p</p>
          </div>
-         <div className="userComment">
-           {comment}
-          </div>
+             {comment}
           </div>
          
         </div>
        </div>
-      </div>
+       
       ))
     
    
   }, [list, ])
 
   const createComment = () => {
-    // list.push(content)
     setList([...list, content])
     console.log("list after add ==z> ", list, "length" , list.length);
     {handleClose()}
-    // {getComments()}
 
   }
   
@@ -137,6 +133,12 @@ function PostView() {
         <Notification />
       </nav>
       <div className="wrapper">
+        <div className="userInfo"> 
+           <img className="images" src={Thuy}></img>
+           <p className="p">username</p>
+           <p className="p">Time posted</p>
+          
+        </div>
         <div className="post-img">
           <img
             src={posts[id].imgUrl}
@@ -179,32 +181,7 @@ function PostView() {
       </div>
       <div className="commentSection">
         number of comment: {list.length}
-        {/* www %
         <div>{getComments}</div>
-        wsuhwusiw */}
-        <div>{getComments}</div>
-        {/* <>
-
-        {list.map((comment, position) => (
-         <div>
-            <div className="eachComent" key={position}>
-              <img className="images" src={Roddy}></img>
-           <div>
-            <div>
-            <div className="nametime">
-               <p>username</p> <p>ieieie</p>
-           </div>
-           <div className="userComment">
-             {comment}
-            </div>
-            </div>
-           
-          </div>
-         </div>
-        </div>
-        ))}
-        </> */}
-
       </div>
       <Footer />
     </div>
