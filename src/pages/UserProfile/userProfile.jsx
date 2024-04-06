@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from "react";
 import { Routes, Route, useNavigate } from "react-router-dom";
 import { users } from "../UserProfile/metaData";
@@ -5,6 +6,7 @@ import styled from "styled-components";
 import profilePix from "../../images/profilePix.jpg";
 import axios from "axios";
 import BlumaLogo from "../../LandingComponent/Button&Search/BlumaLogo";
+import EditProfile from "./editProfile";
 
 const MainContainer = styled.div`
   border: 2px solid #7520ec;
@@ -87,6 +89,20 @@ const RightContents = styled.div`
 const MetaData = styled.div``;
 
 const Profile = () => {
+
+    const [isEditing, setIsEditing] = useState(false);
+    const handleSaveProfile = (editedData) =>{
+        console.log("Save profile:", editedData);
+        setIsEditing(false);
+    };
+
+    const handleCancelEdit =()=>{
+        setIsEditing(false);
+    };
+
+    const navigateToEditProfile =()=>{
+        setIsEditing(true);
+    };
     const [fullName, setFullName] = useState(users[0].name);
     const [age, setAge] = useState(users[0].age);
     const [gender, setGender] = useState(users[0].gender);
@@ -95,10 +111,6 @@ const Profile = () => {
     const [currentDate, setCurrentDate] = useState("");
     const [profileData, setProfileData] = useState({});
     const navigate = useNavigate();
-
-    const navigateToHome = () => {
-        navigate("./pages/HomePage");
-    };
 
     useEffect(() => {
         const formattedDate = new Date().toLocaleDateString();
@@ -135,24 +147,33 @@ const Profile = () => {
 
             <CenterContents>
                 <ProfilePicture>
-                    <UserPicture onClick={navigateToHome} src={profilePix} />
+                    <UserPicture onClick={navigateToEditProfile} src={profilePix} />
                     <EditButton>
-                        <ContactBtn onClick={navigateToHome}> Edit Profile</ContactBtn>
+                        <ContactBtn onClick={navigateToEditProfile}> Edit Profile</ContactBtn>
                     </EditButton>
                 </ProfilePicture>
 
                 <RightContents>
-                    <MetaData>
-                        <h4 style={{ fontWeight: "bold" }}>Full Name</h4>{" "}
-                        <span>{fullName}</span>
-                        <h4 style={{ fontWeight: "bold" }}>Gender</h4> <span>{gender}</span>
-                        <h4 style={{ fontWeight: "bold" }}>Age</h4> <span>{age}</span>
-                        <h4 style={{ fontWeight: "bold" }}>Contact</h4>{" "}
-                        <span>{contact}</span>
-                        <h4 style={{ fontWeight: "bold" }}>About</h4> <span>{about}</span>
-                        <h4 style={{ fontWeight: "bold" }}>Joined On</h4>
-                        <p>{currentDate}</p>
-                    </MetaData>
+                    {isEditing ? (
+                        <EditProfile
+                            initialData={{fullName, age, gender,contact,about}}
+                            onSave={handleSaveProfile}
+                            onCancel={handleCancelEdit}
+                        />
+                    ) : (
+                        <MetaData>
+                            <h4 style={{ fontWeight: "bold" }}>Full Name</h4>{" "}
+                            <span>{fullName}</span>
+                            <h4 style={{ fontWeight: "bold" }}>Gender</h4> <span>{gender}</span>
+                            <h4 style={{ fontWeight: "bold" }}>Age</h4> <span>{age}</span>
+                            <h4 style={{ fontWeight: "bold" }}>Contact</h4>{" "}
+                            <span>{contact}</span>
+                            <h4 style={{ fontWeight: "bold" }}>About</h4> <span>{about}</span>
+                            <h4 style={{ fontWeight: "bold" }}>Joined On</h4>
+                            <p>{currentDate}</p>
+                        </MetaData>
+                    )}
+
                 </RightContents>
             </CenterContents>
         </MainContainer>

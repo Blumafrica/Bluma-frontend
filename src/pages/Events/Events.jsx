@@ -2,30 +2,34 @@ import React from "react";
 import BlumaLogo from "../../LandingComponent/Button&Search/BlumaLogo";
 import styled from "styled-components";
 import { posts } from "../../posts";
-import Card from "../../LandingComponent/landingPageCard/Card";
+import Footer from "../../layout/Footer"
+// import Card from "../../LandingComponent/landingPageCard/Card";
 import { Link, useNavigate, NavLink } from "react-router-dom";
+import PostCard from "../../component/postCard/PostCard";
+import pic from "../../LandingComponent/assets/profileImg.svg";
 
 const Container = styled.div``;
 const Wrapper = styled.div`
   display: flex;
   margin: auto;
-  position: absolute;
-  
+  /* position: absolute; */
 `;
 const Left = styled.div`
   flex: 2;
+  // border: 2px solid green;
 `;
 const Middle = styled.div`
-  flex: 6;
-  border: 2px solid rgb(244, 167, 244);
+  flex: 8;
+  display: flex;
+  // border: 2px solid rgb(244, 167, 244);
   border-radius: 15px;
   padding: 2rem;
   width: fit-content;
+  // border: 2px solid blue;
 `;
-const Right = styled.div`
+const InnerSectionRight = styled.div`
   flex: 2;
-  position: fixed;
-  right: 10px;
+  // border: 2px solid pink;
 `;
 const Advertising = styled.div`
   padding: 2rem;
@@ -40,49 +44,64 @@ const AdvertContent = styled.div`
   align-items: center;
   width: 100%;
 `;
-const Culture = styled.section``
-const Entertainment = styled.section``
-const Sport = styled.section``
-const Educational = styled.section``
+const StyledNavLink = styled(NavLink)`
+  color: #000; /* Change color as needed */
+  text-decoration: none;
+  margin-bottom: 1rem;
+  display: block;
+`;
+const PostDisplayArea = styled.div`
+flex: 8;
+`;
+const Culture = styled.section``;
+const Entertainment = styled.section``;
+const Sport = styled.section``;
+const Educational = styled.section``;
 
 function Events() {
   return (
     <div>
-      <nav className="nav-bar">
-        <BlumaLogo />
-      </nav>
+      {/* <nav className="nav-bar"></nav> */}
       <Wrapper>
         <Left>
-          <NavLink>
+          <BlumaLogo />
+          <StyledNavLink>
             <Culture>Culture</Culture>
-          </NavLink>
-          <NavLink>
+          </StyledNavLink>
+          <StyledNavLink>
             <Entertainment>Entertainment</Entertainment>
-          </NavLink>
-          <NavLink>
+          </StyledNavLink>
+          <StyledNavLink>
             <Sport>Sport</Sport>
-          </NavLink>
-          <NavLink>
+          </StyledNavLink>
+          <StyledNavLink>
             <Educational>Educational</Educational>
-          </NavLink>
+          </StyledNavLink>
         </Left>
         <Middle>
-          {posts.map((post) => (
-            <Link to={`/PostView/${post.id - 1}`}>
-              <Card
-                heading={post.title}
-                coverPic={post.imgUrl}
-                description={post.content}
-              />
-            </Link>
-          ))}
+          <PostDisplayArea>
+            {posts.map((post) => (
+              <Link to={`/PostView/${post.id - 1}`}>
+                <PostCard
+                  profilePic={pic}
+                  username="James Klinkov"
+                  title={post.title}
+                  postImg={post.imgUrl}
+                  textContent={post.content}
+                />
+              </Link>
+            ))}
+          </PostDisplayArea>
+
+          <InnerSectionRight>
+            <Advertising>
+              <AdvertContent>Advertise Here</AdvertContent>
+            </Advertising>
+          </InnerSectionRight>
         </Middle>
-        <Right>
-          <Advertising>
-            <AdvertContent>Advertise Here</AdvertContent>
-          </Advertising>
-        </Right>
+
       </Wrapper>
+      {/* <Footer/> */}
     </div>
   );
 }
