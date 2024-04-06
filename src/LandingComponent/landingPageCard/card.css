@@ -1,10 +1,14 @@
 #card {
-  width: 40rem;
+  width: 45rem;
   color: rgb(78, 77, 77);
   border-radius: 15px;
   box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease;
-  margin: 15px;
+  /* margin: 15px; */
+  height: 45rem;
+}
+.userName{
+
 }
 #card:hover {
   transform: scale(1.05);
@@ -29,7 +33,9 @@
   align-items: center;
 }
 #card .user-pic {
-  height: 40px;
+  height: 3rem;
+  width: 3rem;
+  border-radius: 30px;
 }
 #card button {
   background: none;

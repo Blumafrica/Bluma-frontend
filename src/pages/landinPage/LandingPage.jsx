@@ -97,12 +97,15 @@ function LandingPage() {
       <HeroSection />
       <Tour />
 
-      <div className="card-section">
+      <div class="grid grid-cols-2 gap-[20px] place-items-center" >
         {posts.slice(0, 4).map((post) => (
           <Link to={`/Login`}>
             <Card
               heading={post.title}
               coverPic={post.imgUrl}
+              userPic={post.imgUrl}
+              userName={'mariam ambali'}
+              date={"20-23-2003"}
               description={
                 post.content && post.content.length > maxWord
                   ? `${post.content.substring(0, maxWord)}............`
