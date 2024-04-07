@@ -97,13 +97,14 @@ function LandingPage() {
       <HeroSection />
       <Tour />
 
-      <div class="grid grid-cols-2 gap-[20px] place-items-center" >
+      <div className="grid grid-cols-2 gap-[20px] place-items-center mb-10 mt-7" >
         {posts.slice(0, 4).map((post) => (
           <Link to={`/Login`}>
             <Card
               heading={post.title}
               coverPic={post.imgUrl}
               userPic={post.imgUrl}
+              images={posts}
               userName={'mariam ambali'}
               date={"20-23-2003"}
               description={
