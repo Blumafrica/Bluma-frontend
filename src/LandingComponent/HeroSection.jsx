@@ -63,6 +63,15 @@ const Slide = styled.div`
   width: 100vw;
   height: 100%;
 `;
+const Bg = styled.div`
+  color: white;
+  width: 100vw;
+  height: 100%;
+  background-image: url('https://images.pexels.com/photos/18431669/pexels-photo-18431669/free-photo-of-market-in-ibadan-city.jpeg?auto=compress&cs=tinysrgb&w=600');
+  background-size: contain;
+  //background-repeat: no-repeat;
+  //background-size: cover;
+`;
 
 const HeroSection = (props) => {
   const [slideIndex, setSlideIndex] = useState(0);
@@ -83,27 +92,34 @@ const HeroSection = (props) => {
 
   return (
     <Container>
-      <Arrow direction="left" onClick={() => handleClick("left")}>
-        <ArrowLeftOutlinedIcon />
-      </Arrow>
-      <Wrapper slideIndex={slideIndex}>
-        {Slideritems.map((item) => (
-          <Slide bg={item.bg} identity={item.id} className={item.class}>
-            <TextContent>
-              <Caption>{item.title}</Caption>
-              {/* <Heading>{item.title}</Heading> */}
-              <Text>{item.desc}</Text>
-              <div style={{display: "flex", margin: "3rem 0rem",}}>
-                <SignUpBtn>Get Started</SignUpBtn>
-                {/* <HeroBtn>View more</HeroBtn> */}
-              </div>
-            </TextContent>
-          </Slide>
-        ))}
-      </Wrapper>
-      <Arrow direction="right" onClick={() => handleClick("right")}>
-        <ArrowRightOutlinedIcon />
-      </Arrow>
+      {/*<Arrow direction="left" onClick={() => handleClick("left")}>*/}
+      {/*  <ArrowLeftOutlinedIcon />*/}
+      {/*</Arrow>*/}
+      {/*<Wrapper slideIndex={slideIndex}>*/}
+      {/*  {Slideritems.map((item) => (*/}
+      {/*    <Slide bg={item.bg} identity={item.id} className={item.class}>*/}
+      {/*      <TextContent>*/}
+      {/*        <Caption>{item.title}</Caption>*/}
+      {/*        /!* <Heading>{item.title}</Heading> *!/*/}
+      {/*        <Text>{item.desc}</Text>*/}
+      {/*        <div style={{display: "flex", margin: "3rem 0rem",}}>*/}
+      {/*          <SignUpBtn>Get Started</SignUpBtn>*/}
+      {/*          /!* <HeroBtn>View more</HeroBtn> *!/*/}
+      {/*        </div>*/}
+      {/*      </TextContent>*/}
+      {/*    </Slide>*/}
+      {/*  ))}*/}
+      {/*</Wrapper>*/}
+      {/*<Arrow direction="right" onClick={() => handleClick("right")}>*/}
+      {/*  <ArrowRightOutlinedIcon />*/}
+      {/*</Arrow>*/}
+      {/*  <Wrapper slideIndex={slideIndex}>*/}
+      {/*      /!*{SliderItems.map((item))}*!/*/}
+      {/*      <Slide>*/}
+
+      {/*      </Slide>*/}
+      {/*  </Wrapper>*/}
+        <Bg></Bg>
     </Container>
   );
 };

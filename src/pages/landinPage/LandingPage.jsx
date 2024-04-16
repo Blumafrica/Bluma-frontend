@@ -11,6 +11,8 @@ import { Link, useNavigate } from "react-router-dom";
 import { posts } from "../../posts";
 import "./landingpage.css";
 import axios from "axios";
+import {picture} from '../../picture'
+
 
 
 function LandingPage() {
@@ -85,7 +87,7 @@ function LandingPage() {
         <HeroSection />
         <Tour />
         <div className="card-section">
-          <Card class="card-item" coverPic={postImg}></Card>
+          <Card class="card-item" coverPic={postImg} images={picture}></Card>
         </div>
       </div>
     ));
@@ -93,7 +95,7 @@ function LandingPage() {
 
   return (
     <div className="landing-page">
-      <NavBar />
+      {/*<NavBar />*/}
       <HeroSection />
       <Tour />
 
@@ -116,8 +118,8 @@ function LandingPage() {
           </Link>
         ))}
       </div>
-      <FestivalSlideShow />
-      <Footer />
+      {/*<FestivalSlideShow />*/}
+      {/*<Footer />*/}
     </div>
   );
 }

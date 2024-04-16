@@ -2,6 +2,7 @@ import React from "react";
 import CardCss from "./card.css";
 import likeIcon from "../assets/like 1.svg";
 import { useNavigate } from "react-router-dom";
+import Box from '@mui/material'
 
 
 function Card(props) {
@@ -9,6 +10,8 @@ function Card(props) {
   function goToPost() {
     navigate("/PostView");
   }
+
+    console.log("images: ", props.images)
   return (
     <div id="card" className={props.class} class=" " >
        <div className="post-info">
@@ -22,7 +25,25 @@ function Card(props) {
        </div>
         {/*<div id="divider"></div>*/}
         <div id="imagesCard" class="" >
-          {props.images.length > 0
+
+
+          {props.images.length > 1 ?
+              <>
+              {props.images.map((image)=> (
+                  <div className='h-[20px] w-[10px] border-2px'>
+                      <img src={image.imgUrl} alt={'vghv'}/>
+                  </div>
+              ))}
+              </>
+
+              :
+              <>
+                  {props.images.map((image)=> (
+                      <div className='h-[20px] w-[10px] border-2px'>
+                          <img src={image.url} alt={'cfgcg'}/>
+                      </div>
+                  ))}
+              </>
             
           }
 
