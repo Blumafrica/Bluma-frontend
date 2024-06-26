@@ -1,9 +1,5 @@
 import { useEffect, useState } from "react";
 import styled from "styled-components";
-import ArrowLeftOutlinedIcon from "@mui/icons-material/ArrowBackIos";
-import ArrowRightOutlinedIcon from "@mui/icons-material/ArrowForwardIos";
-import { Slideritems } from "./data";
-import SignUpBtn from "./Button&Search/SignUpBtn";
 import "./heroSection.css";
 
 const Container = styled.div`
@@ -13,64 +9,18 @@ const Container = styled.div`
   position: relative;
   overflow: hidden;
 `;
-const Arrow = styled.div`
-  width: 30px;
-  height: 30px;
-  border-radius: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: white;
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: ${(props) => props.direction === "left" && "10px"};
-  right: ${(props) => props.direction === "right" && "10px"};
-  margin: auto;
-  visibility: hidden;
-`;
-const Wrapper = styled.div`
-  height: 100%;
-  display: flex;
-  transition: all 1.5s ease;
-  transform: translateX(${(props) => props.slideIndex * -100}vw);
-`;
-const Caption = styled.div`
-  font-size: 42px;
-  font-weight: 700;
-`;
-const TextContent = styled.div`
-  max-width: 1200px;
-  margin: 10% auto;
-  background-color: rgba(0, 0, 0, 0.5);
-  padding: 2.5rem;
-  border-radius: 5px;
 
-  @media (min-width: 768px) {
-  }
-
-  @media (min-width: 1024px) {
-  }
-`;
-const Heading = styled.h1``;
-const Text = styled.p`
-  letter-spacing: 1.5px;
-  font-size: 20px;
-`;
-const HeroBtn = styled.button``;
-const Slide = styled.div`
-  color: white;
-  width: 100vw;
-  height: 100%;
-`;
 const Bg = styled.div`
   color: white;
   width: 100vw;
   height: 100%;
-  background-image: url('https://images.pexels.com/photos/18431669/pexels-photo-18431669/free-photo-of-market-in-ibadan-city.jpeg?auto=compress&cs=tinysrgb&w=600');
-  background-size: contain;
-  //background-repeat: no-repeat;
-  //background-size: cover;
+  //background-image: url('https://images.pexels.com/photos/18431669/pexels-photo-18431669/free-photo-of-market-in-ibadan-city.jpeg?auto=compress&cs=tinysrgb&w=600');
+  //background-size: contain;
+  //background-image: url('https://i.pinimg.com/236x/76/0e/37/760e37ff004541f8246c2be8985ed6a2.jpg');
+  background-image: url('https://i.pinimg.com/236x/28/86/ba/2886ba8764521255fc1543664f0f2f4a.jpg');
+
+  background-repeat: no-repeat;
+  background-size: cover;
 `;
 
 const HeroSection = (props) => {
@@ -92,34 +42,9 @@ const HeroSection = (props) => {
 
   return (
     <Container>
-      {/*<Arrow direction="left" onClick={() => handleClick("left")}>*/}
-      {/*  <ArrowLeftOutlinedIcon />*/}
-      {/*</Arrow>*/}
-      {/*<Wrapper slideIndex={slideIndex}>*/}
-      {/*  {Slideritems.map((item) => (*/}
-      {/*    <Slide bg={item.bg} identity={item.id} className={item.class}>*/}
-      {/*      <TextContent>*/}
-      {/*        <Caption>{item.title}</Caption>*/}
-      {/*        /!* <Heading>{item.title}</Heading> *!/*/}
-      {/*        <Text>{item.desc}</Text>*/}
-      {/*        <div style={{display: "flex", margin: "3rem 0rem",}}>*/}
-      {/*          <SignUpBtn>Get Started</SignUpBtn>*/}
-      {/*          /!* <HeroBtn>View more</HeroBtn> *!/*/}
-      {/*        </div>*/}
-      {/*      </TextContent>*/}
-      {/*    </Slide>*/}
-      {/*  ))}*/}
-      {/*</Wrapper>*/}
-      {/*<Arrow direction="right" onClick={() => handleClick("right")}>*/}
-      {/*  <ArrowRightOutlinedIcon />*/}
-      {/*</Arrow>*/}
-      {/*  <Wrapper slideIndex={slideIndex}>*/}
-      {/*      /!*{SliderItems.map((item))}*!/*/}
-      {/*      <Slide>*/}
+        <Bg>
 
-      {/*      </Slide>*/}
-      {/*  </Wrapper>*/}
-        <Bg></Bg>
+        </Bg>
     </Container>
   );
 };

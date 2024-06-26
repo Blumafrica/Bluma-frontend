@@ -1,9 +1,9 @@
-import articleImage from "../images/ArticleImage.jpg"
-import profileImage from "../images/Kashim.jpg";
-import likeIcon from "../images/lovesvg.svg";
-import likedBlueIcon from '../images/loveBlue.svg'
-import commentIcon from "../images/comment.svg";
-import shareIcon from "../images/share.svg";
+import articleImage from "../images/roddy-dec-14.jpg"
+import profileImage from "../images/roddy-dec-14.jpg";
+import likeIcon from "../images/roddy-dec-14.jpg";
+import likedBlueIcon from '../images/roddy-dec-14.jpg'
+import commentIcon from "../images/roddy-dec-14.jpg";
+import shareIcon from "../images/roddy-dec-14.jpg";
 import { useState } from "react";
 export default function Cards(props){
     const [toggle, setToggle] = useState(false);

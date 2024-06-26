@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react";
 import { Routes, Route, useNavigate } from "react-router-dom";
 import { users } from "../UserProfile/metaData";
 import styled from "styled-components";
-import profilePix from "../../images/profilePix.jpg";
+import profilePix from "../../images/roddy-dec-14.jpg";
 import axios from "axios";
 import BlumaLogo from "../../LandingComponent/Button&Search/BlumaLogo";
 import EditProfile from "./editProfile";
