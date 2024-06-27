@@ -17,5 +17,15 @@
 /*/ / background-repeat: no-repeat;*/
 /*/ / background-size: cover;*/
 }
+#text{
+  font-weight: 500;
+  font-size: 30px;
+  line-height: 24px;
+  margin-top: 10px;
+  background-color: aqua;
+  width: 97%;
+  height:  60%;
+  /*word-break: break-all;*/
+}
 
 
