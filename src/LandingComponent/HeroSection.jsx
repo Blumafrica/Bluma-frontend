@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import styled from "styled-components";
 import "./heroSection.css";
+import Button from "@mui/material/Button";
+
 
 const Container = styled.div`
   width: 100%;
@@ -55,7 +57,17 @@ const HeroSection = (props) => {
               className={`w-[40%] h-[40%] grid `}>
                 <span id='text'>
                   Nigeria is a multinational state inhabited by more than 250 ethnic groups speaking 500 distinct languages
+                  Nigeria is a multinational state inhabited by more than 250 ethnic groups speaking 500 distinct languages
                 </span>
+              <div className={`flex`}>
+                  <Button>
+                      sign up
+                  </Button>
+                  <Button>
+                      Login
+                  </Button>
+              </div>
+
           </div>
         </Bg>
     </Container>
