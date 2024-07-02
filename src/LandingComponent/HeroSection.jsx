@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import styled from "styled-components";
 import "./heroSection.css";
+import Button from "@mui/material/Button";
+
 
 const Container = styled.div`
   width: 100%;
@@ -8,25 +10,32 @@ const Container = styled.div`
   display: flex;
   position: relative;
   overflow: hidden;
+ 
 `;
 
 const Bg = styled.div`
   color: white;
   width: 100vw;
   height: 100%;
-  //background-image: url('https://images.pexels.com/photos/18431669/pexels-photo-18431669/free-photo-of-market-in-ibadan-city.jpeg?auto=compress&cs=tinysrgb&w=600');
-  //background-size: contain;
-  //background-image: url('https://i.pinimg.com/236x/76/0e/37/760e37ff004541f8246c2be8985ed6a2.jpg');
-  background-image: url('https://i.pinimg.com/236x/28/86/ba/2886ba8764521255fc1543664f0f2f4a.jpg');
+  justify-content: center;
+  align-items: center;
+  display: flex;
 
-  background-repeat: no-repeat;
-  background-size: cover;
+  //background-image: url('https://images.pexels.com/photos/18431669/pexels-photo-18431669/free-photo-of-market-in-ibadan-city.jpeg?auto=compress&cs=tinysrgb&w=600');
+  background-size: contain;
+  background-image: url('https://i.pinimg.com/236x/76/0e/37/760e37ff004541f8246c2be8985ed6a2.jpg');
+  //background-image: url('https://i.pinimg.com/236x/28/86/ba/2886ba8764521255fc1543664f0f2f4a.jpg');
+  //
+  //background-repeat: no-repeat;
+  //background-size: cover;
 `;
 
 const HeroSection = (props) => {
   const [slideIndex, setSlideIndex] = useState(0);
+    const [isMobile, setIsMobile] = useState(window.innerWidth < 1200);
 
-  useEffect(() => {
+
+    useEffect(() => {
     const intervalId = setInterval(() => handleClick("left"), 5000);
 
     return () => clearInterval(intervalId);
@@ -40,10 +49,34 @@ const HeroSection = (props) => {
     }
   };
 
+
+
   return (
     <Container>
         <Bg>
+          <div
+              style={{backgroundColor: 'rgba(255, 255, 255, 0.2)',margin: 'auto', borderRadius: '10px 10px 10px 10px' }}
+              className={`w-[40%] h-[40%] grid `}>
+                <span id='text'>
+                  Nigeria is a multinational state inhabited by more than 250 ethnic groups speaking 500 distinct languages
+                  Nigeria is a multinational state inhabited by more than 250 ethnic groups speaking 500 distinct languages
+                </span>
+              <div className={` w-[20rem]  flex gap-3 position  float-right mb-5 bg-red-50 `}>
+                  <Button
+                      variant='contained'
+                      sx={{width: '8rem', height: '3rem'}}
+                  >
+                      sign up
+                  </Button>
+                  <Button
+                      variant='contained'
+                      sx={{width: '8rem', height: '3rem'}}
+                  >
+                      Login
+                  </Button>
+              </div>
 
+          </div>
         </Bg>
     </Container>
   );
