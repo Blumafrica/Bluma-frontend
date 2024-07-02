@@ -32,8 +32,10 @@ const Bg = styled.div`
 
 const HeroSection = (props) => {
   const [slideIndex, setSlideIndex] = useState(0);
+    const [isMobile, setIsMobile] = useState(window.innerWidth < 1200);
 
-  useEffect(() => {
+
+    useEffect(() => {
     const intervalId = setInterval(() => handleClick("left"), 5000);
 
     return () => clearInterval(intervalId);
@@ -59,11 +61,17 @@ const HeroSection = (props) => {
                   Nigeria is a multinational state inhabited by more than 250 ethnic groups speaking 500 distinct languages
                   Nigeria is a multinational state inhabited by more than 250 ethnic groups speaking 500 distinct languages
                 </span>
-              <div className={`flex`}>
-                  <Button>
+              <div className={` w-[20rem]  flex gap-3 position  float-right mb-5 bg-red-50 `}>
+                  <Button
+                      variant='contained'
+                      sx={{width: '8rem', height: '3rem'}}
+                  >
                       sign up
                   </Button>
-                  <Button>
+                  <Button
+                      variant='contained'
+                      sx={{width: '8rem', height: '3rem'}}
+                  >
                       Login
                   </Button>
               </div>
