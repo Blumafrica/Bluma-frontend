@@ -56,21 +56,26 @@ const HeroSection = (props) => {
         <Bg>
           <div
               style={{backgroundColor: 'rgba(255, 255, 255, 0.2)',margin: 'auto', borderRadius: '10px 10px 10px 10px' }}
-              className={`w-[40%] h-[40%] grid `}>
-                <span id='text'>
-                  Nigeria is a multinational state inhabited by more than 250 ethnic groups speaking 500 distinct languages
-                  Nigeria is a multinational state inhabited by more than 250 ethnic groups speaking 500 distinct languages
-                </span>
-              <div className={` w-[20rem]  flex gap-3 position  float-right mb-5 bg-red-50 `}>
+              className={` grid w-[40%] h-[40%]  `}>
+                {/*<div id='text'>*/}
+                {/*  Nigeria is a multinational state inhabited by more than 250 ethnic groups speaking 500 distinct languages*/}
+                {/*  Nigeria is a multinational state inhabited by more than 250 ethnic groups speaking 500 distinct languages*/}
+                {/*</div>*/}
+              <div className={` w-[20rem]  grid grid-cols-2 gap-3 justify-self-end place-content-center   `}>
                   <Button
                       variant='contained'
-                      sx={{width: '8rem', height: '3rem'}}
+                      sx={{backgroundColor: 'black',width: '8rem', height: '3rem', textTransform: 'none', fontSize: 16,
+                          '&:hover': {backgroundColor: 'black'},
+                         }}
                   >
-                      sign up
+                     <span> Sign up</span>
                   </Button>
                   <Button
                       variant='contained'
-                      sx={{width: '8rem', height: '3rem'}}
+                      sx={{
+                          backgroundColor: 'white',color: 'black',width: '8rem', height: '3rem', textTransform: 'none',
+                          '&:hover': {backgroundColor: 'white'},
+                       }}
                   >
                       Login
                   </Button>
