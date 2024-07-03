@@ -95,7 +95,7 @@ function LandingPage() {
 
   return (
     <div className="landing-page">
-      {/*<NavBar />*/}
+      <NavBar />
       <HeroSection />
       <Tour />
 
