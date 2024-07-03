@@ -5,7 +5,9 @@
     background-color: transparent;
     outline: none;
     border: none;
-    font-size: 20px;
+    font-size: 30px;
+    /*color: white;*/
+    font-weight: bold;
 }
 .bluma-logo span{
     background-color: rgb(129, 52, 201);
