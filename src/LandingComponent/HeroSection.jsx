@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import styled from "styled-components";
 import "./heroSection.css";
 import Button from "@mui/material/Button";
+import {useNavigate} from "react-router-dom";
 
 
 const Container = styled.div`
@@ -33,6 +34,7 @@ const Bg = styled.div`
 const HeroSection = (props) => {
   const [slideIndex, setSlideIndex] = useState(0);
     const [isMobile, setIsMobile] = useState(window.innerWidth < 1200);
+    const navigate =  useNavigate()
 
 
     useEffect(() => {
@@ -68,7 +70,7 @@ const HeroSection = (props) => {
                           '&:hover': {backgroundColor: 'black'},
                          }}
                   >
-                     <span> Sign up</span>
+                     <span onClick={()=> {navigate('/SignUp')}}> Sign up</span>
                   </Button>
                   <Button
                       variant='contained'
@@ -77,7 +79,7 @@ const HeroSection = (props) => {
                           '&:hover': {backgroundColor: 'white'},
                        }}
                   >
-                      Login
+                      <span onClick={()=> {navigate('/Login')}}>Login</span>
                   </Button>
               </div>
 

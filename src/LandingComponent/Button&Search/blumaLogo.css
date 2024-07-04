@@ -1,5 +1,5 @@
 .bluma-logo{
-    width:fit-content   
+    width:fit-content;
 }
 .bluma-logo button{
     background-color: transparent;
@@ -11,7 +11,9 @@
 }
 .bluma-logo span{
     background-color: rgb(129, 52, 201);
-    padding: 5px;
+    /*padding: 5px;*/
     border-radius: 50%;
     color: white;
+    height: 10rem;
+    width: 10rem;
 }
