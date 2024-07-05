@@ -17,7 +17,7 @@ export default function Header() {
     <>
       <header class="header">
         <div className="topNav">
-            {/* <div class="navBar sm:text-2xl"> */}
+            {/* <div class="blumaNavbar sm:text-2xl"> */}
                {/* <nav class="p-4"> */}
                <div className="words">
                   <Link to="/HomePage">

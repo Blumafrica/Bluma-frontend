@@ -69,8 +69,9 @@ const HeroSection = (props) => {
                       sx={{backgroundColor: 'black',width: '8rem', height: '3rem', textTransform: 'none', fontSize: 16,
                           '&:hover': {backgroundColor: 'black'},
                          }}
+                      onClick={()=> {navigate('/SignUp')}}
                   >
-                     <span onClick={()=> {navigate('/SignUp')}}> Sign up</span>
+                     <span > Sign up</span>
                   </Button>
                   <Button
                       variant='contained'
@@ -78,8 +79,10 @@ const HeroSection = (props) => {
                           backgroundColor: 'white',color: 'black',width: '8rem', height: '3rem', textTransform: 'none',
                           '&:hover': {backgroundColor: 'white'},
                        }}
+                      onClick={()=> {navigate('/Login')}}
+
                   >
-                      <span onClick={()=> {navigate('/Login')}}>Login</span>
+                      <span >Login</span>
                   </Button>
               </div>
 
