@@ -51,14 +51,20 @@ const HeroSection = (props) => {
     }
   };
 
-
+    // width: 100%;
+    // height: 100vh;
+    // display: flex;
+    // position: relative;
+    // overflow: hidden;
 
   return (
-    <Container>
+    <div
+        id={'container'}
+    >
         <Bg>
           <div
               style={{backgroundColor: 'rgba(255, 255, 255, 0.2)',margin: 'auto', borderRadius: '10px 10px 10px 10px' }}
-              className={` grid w-[40%] h-[40%]  `}>
+              className={` grid w-[40%] h-[40%] md:w-[40%] `}>
                 {/*<div id='text'>*/}
                 {/*  Nigeria is a multinational state inhabited by more than 250 ethnic groups speaking 500 distinct languages*/}
                 {/*  Nigeria is a multinational state inhabited by more than 250 ethnic groups speaking 500 distinct languages*/}
@@ -88,7 +94,7 @@ const HeroSection = (props) => {
 
           </div>
         </Bg>
-    </Container>
+    </div>
   );
 };
 

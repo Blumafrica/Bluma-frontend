@@ -35,7 +35,7 @@ function NavBar() {
                  <NavLink to="products" className={`${!isScroll ? 'text-1xl text-white' : ''}`}>Products</NavLink>
                  <NavLink to="events" className={`${!isScroll ? 'text-1xl text-white' : ''}`}>Events</NavLink>
          </div>
-        <Hambuger />
+        {/*<Hambuger />*/}
        </div>
     </header>
   );
