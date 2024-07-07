@@ -72,45 +72,45 @@ function Login() {
 
 
     return (
-        <div className="login">
-            <div className="login-section">
-                <div className="background-image">
-                    <p className='bluma-tag'>Bluma</p>
-                    <p className='africa'>Africa</p>
-                </div>
+        <div className={`grid grid-cols-3 w-[15rem] h-[15rem] mt-auto mb-auto bg-pink-300`}>
+            <div className="">
+                {/*<div className="background-image">*/}
+                {/*    <p className='bluma-tag'>Bluma</p>*/}
+                {/*    <p className='africa'>Africa</p>*/}
+                {/*</div>*/}
                 {/* <div className='m-3'> */}
-                <form onSubmit={handleSubmit}>
-                    <p color="red" margin-left={'20px'}className="error">{errors.email}</p>
-                    <input
-                        class="m-2 p-4 w-4/5 rounded-xl border-2 border-purple-400 bg-transparent text-center text-xl items-start"
-                        type="email"
-                        placeholder="email"
-                        name="email"
-                        value={values.email}
-                        onChange={handleChange}
-                        onBlur={handleBlur}
-                    ></input>
-                    <br></br>
-                    <p color="red" margin-left={'20px'} className="error">{errors.password}</p>
-                    <input
-                        class="m-2 p-4 w-4/5 rounded-xl border-2 border-purple-400 bg-transparent text-center text-xl items-center"
-                        type="password"
-                        placeholder="password"
-                        name="password"
-                        value={values.password}
-                        onChange={handleChange}
-                        onBlur={handleBlur}
-                    ></input>
-                    <button className="submit" onClick={handleSubmit}>Submit</button>
-                    <Link to="/SignUp">
-                        <div className='text-xl '>Don't have an account? create account</div>
+                {/*<form onSubmit={handleSubmit}>*/}
+                {/*    <p color="red" margin-left={'20px'}className="error">{errors.email}</p>*/}
+                {/*    <input*/}
+                {/*        class="m-2 p-4 w-4/5 rounded-xl border-2 border-purple-400 bg-transparent text-center text-xl items-start"*/}
+                {/*        type="email"*/}
+                {/*        placeholder="email"*/}
+                {/*        name="email"*/}
+                {/*        value={values.email}*/}
+                {/*        onChange={handleChange}*/}
+                {/*        onBlur={handleBlur}*/}
+                {/*    ></input>*/}
+                {/*    <br></br>*/}
+                {/*    <p color="red" margin-left={'20px'} className="error">{errors.password}</p>*/}
+                {/*    <input*/}
+                {/*        class="m-2 p-4 w-4/5 rounded-xl border-2 border-purple-400 bg-transparent text-center text-xl items-center"*/}
+                {/*        type="password"*/}
+                {/*        placeholder="password"*/}
+                {/*        name="password"*/}
+                {/*        value={values.password}*/}
+                {/*        onChange={handleChange}*/}
+                {/*        onBlur={handleBlur}*/}
+                {/*    ></input>*/}
+                {/*    <button className="submit" onClick={handleSubmit}>Submit</button>*/}
+                {/*    <Link to="/SignUp">*/}
+                {/*        <div className='text-xl '>Don't have an account? create account</div>*/}
 
-                    </Link>
+                {/*    </Link>*/}
 
-                </form>
+                {/*</form>*/}
                 
                 
-                {openModal ?
+                {openModal &&
                     <Modal
                         open={openModal}
                         onClose={handleClose}
@@ -127,7 +127,7 @@ function Login() {
                             </Typography>
                         </Box>
                     </Modal>
-                    : null}
+                    }
             </div>
         </div>
     )

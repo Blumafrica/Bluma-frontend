@@ -24,20 +24,19 @@ function NavBar() {
   return (
     
     <header
-        style={{backgroundColor: isScroll ? 'rgb(255, 255, 255, 0.2)' : 'rgb(255, 255, 255, 0.2)'}}
-
-        className={`tw-flex tw-z-10 tw-justify-center tw-items-center tw-px-16 tw-py-6 tw-w-full  max-md:tw-px-5 max-md:tw-max-w-full tw-fixed tw-top-0`}
+        className={`flex z-10 justify-center items-center px-16 py-6 w-full bg-#2f2f2d max-md:px-5 max-md:max-w-full fixed top-0 ${isScroll ? `bg-[#2f2f2d]` : `bg-[rgba(255, 255, 255, 0.2)]`}`}
     >
-      <BlumaLogo />
-      {/*<div className="links">*/}
-      {/*  <NavLink to="about">About</NavLink>*/}
-      {/*  <NavLink to="products">Products</NavLink>*/}
-      {/*  <NavLink to="events">Events</NavLink>*/}
-      {/*</div>*/}
-      {/*<div className="check-in">*/}
-      {/*<Link to={`/Login`}>Log in</Link>*/}
-      {/*</div>*/}
-      {/*<Hambuger />*/}
+       <div
+           className="flex gap-5 justify-between w-full max-md:flex-wrap max-md:max-w-full"
+       >
+           <BlumaLogo textColor={isScroll ? 'white' : 'white'} />
+          <div className={`flex gap-4`}>
+                 <NavLink to="about" className={`${!isScroll ? 'text-1xl text-white' : 'text-1xl text-white'}`}>About</NavLink>
+                 <NavLink to="products" className={`${!isScroll ? 'text-1xl text-white' : 'text-1xl text-white'}`}>Products</NavLink>
+                 <NavLink to="events" className={`${!isScroll ? 'text-1xl text-white' : 'text-1xl text-white'}`}>Events</NavLink>
+         </div>
+        {/*<Hambuger />*/}
+       </div>
     </header>
   );
 }
