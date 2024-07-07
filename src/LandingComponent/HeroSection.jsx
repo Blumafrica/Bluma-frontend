@@ -64,13 +64,22 @@ const HeroSection = (props) => {
         <Bg>
           <div
               style={{backgroundColor: 'rgba(255, 255, 255, 0.2)',margin: 'auto', borderRadius: '10px 10px 10px 10px' }}
-              className={` grid w-[40%] h-[40%] md:w-[40%] `}>
+              className={` flex w-[40%] h-[40%] md:w-[40%] `}>
                 {/*<div id='text'>*/}
                 {/*  Nigeria is a multinational state inhabited by more than 250 ethnic groups speaking 500 distinct languages*/}
                 {/*  Nigeria is a multinational state inhabited by more than 250 ethnic groups speaking 500 distinct languages*/}
                 {/*</div>*/}
-              <div className={` w-[20rem]  grid grid-cols-2 gap-3 justify-self-end place-content-center   `}>
-                  <Button
+              <div
+                  // style={{gridTemplateColumns : '80% 20%'}}
+                  className={` w-[100%]  grid grid-rows-2 gap-20 justify-self-end  place-content-center    `}>
+                  <div className={`flex  w-[100%] `}>
+                      <span className={`w-auto font-bold text-16`}>
+                        Learn more about Nigeria, Xplore Nigeria
+                      </span>
+
+                  </div>
+                  <div className={`flex w-[100%] gap-4  justify-self-stretch`}>
+                      <Button
                       variant='contained'
                       sx={{backgroundColor: 'black',width: '8rem', height: '3rem', textTransform: 'none', fontSize: 16,
                           '&:hover': {backgroundColor: 'black'},
@@ -82,7 +91,7 @@ const HeroSection = (props) => {
                   <Button
                       variant='contained'
                       sx={{
-                          backgroundColor: 'white',color: 'black',width: '8rem', height: '3rem', textTransform: 'none',
+                          backgroundColor: 'white',color: 'black',width: '8rem', height: '3rem', fontSize: 16, textTransform: 'none',
                           '&:hover': {backgroundColor: 'white'},
                        }}
                       onClick={()=> {navigate('/Login')}}
@@ -90,6 +99,8 @@ const HeroSection = (props) => {
                   >
                       <span >Login</span>
                   </Button>
+                  </div>
+
               </div>
 
           </div>

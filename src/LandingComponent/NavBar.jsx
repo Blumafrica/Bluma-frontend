@@ -24,16 +24,16 @@ function NavBar() {
   return (
     
     <header
-        className={`flex z-10 justify-center items-center px-16 py-6 w-full bg-#2f2f2d max-md:px-5 max-md:max-w-full fixed top-0 ${isScroll ? `bg-#2f2f2d` : `bg-rgba(255, 255, 255, 0.2)`}`}
+        className={`flex z-10 justify-center items-center px-16 py-6 w-full bg-#2f2f2d max-md:px-5 max-md:max-w-full fixed top-0 ${isScroll ? `bg-[#2f2f2d]` : `bg-[rgba(255, 255, 255, 0.2)]`}`}
     >
        <div
            className="flex gap-5 justify-between w-full max-md:flex-wrap max-md:max-w-full"
        >
-           <BlumaLogo textColor={isScroll ? 'black' : 'white'} />
+           <BlumaLogo textColor={isScroll ? 'white' : 'white'} />
           <div className={`flex gap-4`}>
-                 <NavLink to="about" className={`${!isScroll ? 'text-1xl text-white' : ''}`}>About</NavLink>
-                 <NavLink to="products" className={`${!isScroll ? 'text-1xl text-white' : ''}`}>Products</NavLink>
-                 <NavLink to="events" className={`${!isScroll ? 'text-1xl text-white' : ''}`}>Events</NavLink>
+                 <NavLink to="about" className={`${!isScroll ? 'text-1xl text-white' : 'text-1xl text-white'}`}>About</NavLink>
+                 <NavLink to="products" className={`${!isScroll ? 'text-1xl text-white' : 'text-1xl text-white'}`}>Products</NavLink>
+                 <NavLink to="events" className={`${!isScroll ? 'text-1xl text-white' : 'text-1xl text-white'}`}>Events</NavLink>
          </div>
         {/*<Hambuger />*/}
        </div>
