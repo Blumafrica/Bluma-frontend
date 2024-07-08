@@ -3,7 +3,8 @@ export const Slideritems = [
     id: 1,
     class: "one",
     title: "Vanishing Traditions, Emerging Voices",
-    desc: "Across the diverse landscapes of Nigeria, the tapestry of traditions is unraveling. As the old tales fade, new narratives emerge. The challenge lies in harmonizing the old and the new, preserving the essence of our diverse heritage. Let us celebrate the mosaic of cultures that shape Nigeria, ensuring that the voices of our ancestors reverberate alongside the vibrant stories of today.",
+    desc: "Across the diverse landscapes of Nigeria, the tapestry of traditions is unraveling. As the old tales fade, new narratives emerge. The challenge lies in harmonizing the old and the new, preserving the essence of our diverse heritage.",
+    // desc: "Across the diverse landscapes of Nigeria, the tapestry of traditions is unraveling. As the old tales fade, new narratives emerge. The challenge lies in harmonizing the old and the new, preserving the essence of our diverse heritage. Let us celebrate the mosaic of cultures that shape Nigeria, ensuring that the voices of our ancestors reverberate alongside the vibrant stories of today.",
   },
   {
     id: 2,

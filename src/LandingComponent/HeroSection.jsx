@@ -3,6 +3,7 @@ import styled from "styled-components";
 import "./heroSection.css";
 import Button from "@mui/material/Button";
 import {useNavigate} from "react-router-dom";
+import {Slideritems} from "./data";
 
 
 const Container = styled.div`
@@ -21,14 +22,8 @@ const Bg = styled.div`
   justify-content: center;
   align-items: center;
   display: flex;
-
-  //background-image: url('https://images.pexels.com/photos/18431669/pexels-photo-18431669/free-photo-of-market-in-ibadan-city.jpeg?auto=compress&cs=tinysrgb&w=600');
   background-size: contain;
   background-image: url('https://i.pinimg.com/236x/76/0e/37/760e37ff004541f8246c2be8985ed6a2.jpg');
-  //background-image: url('https://i.pinimg.com/236x/28/86/ba/2886ba8764521255fc1543664f0f2f4a.jpg');
-  //
-  //background-repeat: no-repeat;
-  //background-size: cover;
 `;
 
 const HeroSection = (props) => {
@@ -51,31 +46,21 @@ const HeroSection = (props) => {
     }
   };
 
-    // width: 100%;
-    // height: 100vh;
-    // display: flex;
-    // position: relative;
-    // overflow: hidden;
 
-  return (
-    <div
-        id={'container'}
-    >
+    const blumaDescription = `mt-5 text-16 font-extrabold text-white max-md:max-w-full`;
+
+
+    return (
+      <div id={'container'}>
         <Bg>
           <div
               style={{backgroundColor: 'rgba(255, 255, 255, 0.2)',margin: 'auto', borderRadius: '10px 10px 10px 10px' }}
-              className={` flex w-[40%] h-[40%] md:w-[40%] `}>
-                {/*<div id='text'>*/}
-                {/*  Nigeria is a multinational state inhabited by more than 250 ethnic groups speaking 500 distinct languages*/}
-                {/*  Nigeria is a multinational state inhabited by more than 250 ethnic groups speaking 500 distinct languages*/}
-                {/*</div>*/}
+              className={` w-[40%] h-[40%] md:w-[40%] `}>
               <div
-                  // style={{gridTemplateColumns : '80% 20%'}}
-                  className={` w-[100%]  grid grid-rows-2 gap-20 justify-self-end  place-content-center    `}>
-                  <div className={`flex  w-[100%] `}>
-                      <span className={`w-auto font-bold text-16`}>
-                        Learn more about Nigeria, Xplore Nigeria
-                      </span>
+                  className={` w-[100%]  grid gap-10   place-content-center    `}>
+                  <div className={`grid  w-[100%] place-content-center  `}>
+                      <span className={`w-auto mt-5 text-16 text-2xl  font-extrabold text-white max-md:max-w-full`}>{Slideritems?.[0]?.title}</span>
+                      <span className={`w-auto text-white max-md:max-w-full`} >{Slideritems?.[0]?.desc}</span>
 
                   </div>
                   <div className={`flex w-[100%] gap-4  justify-self-stretch`}>
@@ -105,7 +90,7 @@ const HeroSection = (props) => {
 
           </div>
         </Bg>
-    </div>
+      </div>
   );
 };
 
