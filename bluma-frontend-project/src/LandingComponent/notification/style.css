@@ -1,0 +1,10 @@
+.notification{
+    height: 2rem;
+    display: flex;
+    align-items: center;
+}
+.notification img{
+    height: 100%;
+    width: 100%;
+    display: block;
+}

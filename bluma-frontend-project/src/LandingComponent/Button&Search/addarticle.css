@@ -1,0 +1,26 @@
+.add-article{
+    /* display: flex;
+    flex-direction: row-reverse;
+    padding: 2rem; */
+    width: fit-content;
+    margin: auto;
+    margin-top: 1rem;
+    
+}
+.add-article button{
+    display: flex;
+    align-items: center;
+    border: none;
+    outline: none;
+    color: white;
+    background-color: rgb(129, 52, 201);
+    
+}
+@media (max-width:1550px) {
+    .add-article button{
+        font-size: 18px;
+    }
+    .add-article img{
+        height: 20px;
+    }
+}
